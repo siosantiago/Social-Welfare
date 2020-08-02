@@ -3,27 +3,49 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B101D24D686EA00CAE8D2 /* LoginViewController.swift */; };
+		568B102024D71E7700CAE8D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */; };
+		568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568B102124D776D700CAE8D2 /* AppointmentsCell.xib */; };
+		56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17A6824C61F54009FC858 /* WelcomePage.swift */; };
+		56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */; };
+		56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */; };
+		56DEDD6724CFAA590023BCA2 /* AppointmentsViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56DEDD6524CFAA590023BCA2 /* AppointmentsViewCell.xib */; };
+		56DEDD6924CFAE360023BCA2 /* AppoimentsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */; };
+		56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6B24CFB1B10023BCA2 /* Appointment.swift */; };
 		56E9326024AE4A2B00F0E12E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */; };
 		56E9326224AE4A2B00F0E12E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9326124AE4A2B00F0E12E /* SceneDelegate.swift */; };
-		56E9326424AE4A2B00F0E12E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9326324AE4A2B00F0E12E /* ViewController.swift */; };
+		56E9326424AE4A2B00F0E12E /* StudentsOrMenberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9326324AE4A2B00F0E12E /* StudentsOrMenberViewController.swift */; };
 		56E9326724AE4A2B00F0E12E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326524AE4A2B00F0E12E /* Main.storyboard */; };
 		56E9326924AE4A2E00F0E12E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326824AE4A2E00F0E12E /* Assets.xcassets */; };
 		56E9326C24AE4A2E00F0E12E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326A24AE4A2E00F0E12E /* LaunchScreen.storyboard */; };
+		90E37BFE7F99C29E161D3286 /* Pods_Social_Welfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14315F1EB43809F647DD24BE /* Pods_Social_Welfare.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14315F1EB43809F647DD24BE /* Pods_Social_Welfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Welfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		568B101D24D686EA00CAE8D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		568B102124D776D700CAE8D2 /* AppointmentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCell.xib; sourceTree = "<group>"; };
+		56B17A6824C61F54009FC858 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
+		56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewCell.swift; sourceTree = "<group>"; };
+		56DEDD6524CFAA590023BCA2 /* AppointmentsViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsViewCell.xib; sourceTree = "<group>"; };
+		56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppoimentsPageController.swift; sourceTree = "<group>"; };
+		56DEDD6B24CFB1B10023BCA2 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		56E9325C24AE4A2B00F0E12E /* Social Welfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Welfare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E9326124AE4A2B00F0E12E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		56E9326324AE4A2B00F0E12E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		56E9326324AE4A2B00F0E12E /* StudentsOrMenberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsOrMenberViewController.swift; sourceTree = "<group>"; };
 		56E9326624AE4A2B00F0E12E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56E9326824AE4A2E00F0E12E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56E9326B24AE4A2E00F0E12E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56E9326D24AE4A2E00F0E12E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		957719F52DE05811087DB235 /* Pods-Social Welfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Welfare.debug.xcconfig"; path = "Target Support Files/Pods-Social Welfare/Pods-Social Welfare.debug.xcconfig"; sourceTree = "<group>"; };
+		DFCCD0006B8F3573703E44F0 /* Pods-Social Welfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Welfare.release.xcconfig"; path = "Target Support Files/Pods-Social Welfare/Pods-Social Welfare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +53,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90E37BFE7F99C29E161D3286 /* Pods_Social_Welfare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56B17A6524C61E8A009FC858 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56E9326324AE4A2B00F0E12E /* StudentsOrMenberViewController.swift */,
+				56B17A6824C61F54009FC858 /* WelcomePage.swift */,
+				56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */,
+				568B101D24D686EA00CAE8D2 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		56B17AAA24C92B83009FC858 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56E9326524AE4A2B00F0E12E /* Main.storyboard */,
+				56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */,
+				56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */,
+				56DEDD6524CFAA590023BCA2 /* AppointmentsViewCell.xib */,
+				568B102124D776D700CAE8D2 /* AppointmentsCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56DEDD6A24CFB1830023BCA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56DEDD6B24CFB1B10023BCA2 /* Appointment.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		56E9325324AE4A2B00F0E12E = {
 			isa = PBXGroup;
 			children = (
 				56E9325E24AE4A2B00F0E12E /* Social Welfare */,
 				56E9325D24AE4A2B00F0E12E /* Products */,
+				6E1E142A79881820AFD58065 /* Pods */,
+				F14E73D82A637A187F2395CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +114,32 @@
 			children = (
 				56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */,
 				56E9326124AE4A2B00F0E12E /* SceneDelegate.swift */,
-				56E9326324AE4A2B00F0E12E /* ViewController.swift */,
-				56E9326524AE4A2B00F0E12E /* Main.storyboard */,
+				56B17AAA24C92B83009FC858 /* View */,
+				56DEDD6A24CFB1830023BCA2 /* Model */,
+				56B17A6524C61E8A009FC858 /* Controller */,
 				56E9326824AE4A2E00F0E12E /* Assets.xcassets */,
 				56E9326A24AE4A2E00F0E12E /* LaunchScreen.storyboard */,
 				56E9326D24AE4A2E00F0E12E /* Info.plist */,
+				568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */,
 			);
 			path = "Social Welfare";
+			sourceTree = "<group>";
+		};
+		6E1E142A79881820AFD58065 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				957719F52DE05811087DB235 /* Pods-Social Welfare.debug.xcconfig */,
+				DFCCD0006B8F3573703E44F0 /* Pods-Social Welfare.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F14E73D82A637A187F2395CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14315F1EB43809F647DD24BE /* Pods_Social_Welfare.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +149,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56E9327024AE4A2E00F0E12E /* Build configuration list for PBXNativeTarget "Social Welfare" */;
 			buildPhases = (
+				B8D167B866BBD05D2BC23F08 /* [CP] Check Pods Manifest.lock */,
 				56E9325824AE4A2B00F0E12E /* Sources */,
 				56E9325924AE4A2B00F0E12E /* Frameworks */,
 				56E9325A24AE4A2B00F0E12E /* Resources */,
+				647A548E71D75F79197DF1A1 /* [CP] Embed Pods Frameworks */,
+				38FBDD69FB444C81D92FED74 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,18 +205,86 @@
 			files = (
 				56E9326C24AE4A2E00F0E12E /* LaunchScreen.storyboard in Resources */,
 				56E9326924AE4A2E00F0E12E /* Assets.xcassets in Resources */,
+				568B102024D71E7700CAE8D2 /* GoogleService-Info.plist in Resources */,
+				568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */,
+				56DEDD6724CFAA590023BCA2 /* AppointmentsViewCell.xib in Resources */,
 				56E9326724AE4A2B00F0E12E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38FBDD69FB444C81D92FED74 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		647A548E71D75F79197DF1A1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8D167B866BBD05D2BC23F08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Social Welfare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56E9325824AE4A2B00F0E12E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56E9326424AE4A2B00F0E12E /* ViewController.swift in Sources */,
+				568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */,
+				56E9326424AE4A2B00F0E12E /* StudentsOrMenberViewController.swift in Sources */,
+				56DEDD6924CFAE360023BCA2 /* AppoimentsPageController.swift in Sources */,
+				56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */,
+				56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */,
+				56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */,
+				56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */,
 				56E9326024AE4A2B00F0E12E /* AppDelegate.swift in Sources */,
 				56E9326224AE4A2B00F0E12E /* SceneDelegate.swift in Sources */,
 			);
@@ -282,6 +428,7 @@
 		};
 		56E9327124AE4A2E00F0E12E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 957719F52DE05811087DB235 /* Pods-Social Welfare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +446,7 @@
 		};
 		56E9327224AE4A2E00F0E12E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DFCCD0006B8F3573703E44F0 /* Pods-Social Welfare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

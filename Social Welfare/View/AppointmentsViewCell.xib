@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="appointmentsViewCell" rowHeight="362" id="KGk-i7-Jjw" customClass="AppointmentsViewCell" customModule="Social_Welfare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="481" height="362"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM" customClass="AppointmentsViewCell" customModule="Social_Welfare" customModuleProvider="target">
+                <rect key="frame" x="0.0" y="0.0" width="481" height="362"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WbR-IC-AIT">
+                        <rect key="frame" x="20" y="10" width="441" height="342"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yBN-gf-ctO">
+                                <rect key="frame" x="0.0" y="0.0" width="441" height="137.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TittleApointment" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTi-ZR-O6P">
+                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="137.5"/>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateInfo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIf-wE-dnX">
+                                        <rect key="frame" x="230.5" y="0.0" width="210.5" height="137.5"/>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="iIf-wE-dnX" firstAttribute="top" secondItem="yBN-gf-ctO" secondAttribute="top" id="3YT-sA-JQI"/>
+                                    <constraint firstAttribute="bottom" secondItem="iIf-wE-dnX" secondAttribute="bottom" id="PvB-Dt-McU"/>
+                                    <constraint firstAttribute="bottom" secondItem="oTi-ZR-O6P" secondAttribute="bottom" id="k9h-u7-BcS"/>
+                                    <constraint firstItem="oTi-ZR-O6P" firstAttribute="top" secondItem="yBN-gf-ctO" secondAttribute="top" id="oPc-dS-BpV"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="moreInfo" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKX-rp-Z9G">
+                                <rect key="frame" x="0.0" y="147.5" width="441" height="194.5"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="yBN-gf-ctO" secondAttribute="trailing" id="MfB-7h-8vf"/>
+                            <constraint firstItem="yBN-gf-ctO" firstAttribute="leading" secondItem="WbR-IC-AIT" secondAttribute="leading" id="pbc-i4-Pjl"/>
+                            <constraint firstAttribute="trailing" secondItem="TKX-rp-Z9G" secondAttribute="trailing" id="r0q-0I-7za"/>
+                            <constraint firstItem="TKX-rp-Z9G" firstAttribute="leading" secondItem="WbR-IC-AIT" secondAttribute="leading" id="tWJ-Gz-ZAj"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="WbR-IC-AIT" secondAttribute="trailing" constant="20" id="Dqd-PU-aZ4"/>
+                    <constraint firstItem="WbR-IC-AIT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="MOz-Hk-rVf"/>
+                    <constraint firstItem="WbR-IC-AIT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Mfr-qq-yFm"/>
+                    <constraint firstItem="WbR-IC-AIT" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="b5B-el-qU6"/>
+                    <constraint firstAttribute="bottom" secondItem="WbR-IC-AIT" secondAttribute="bottom" constant="10" id="qyu-Ml-k0O"/>
+                    <constraint firstItem="WbR-IC-AIT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ykZ-al-xBG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Deh-OB-Ox2"/>
+            <connections>
+                <outlet property="dateViewCell" destination="iIf-wE-dnX" id="b4t-ah-2MH"/>
+                <outlet property="infoViewCell" destination="TKX-rp-Z9G" id="c8m-5Z-WW7"/>
+                <outlet property="tittleViewCell" destination="oTi-ZR-O6P" id="EJq-6t-5EZ"/>
+            </connections>
+            <point key="canvasLocation" x="115" y="67"/>
+        </tableViewCell>
+    </objects>
+</document>

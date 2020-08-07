@@ -15,8 +15,9 @@ class PrimaryButton: UIButton {
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
+        super.draw(rect)
         backgroundColor = .clear
-        setTitleColor(#colorLiteral(red: 0.03921568627, green: 0.5176470588, blue: 1, alpha: 1), for: .normal)
+        setTitleColor(#colorLiteral(red: 0.9176470588, green: 0.5647058824, blue: 0.4784313725, alpha: 1), for: .normal)
         //Cuatro estados del boton: normal, seleccionado, deshabilitar, y remarcado.
         //normal, selected, enable, disable
         setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .highlighted)

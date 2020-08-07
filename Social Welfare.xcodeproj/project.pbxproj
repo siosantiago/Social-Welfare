@@ -10,6 +10,8 @@
 		568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B101D24D686EA00CAE8D2 /* LoginViewController.swift */; };
 		568B102024D71E7700CAE8D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */; };
 		568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568B102124D776D700CAE8D2 /* AppointmentsCell.xib */; };
+		568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */; };
+		56954F8724DCE27D001DA6DE /* RegisterNewStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */; };
 		56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17A6824C61F54009FC858 /* WelcomePage.swift */; };
 		56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */; };
 		56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */; };
@@ -30,6 +32,8 @@
 		568B101D24D686EA00CAE8D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		568B102124D776D700CAE8D2 /* AppointmentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCell.xib; sourceTree = "<group>"; };
+		568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentViewController.swift; sourceTree = "<group>"; };
+		56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewStudentViewController.swift; sourceTree = "<group>"; };
 		56B17A6824C61F54009FC858 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewCell.swift; sourceTree = "<group>"; };
@@ -63,10 +67,12 @@
 		56B17A6524C61E8A009FC858 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				56E9326324AE4A2B00F0E12E /* StudentsOrMenberViewController.swift */,
 				56B17A6824C61F54009FC858 /* WelcomePage.swift */,
-				56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */,
+				56E9326324AE4A2B00F0E12E /* StudentsOrMenberViewController.swift */,
+				56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */,
 				568B101D24D686EA00CAE8D2 /* LoginViewController.swift */,
+				56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */,
+				568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,9 +288,11 @@
 				56E9326424AE4A2B00F0E12E /* StudentsOrMenberViewController.swift in Sources */,
 				56DEDD6924CFAE360023BCA2 /* AppoimentsPageController.swift in Sources */,
 				56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */,
+				568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */,
 				56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */,
 				56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */,
 				56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */,
+				56954F8724DCE27D001DA6DE /* RegisterNewStudentViewController.swift in Sources */,
 				56E9326024AE4A2B00F0E12E /* AppDelegate.swift in Sources */,
 				56E9326224AE4A2B00F0E12E /* SceneDelegate.swift in Sources */,
 			);

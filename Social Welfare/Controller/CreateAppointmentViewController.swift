@@ -21,11 +21,13 @@ class CreateAppointmentViewController: UIViewController {
     let dictionaryInfoVar = "Info"
     
     var pickerViewData: [[String]] = []
-    
+    var timeChosen: String?
+    var minutesChosen: String?
+    var arr1: [String] = []
     
     @IBOutlet weak var titleAppointmentTextField: UITextField!
     @IBOutlet weak var dateAppointmentTextField: UITextField!
-    @IBOutlet weak var timeAppointmentTextField: UITextField!
+    @IBOutlet weak var timeAppointmentPickerView: UIPickerView!
     @IBOutlet weak var infoAppointmentTextField: UITextField!
     
     
@@ -33,19 +35,22 @@ class CreateAppointmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        timeAppointmentPickerView.delegate = self
+        timeAppointmentPickerView.dataSource = self
         // Do any additional setup after loading the view.
+        createPickerViewData()
     }
     
     @IBAction func createNewAppointmentPressed(_ sender: UIButton) {
         if let title = titleAppointmentTextField.text,
             let date = dateAppointmentTextField.text,
-            let time = timeAppointmentTextField.text,
+            let time = timeChosen,
+            let minutes = minutesChosen,
             let info = infoAppointmentTextField.text {
             db.collection(newAppointmentCollectionName).addDocument(data: [
                 dictionaryTitleVar: title,
                 dictionaryDateVar: date,
-                dictionaryTimeVar: time,
+                dictionaryTimeVar: "\(time)\(minutes)",
                 dictionaryInfoVar: info]) { (error) in
                     if let e = error {
                         print(e.localizedDescription)
@@ -72,8 +77,10 @@ class CreateAppointmentViewController: UIViewController {
 }
 
 extension CreateAppointmentViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    
     func createPickerViewData() {
-        var arr1: [String] = []
+        
         for data in 1...24{
             arr1.append("\(data):")
         }
@@ -87,11 +94,28 @@ extension CreateAppointmentViewController: UIPickerViewDataSource, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 24
+        if component == 0{
+            return 24
+        }
+        else{
+            return 2
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return pickerViewData[component][row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0{
+            let firstArr = pickerViewData[0]
+            timeChosen = firstArr[row]
+        }
+        else{
+            let firstArr = pickerViewData[1]
+            minutesChosen = firstArr[row]
+        }
+        
     }
     
     

@@ -522,11 +522,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wCU-Qk-6uR">
                                         <rect key="frame" x="0.0" y="309" width="414" height="137"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HLL-Lv-F2V">
-                                                <rect key="frame" x="20" y="76.5" width="364" height="40.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="97" translatesAutoresizingMaskIntoConstraints="NO" id="QBt-SH-VYN">
                                                 <rect key="frame" x="20" y="35" width="374" height="26.5"/>
                                                 <subviews>
@@ -548,15 +543,18 @@
                                                     <constraint firstAttribute="bottom" secondItem="MEz-cZ-Had" secondAttribute="bottom" id="VPc-oD-QtY"/>
                                                 </constraints>
                                             </stackView>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOg-Ye-gaJ">
+                                                <rect key="frame" x="0.0" y="79" width="414" height="58"/>
+                                            </pickerView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="QBt-SH-VYN" secondAttribute="trailing" constant="20" id="09a-cC-3px"/>
-                                            <constraint firstItem="HLL-Lv-F2V" firstAttribute="top" secondItem="QBt-SH-VYN" secondAttribute="bottom" constant="15" id="D1T-1A-RN5"/>
                                             <constraint firstItem="QBt-SH-VYN" firstAttribute="leading" secondItem="wCU-Qk-6uR" secondAttribute="leading" constant="20" id="HMl-h0-siw"/>
-                                            <constraint firstItem="HLL-Lv-F2V" firstAttribute="leading" secondItem="wCU-Qk-6uR" secondAttribute="leading" constant="20" id="jPy-tv-wW1"/>
+                                            <constraint firstItem="BOg-Ye-gaJ" firstAttribute="leading" secondItem="wCU-Qk-6uR" secondAttribute="leading" id="Iam-KP-ra1"/>
+                                            <constraint firstAttribute="trailing" secondItem="BOg-Ye-gaJ" secondAttribute="trailing" id="JMD-P0-lc0"/>
+                                            <constraint firstItem="BOg-Ye-gaJ" firstAttribute="top" secondItem="QBt-SH-VYN" secondAttribute="bottom" constant="17.5" id="hlc-6b-pFv"/>
                                             <constraint firstItem="QBt-SH-VYN" firstAttribute="top" secondItem="wCU-Qk-6uR" secondAttribute="top" constant="35" id="oOQ-84-zT2"/>
-                                            <constraint firstAttribute="bottom" secondItem="HLL-Lv-F2V" secondAttribute="bottom" constant="20" id="uKF-0j-eLp"/>
-                                            <constraint firstAttribute="trailing" secondItem="HLL-Lv-F2V" secondAttribute="trailing" constant="30" id="v6F-Mg-o58"/>
+                                            <constraint firstAttribute="bottom" secondItem="BOg-Ye-gaJ" secondAttribute="bottom" id="yJh-24-wnW"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwM-r4-SJ7" userLabel="info">
@@ -644,7 +642,7 @@
                     <connections>
                         <outlet property="dateAppointmentTextField" destination="cPa-4V-hzf" id="nhf-T3-9WY"/>
                         <outlet property="infoAppointmentTextField" destination="8pq-I6-OJ8" id="oZN-36-gAg"/>
-                        <outlet property="timeAppointmentTextField" destination="HLL-Lv-F2V" id="6gw-zu-HQx"/>
+                        <outlet property="timeAppointmentPickerView" destination="BOg-Ye-gaJ" id="yY7-O9-DoB"/>
                         <outlet property="titleAppointmentTextField" destination="Xiw-TV-oxq" id="7Cj-9w-po6"/>
                     </connections>
                 </viewController>

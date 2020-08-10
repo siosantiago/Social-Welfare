@@ -22,16 +22,19 @@ class CreateAppointmentViewController: UIViewController {
     
     var pickerViewData: [[String]] = []
     var timeChosen: String?
-    var minutesChosen: String?
+    var minutesChosen: String? = "00"
     var arr1: [String] = []
+    var appValid = false
+    var datePicked: Date? = nil
     
     @IBOutlet weak var titleAppointmentTextField: UITextField!
-    @IBOutlet weak var dateAppointmentTextField: UITextField!
     @IBOutlet weak var timeAppointmentPickerView: UIPickerView!
+    @IBOutlet weak var datePickerView: UIDatePicker!
     @IBOutlet weak var infoAppointmentTextField: UITextField!
     
+    let dateFormatter = DateFormatter()
     
-
+    var defaultDate: String? = "0.0"
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,11 +42,17 @@ class CreateAppointmentViewController: UIViewController {
         timeAppointmentPickerView.dataSource = self
         // Do any additional setup after loading the view.
         createPickerViewData()
+        datePickerView.datePickerMode = .date
+        datePickerView.minimumDate = Date.init()
+    }
+    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+        datePicked = datePickerView.date
+        print("Date picked = \(datePicked!)")
     }
     
     @IBAction func createNewAppointmentPressed(_ sender: UIButton) {
         if let title = titleAppointmentTextField.text,
-            let date = dateAppointmentTextField.text,
+            let date = datePicked,
             let time = timeChosen,
             let minutes = minutesChosen,
             let info = infoAppointmentTextField.text {
@@ -53,26 +62,28 @@ class CreateAppointmentViewController: UIViewController {
                 dictionaryTimeVar: "\(time)\(minutes)",
                 dictionaryInfoVar: info]) { (error) in
                     if let e = error {
+                        self.performSegue(withIdentifier: "creationSuccessfulSegue", sender: self)
                         print(e.localizedDescription)
+                        
                     }
                     else {
-                        print("Succesfully saved data")
+                        self.appValid = true
+                        self.performSegue(withIdentifier: "creationSuccessfulSegue", sender: self)
                     }
             }
         }
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+           // Get the new view controller using segue.destination.
+           // Pass the selected object to the new view controller.
+        if segue.identifier == "creationSuccessfulSegue" {
+            if let destinationVC = segue.destination as? CreationAppointmentSuccesfullyViewController {
+                destinationVC.isAppointValid = appValid
+            }
+        }
+        
     }
-    */
 
 }
 
@@ -80,7 +91,6 @@ extension CreateAppointmentViewController: UIPickerViewDataSource, UIPickerViewD
     
     
     func createPickerViewData() {
-        
         for data in 1...24{
             arr1.append("\(data):")
         }
@@ -108,15 +118,14 @@ extension CreateAppointmentViewController: UIPickerViewDataSource, UIPickerViewD
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if component == 0{
-            let firstArr = pickerViewData[0]
+            let firstArr = pickerViewData[component]
             timeChosen = firstArr[row]
+            
         }
         else{
-            let firstArr = pickerViewData[1]
+            let firstArr = pickerViewData[component]
             minutesChosen = firstArr[row]
         }
-        
     }
-    
-    
 }
+

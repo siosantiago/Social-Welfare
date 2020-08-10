@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
                     print(e)
                 }
                 else{
-                    self.performSegue(withIdentifier: self.segueIdentifier, sender: self)
+                    self.goToMain()
                 }
             }
         }

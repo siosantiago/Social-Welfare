@@ -10,6 +10,6 @@ import Foundation
 
 struct Appointment {
     let title: String
-    let date: String
+    let date: Date
     let info: String
 }

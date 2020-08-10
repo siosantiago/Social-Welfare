@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class WelcomePage: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        //checkAuth()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -27,6 +29,15 @@ class WelcomePage: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func checkAuth(){
+        if Auth.auth().currentUser != nil {
+          // User is signed in.
+          // ...
+            goToMain()
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -38,4 +49,18 @@ class WelcomePage: UIViewController {
     }
     */
 
+}
+
+extension UIViewController {
+    func goToMain() {
+        let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let appDel: AppDelegate = UIApplication.shared.delegate as? AppDelegate else
+        {
+            return
+        }
+        let centerVC = mainStoryBoard.instantiateViewController(identifier: "Home")
+        appDel.window?.rootViewController = centerVC
+        appDel.window?.makeKeyAndVisible()
+    }
 }

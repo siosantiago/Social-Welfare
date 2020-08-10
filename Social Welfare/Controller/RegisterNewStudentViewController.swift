@@ -43,6 +43,7 @@ class RegisterNewStudentViewController: UIViewController {
         
     }
     
+    
     @IBAction func registerNewStudentAccountPressed(_ sender: PrimaryButton) {
         if let email = emailStudentAccountTextField.text,
             let password = passwordStudentAccountTextField.text,
@@ -53,28 +54,30 @@ class RegisterNewStudentViewController: UIViewController {
                 if let e = error{
                     print(e)
                 }
-                else{
-                    self.db.collection(self.newStudentCollectionName).addDocument(data: [
-                        self.dictionaryMailVar: email,
-                        self.dictionaryNameVar: name,
-                        self.dictionaryLastNameVar: lastName,
-                        self.dictionaryDateVar: Date().timeIntervalSince1970,
-                        self.dictionaryAgeVar: age]) { (error) in
-                        if let e = error {
-                            print("There was an issue saving data to firestroe, \(e)")
-                        }
-                        else{
-                            print("Succesfully saved data")
-                        }
-                    }
-                    self.performSegue(withIdentifier: "studentRegisterSegue", sender: self)
+                else if let uid = authResult?.user.uid {
+                    self.saveDataUser(email: email, name: name, lastName: lastName, age: age, uid: uid)
                 }
             }
         }
     }
     
-    
-
+    func saveDataUser(email: String, name: String, lastName: String, age: String, uid: String) {
+        
+        let data = [self.dictionaryMailVar: email,
+        self.dictionaryNameVar: name,
+        self.dictionaryLastNameVar: lastName,
+        self.dictionaryDateVar: Date().timeIntervalSince1970,
+        self.dictionaryAgeVar: age] as [String : Any]
+        
+        self.db.collection(self.newStudentCollectionName).document(uid).setData(data) { (error) in
+            if let e = error {
+                print("There was an issue saving data to firestroe, \(e)")
+            }
+            else{
+                self.goToMain()
+            }
+        }
+    }
 }
 
 extension RegisterNewStudentViewController: UIPickerViewDataSource, UIPickerViewDelegate {

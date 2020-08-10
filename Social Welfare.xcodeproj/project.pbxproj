@@ -12,6 +12,9 @@
 		568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568B102124D776D700CAE8D2 /* AppointmentsCell.xib */; };
 		568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */; };
 		56954F8724DCE27D001DA6DE /* RegisterNewStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */; };
+		56954F8924DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8824DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift */; };
+		56954F8B24DE38F8001DA6DE /* userViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8A24DE38F8001DA6DE /* userViewController.swift */; };
+		56954F8D24E073C6001DA6DE /* AllAppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8C24E073C6001DA6DE /* AllAppointmentsViewController.swift */; };
 		56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17A6824C61F54009FC858 /* WelcomePage.swift */; };
 		56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */; };
 		56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */; };
@@ -19,7 +22,6 @@
 		56DEDD6924CFAE360023BCA2 /* AppoimentsPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */; };
 		56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6B24CFB1B10023BCA2 /* Appointment.swift */; };
 		56E9326024AE4A2B00F0E12E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */; };
-		56E9326224AE4A2B00F0E12E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9326124AE4A2B00F0E12E /* SceneDelegate.swift */; };
 		56E9326424AE4A2B00F0E12E /* StudentsOrMenberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E9326324AE4A2B00F0E12E /* StudentsOrMenberViewController.swift */; };
 		56E9326724AE4A2B00F0E12E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326524AE4A2B00F0E12E /* Main.storyboard */; };
 		56E9326924AE4A2E00F0E12E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326824AE4A2E00F0E12E /* Assets.xcassets */; };
@@ -34,6 +36,9 @@
 		568B102124D776D700CAE8D2 /* AppointmentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCell.xib; sourceTree = "<group>"; };
 		568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentViewController.swift; sourceTree = "<group>"; };
 		56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewStudentViewController.swift; sourceTree = "<group>"; };
+		56954F8824DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAppointmentSuccesfullyViewController.swift; sourceTree = "<group>"; };
+		56954F8A24DE38F8001DA6DE /* userViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userViewController.swift; sourceTree = "<group>"; };
+		56954F8C24E073C6001DA6DE /* AllAppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppointmentsViewController.swift; sourceTree = "<group>"; };
 		56B17A6824C61F54009FC858 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewCell.swift; sourceTree = "<group>"; };
@@ -42,7 +47,6 @@
 		56DEDD6B24CFB1B10023BCA2 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		56E9325C24AE4A2B00F0E12E /* Social Welfare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social Welfare.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56E9326124AE4A2B00F0E12E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56E9326324AE4A2B00F0E12E /* StudentsOrMenberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsOrMenberViewController.swift; sourceTree = "<group>"; };
 		56E9326624AE4A2B00F0E12E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56E9326824AE4A2E00F0E12E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +76,10 @@
 				56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */,
 				568B101D24D686EA00CAE8D2 /* LoginViewController.swift */,
 				56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */,
+				56954F8C24E073C6001DA6DE /* AllAppointmentsViewController.swift */,
 				568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */,
+				56954F8824DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift */,
+				56954F8A24DE38F8001DA6DE /* userViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -119,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */,
-				56E9326124AE4A2B00F0E12E /* SceneDelegate.swift */,
 				56B17AAA24C92B83009FC858 /* View */,
 				56DEDD6A24CFB1830023BCA2 /* Model */,
 				56B17A6524C61E8A009FC858 /* Controller */,
@@ -291,10 +297,12 @@
 				568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */,
 				56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */,
 				56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */,
+				56954F8B24DE38F8001DA6DE /* userViewController.swift in Sources */,
+				56954F8D24E073C6001DA6DE /* AllAppointmentsViewController.swift in Sources */,
 				56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */,
 				56954F8724DCE27D001DA6DE /* RegisterNewStudentViewController.swift in Sources */,
 				56E9326024AE4A2B00F0E12E /* AppDelegate.swift in Sources */,
-				56E9326224AE4A2B00F0E12E /* SceneDelegate.swift in Sources */,
+				56954F8924DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

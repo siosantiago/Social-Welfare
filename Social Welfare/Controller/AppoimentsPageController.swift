@@ -24,7 +24,7 @@ class AppoimentsPageController: UIViewController {
     }
     
     //variables
-    var appointments: [Appointment] = [Appointment(title: "Diabetes Run 2020", date: "03/17/2020", info: "Leo's club members walking jfkjfkakkkakkkkkajfjflfljdlfjldldlldldlllddkjf"), Appointment(title: "The other run", date: "03/17/2020", info: "Leo's club members walking ")]
+    var appointments: [Appointment] = []
     
 
     override func viewDidLoad() {
@@ -37,9 +37,7 @@ class AppoimentsPageController: UIViewController {
         appointmentsTableView.rowHeight = UITableView.automaticDimension
         appointmentsTableView.estimatedRowHeight = 100
         
-        let newAppointment = Appointment(title: "Second test", date: "03/17/2020", info: "Blah blah balhs.")
-        
-        appointments.append(newAppointment)
+
     }
     
 
@@ -53,13 +51,13 @@ extension AppoimentsPageController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
+        let dateFormatter = DateFormatter()
         let appoint = appointments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AppointmentsViewCell
         
         cell.tittleViewCell.text = appoint.title
         cell.infoViewCell.text = appoint.info
-        cell.dateViewCell.text = appoint.date
+        cell.dateViewCell.text = dateFormatter.string(from: appoint.date)
         
         
         return cell

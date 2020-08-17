@@ -7,21 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class AppoimentsPageController: UIViewController {
     
     @IBOutlet weak var appointmentsTableView: UITableView!
+    
+    let db = Firestore.firestore()
+    let user = Auth.auth().currentUser
     let cellIdentifier = "appointmentsCell"
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.isNavigationBarHidden = false
-    }
+    let nibCell = "AppointmentsCell"
+    let firebaseCollectionName = "Appointment"
+    let firebaseTitleVar = "Title"
+    let firebaseDateVar = "Date"
+    let firebaseTimeVar = "Time"
+    let firebaseInfoVar = "Info"
+    let firebaseTutorID = "Club Member ID"
     
     //variables
     var appointments: [Appointment] = []
@@ -36,13 +37,41 @@ class AppoimentsPageController: UIViewController {
         appointmentsTableView.register(UINib(nibName: "AppointmentsCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         appointmentsTableView.rowHeight = UITableView.automaticDimension
         appointmentsTableView.estimatedRowHeight = 100
-        
-
+        loadAppointments()
     }
     
-
-    
-
+    func loadAppointments() {
+        db.collection(firebaseCollectionName).order(by: firebaseDateVar).addSnapshotListener { (querySnapshot, error) in
+            
+            self.appointments = []
+            
+            if let e = error {
+                print("Issue retreiving data from firestore \(e)")
+            }
+            else{
+                if let snapshotDocuments = querySnapshot?.documents,
+                    let safeUser = self.user{
+                    let userID = safeUser.uid
+                    for document in snapshotDocuments {
+                        let data = document.data()
+                        let id = document.documentID
+                        if let title = data[self.firebaseTitleVar] as? String,
+                            userID == data[self.firebaseTutorID] as? String,
+                            let time = data[self.firebaseTimeVar] as? String,
+                            let date = data[self.firebaseDateVar] as? Timestamp,
+                            let info = data[self.firebaseInfoVar] as? String {
+                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, time: time, id: id )
+                            
+                            self.appointments.append(newAppointment)
+                            DispatchQueue.main.async {
+                                self.appointmentsTableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension AppoimentsPageController: UITableViewDataSource {
@@ -51,13 +80,15 @@ extension AppoimentsPageController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let appointment = appointments[indexPath.row]
         let dateFormatter = DateFormatter()
-        let appoint = appointments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AppointmentsViewCell
         
-        cell.tittleViewCell.text = appoint.title
-        cell.infoViewCell.text = appoint.info
-        cell.dateViewCell.text = dateFormatter.string(from: appoint.date)
+        cell.tittleViewCell.text = appointment.title
+        cell.infoViewCell.text = appointment.info
+        dateFormatter.dateFormat = "MMMM dd"
+        let stringDate = dateFormatter.string(from: appointment.date)
+        cell.dateViewCell.text = "\(stringDate) | \(appointment.time)"
         
         
         return cell

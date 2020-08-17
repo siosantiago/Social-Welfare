@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="top" axis="vertical" distribution="equalCentering" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gq2-nw-Uj6">
-                                <rect key="frame" x="20" y="108" width="374" height="168"/>
+                                <rect key="frame" x="20" y="20" width="374" height="168"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@2.com" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Eu-dt-F5m">
                                         <rect key="frame" x="20" y="0.0" width="334" height="39.5"/>
@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzV-li-ONQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="-186"/>
+            <point key="canvasLocation" x="1970" y="-174"/>
         </scene>
         <!--Appointments Page-->
         <scene sceneID="oWy-Pp-TBY">
@@ -272,21 +272,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-4j-poG">
-                                <rect key="frame" x="0.0" y="44" width="414" height="749"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" name="Button BackGround 1"/>
                                 <sections/>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zug-go-bXn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" name="Background Color 1"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                    <color key="textColor" red="0.1058823529" green="0.14901960780000001" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="My Appointments" id="xuk-y1-7wp"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="5Pa-4j-poG" firstAttribute="trailing" secondItem="VlF-dn-kUz" secondAttribute="trailing" id="8kH-94-nxK"/>
                             <constraint firstItem="5Pa-4j-poG" firstAttribute="leading" secondItem="VlF-dn-kUz" secondAttribute="leading" id="Dzy-rw-nZd"/>
-                            <constraint firstItem="VlF-dn-kUz" firstAttribute="bottom" secondItem="5Pa-4j-poG" secondAttribute="bottom" constant="20" id="i8e-By-utm"/>
-                            <constraint firstItem="5Pa-4j-poG" firstAttribute="top" secondItem="VlF-dn-kUz" secondAttribute="top" id="zMT-Ma-cRk"/>
+                            <constraint firstItem="zug-go-bXn" firstAttribute="top" secondItem="VlF-dn-kUz" secondAttribute="top" id="PIO-Az-Vkt"/>
+                            <constraint firstItem="VlF-dn-kUz" firstAttribute="bottom" secondItem="5Pa-4j-poG" secondAttribute="bottom" id="i8e-By-utm"/>
+                            <constraint firstItem="zug-go-bXn" firstAttribute="trailing" secondItem="VlF-dn-kUz" secondAttribute="trailing" id="rfk-dI-7JN"/>
+                            <constraint firstItem="zug-go-bXn" firstAttribute="leading" secondItem="VlF-dn-kUz" secondAttribute="leading" id="xTu-du-U6D"/>
+                            <constraint firstItem="5Pa-4j-poG" firstAttribute="top" secondItem="zug-go-bXn" secondAttribute="bottom" id="xnO-b5-fEp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VlF-dn-kUz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="bookmark.fill" catalog="system" id="FTL-GU-nt6"/>
+                    <tabBarItem key="tabBarItem" title="Main" image="bookmark.fill" catalog="system" id="FTL-GU-nt6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="appointmentsTableView" destination="5Pa-4j-poG" id="ngQ-K9-Qqp"/>
@@ -294,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BL-fi-8uR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4461" y="127"/>
+            <point key="canvasLocation" x="4460.8695652173919" y="-207.58928571428569"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RZp-9a-uHj">
@@ -310,7 +324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xou-Qo-MEU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1971" y="-1087"/>
+            <point key="canvasLocation" x="1970" y="-848"/>
         </scene>
         <!--Welcome View Screen-->
         <scene sceneID="0fI-UI-8VM">
@@ -433,11 +447,11 @@
                         <color key="backgroundColor" name="Background Color 1"/>
                         <viewLayoutGuide key="safeArea" id="P30-SB-DND"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="person.fill" catalog="system" id="D9D-KD-Jnz"/>
+                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" id="D9D-KD-Jnz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4k-7F-Pen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4461" y="1950"/>
+            <point key="canvasLocation" x="4425" y="1141"/>
         </scene>
         <!--Creation Appointment Succesfully View Controller-->
         <scene sceneID="RZW-FJ-TT9">
@@ -467,13 +481,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C65-fV-9X4" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                <rect key="frame" x="157" y="549" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ELE-zj-Hc4"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="z1W-8U-EVe"/>
+                                </constraints>
+                                <state key="normal" title="Return"/>
+                                <connections>
+                                    <action selector="dismissButtonPressed:" destination="jCi-B1-Ljh" eventType="touchUpInside" id="FOC-17-4UK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
+                            <constraint firstItem="C65-fV-9X4" firstAttribute="top" secondItem="VsY-lG-q8e" secondAttribute="bottom" constant="90" id="5Sb-6o-xtA"/>
                             <constraint firstItem="1zn-C9-zyW" firstAttribute="centerX" secondItem="7e7-vD-sPT" secondAttribute="centerX" id="KK8-vq-sZQ"/>
                             <constraint firstItem="1zn-C9-zyW" firstAttribute="top" secondItem="WVb-8g-asz" secondAttribute="top" constant="97" id="bZz-Ko-Dde"/>
                             <constraint firstItem="VsY-lG-q8e" firstAttribute="centerX" secondItem="7e7-vD-sPT" secondAttribute="centerX" id="h4n-DZ-MhX"/>
                             <constraint firstItem="VsY-lG-q8e" firstAttribute="centerY" secondItem="7e7-vD-sPT" secondAttribute="centerY" id="oFu-7V-xlJ"/>
+                            <constraint firstItem="C65-fV-9X4" firstAttribute="centerX" secondItem="7e7-vD-sPT" secondAttribute="centerX" id="vEo-6v-kT3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WVb-8g-asz"/>
                     </view>
@@ -485,7 +512,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxe-nO-xUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5587" y="1045"/>
+            <point key="canvasLocation" x="5589.8550724637689" y="442.63392857142856"/>
         </scene>
         <!--Appointments Page-->
         <scene sceneID="VDy-v9-5lf">
@@ -689,7 +716,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rG5-4C-N14"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="folder" catalog="system" id="OiG-3S-IUS"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="folder" catalog="system" id="OiG-3S-IUS"/>
                     <connections>
                         <outlet property="datePickerView" destination="r6R-FU-kxl" id="Vr3-pp-jFh"/>
                         <outlet property="infoAppointmentTextField" destination="8pq-I6-OJ8" id="oZN-36-gAg"/>
@@ -700,7 +727,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5v-ER-lMn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4461" y="1045"/>
+            <point key="canvasLocation" x="4461" y="443"/>
         </scene>
         <!--AllAppointmentsPage-->
         <scene sceneID="vaU-lh-AYM">
@@ -710,7 +737,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SyW-b6-dIq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SyW-b6-dIq">
                                 <rect key="frame" x="0.0" y="44" width="414" height="754"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
@@ -724,18 +751,74 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jyl-30-Vb9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="calendar" catalog="system" id="KSO-LJ-9h9"/>
+                    <tabBarItem key="tabBarItem" title="browse" image="calendar" catalog="system" id="KSO-LJ-9h9"/>
                     <connections>
                         <outlet property="allAppointmentsTableView" destination="SyW-b6-dIq" id="TmW-Oq-YR9"/>
+                        <segue destination="Htw-An-uoj" kind="show" identifier="addMeToAppointment" id="Bha-WA-u80"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNw-IG-av8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4461" y="-666"/>
+            <point key="canvasLocation" x="4461" y="-1088"/>
+        </scene>
+        <!--Add Me To Appointment View Controller-->
+        <scene sceneID="3Ln-7h-N9N">
+            <objects>
+                <viewController id="Htw-An-uoj" customClass="AddMeToAppointmentViewController" customModule="Social_Welfare" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uRf-fE-M9u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1eE-cx-7p0">
+                                <rect key="frame" x="0.0" y="389" width="414" height="453"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D0-gt-6NI">
+                                        <rect key="frame" x="157" y="293" width="100" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="pbk-7Y-3lS"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="wlc-cd-ibA"/>
+                                        </constraints>
+                                        <state key="normal" title="Join"/>
+                                        <connections>
+                                            <action selector="addMePressed:" destination="Htw-An-uoj" eventType="touchUpInside" id="8Qj-Ra-6Kk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Background Color 1"/>
+                                <constraints>
+                                    <constraint firstItem="4D0-gt-6NI" firstAttribute="centerX" secondItem="1eE-cx-7p0" secondAttribute="centerX" id="5cm-ep-KQS"/>
+                                    <constraint firstAttribute="bottom" secondItem="4D0-gt-6NI" secondAttribute="bottom" constant="100" id="wtH-Sp-xKE"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPt-6w-DMD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="389"/>
+                                <color key="backgroundColor" name="Background Color 1"/>
+                                <color key="tintColor" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xPt-6w-DMD" firstAttribute="trailing" secondItem="isq-Yo-8JQ" secondAttribute="trailing" id="GJ1-OZ-zmi"/>
+                            <constraint firstItem="xPt-6w-DMD" firstAttribute="top" secondItem="uRf-fE-M9u" secondAttribute="top" id="JQw-oC-6q8"/>
+                            <constraint firstItem="xPt-6w-DMD" firstAttribute="top" secondItem="isq-Yo-8JQ" secondAttribute="top" id="JVA-qm-Wxb"/>
+                            <constraint firstItem="1eE-cx-7p0" firstAttribute="top" secondItem="xPt-6w-DMD" secondAttribute="bottom" id="Ngf-Hz-Oty"/>
+                            <constraint firstItem="1eE-cx-7p0" firstAttribute="top" secondItem="uRf-fE-M9u" secondAttribute="top" constant="389" id="OtB-WR-mc9"/>
+                            <constraint firstItem="1eE-cx-7p0" firstAttribute="leading" secondItem="uRf-fE-M9u" secondAttribute="leading" id="QXJ-UF-eFG"/>
+                            <constraint firstItem="xPt-6w-DMD" firstAttribute="leading" secondItem="isq-Yo-8JQ" secondAttribute="leading" id="bhg-1t-P49"/>
+                            <constraint firstAttribute="bottom" secondItem="1eE-cx-7p0" secondAttribute="bottom" id="twC-6I-OuU"/>
+                            <constraint firstItem="1eE-cx-7p0" firstAttribute="trailing" secondItem="isq-Yo-8JQ" secondAttribute="trailing" id="xji-G4-0jI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="isq-Yo-8JQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="f2s-PU-C5W"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fBf-Cs-1JP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5417.3913043478269" y="-1088.1696428571429"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BJP-19-ijV"/>
+        <segue reference="qXF-yu-Xlc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="App Icon Image" width="500" height="500"/>

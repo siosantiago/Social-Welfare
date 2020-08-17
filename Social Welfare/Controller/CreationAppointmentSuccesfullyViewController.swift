@@ -25,6 +25,7 @@ class CreationAppointmentSuccesfullyViewController: UIViewController {
             }
         }
     }
-    
-    
+    @IBAction func dismissButtonPressed(_ sender: PrimaryButton) {
+        dismiss(animated: true, completion: nil)
+    }
 }

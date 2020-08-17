@@ -14,7 +14,7 @@ class WelcomePage: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-        //checkAuth()
+        checkAuth()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

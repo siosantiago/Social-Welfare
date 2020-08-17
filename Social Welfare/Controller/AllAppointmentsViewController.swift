@@ -24,6 +24,7 @@ class AllAppointmentsViewController: UIViewController {
     let firebaseInfoVar = "Info"
     
     var allAppointments: [Appointment] = []
+    var appointmentN: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +35,10 @@ class AllAppointmentsViewController: UIViewController {
         allAppointmentsTableView.register(UINib(nibName: "AppointmentsCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         allAppointmentsTableView.rowHeight = UITableView.automaticDimension
         allAppointmentsTableView.estimatedRowHeight = 100
-        
         loadAppointments()
     }
+    
+    
     
     func loadAppointments() {
         db.collection(firebaseCollectionName).order(by: firebaseDateVar)
@@ -44,14 +46,18 @@ class AllAppointmentsViewController: UIViewController {
             self.allAppointments = []
             
             if let e = error {
-                print("Issue retriveing data from firestore \(e)")
+                print("Issue retreiving data from firestore \(e)")
             }
             else{
                 if let snapshotDocuments = querySnapshot?.documents{
                     for document in snapshotDocuments {
                         let data = document.data()
-                        if let title = data[self.firebaseTitleVar] as? String, let date = data[self.firebaseDateVar] as? Timestamp, let info = data[self.firebaseInfoVar] as? String {
-                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info )
+                        let id = document.documentID
+                        if let title = data[self.firebaseTitleVar] as? String,
+                            let time = data[self.firebaseTimeVar] as? String,
+                            let date = data[self.firebaseDateVar] as? Timestamp,
+                            let info = data[self.firebaseInfoVar] as? String {
+                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, time: time, id: id )
                             
                             self.allAppointments.append(newAppointment)
                             DispatchQueue.main.async {
@@ -63,17 +69,6 @@ class AllAppointmentsViewController: UIViewController {
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -88,13 +83,37 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
         
         cell.tittleViewCell.text = appointment.title
         cell.infoViewCell.text = appointment.info
-        dateFormatter.dateFormat = "MMMM dd '|' HH:mm "
+        dateFormatter.dateFormat = "MMMM dd"
         let stringDate = dateFormatter.string(from: appointment.date)
-        cell.dateViewCell.text = stringDate
+        cell.dateViewCell.text = "\(stringDate) | \(appointment.time)"
         cell.tittleViewCell.textColor = .red
+        cell.layer.borderColor = #colorLiteral(red: 0.03529411765, green: 0.1450980392, blue: 0.1960784314, alpha: 1)
+        cell.layer.borderWidth = 5.0
+        
+        
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        appointmentN = allAppointments[indexPath.row].id
+        print(appointmentN ?? "Nothing is in it")
+        self.performSegue(withIdentifier: "addMeToAppointment", sender: self)
+        
+    }
     
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "addMeToAppointment" {
+            if let destinationVC = segue.destination as? AddMeToAppointmentViewController {
+                if let safeDocumentName = appointmentN {
+                    destinationVC.appointID = safeDocumentName
+                }
+            }
+        }
+    }
 }

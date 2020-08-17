@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3FBE0120-34D2-4EDD-BCEB-AA9B84F00DA5"
+            uuid = "5D6C5D3F-7074-43E9-B8AF-FB871DFF2B8D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Social Welfare/Controller/AllAppointmentsViewController.swift"
+            filePath = "Social Welfare/Controller/AddMeToAppointmentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F48CDE2F-F39D-4A89-A790-4CE53FCCF6F3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Social Welfare/Controller/AllAppointmentsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "loadAppointments()"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "allClubMembersAdded(ID:userID:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

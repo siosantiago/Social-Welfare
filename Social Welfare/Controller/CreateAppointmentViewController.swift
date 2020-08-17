@@ -14,11 +14,13 @@ class CreateAppointmentViewController: UIViewController {
     let db = Firestore.firestore()
     
     let appointmentsPageController = AppoimentsPageController()
+    let user = Auth.auth().currentUser
     let newAppointmentCollectionName = "Appointment"
     let dictionaryTitleVar = "Title"
     let dictionaryDateVar = "Date"
     let dictionaryTimeVar = "Time"
     let dictionaryInfoVar = "Info"
+    let dictionaryUserIDVar = "Student ID"
     
     var pickerViewData: [[String]] = []
     var timeChosen: String?
@@ -52,15 +54,20 @@ class CreateAppointmentViewController: UIViewController {
     
     @IBAction func createNewAppointmentPressed(_ sender: UIButton) {
         if let title = titleAppointmentTextField.text,
+            !title.isEmpty,
             let date = datePicked,
             let time = timeChosen,
             let minutes = minutesChosen,
-            let info = infoAppointmentTextField.text {
-            db.collection(newAppointmentCollectionName).addDocument(data: [
+            let info = infoAppointmentTextField.text,
+            let safeUser = user,
+            !info.isEmpty   {
+            let id = safeUser.uid
+            db.collection(newAppointmentCollectionName).document(title).setData( [
                 dictionaryTitleVar: title,
                 dictionaryDateVar: date,
                 dictionaryTimeVar: "\(time)\(minutes)",
-                dictionaryInfoVar: info]) { (error) in
+                dictionaryInfoVar: info,
+                dictionaryUserIDVar: id]) { (error) in
                     if let e = error {
                         self.performSegue(withIdentifier: "creationSuccessfulSegue", sender: self)
                         print(e.localizedDescription)
@@ -120,7 +127,6 @@ extension CreateAppointmentViewController: UIPickerViewDataSource, UIPickerViewD
         if component == 0{
             let firstArr = pickerViewData[component]
             timeChosen = firstArr[row]
-            
         }
         else{
             let firstArr = pickerViewData[component]

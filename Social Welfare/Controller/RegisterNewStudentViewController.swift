@@ -12,12 +12,7 @@ import Firebase
 class RegisterNewStudentViewController: UIViewController {
     
     let db = Firestore.firestore()
-    let newStudentCollectionName = "Student's info"
-    let dictionaryNameVar = "Name"
-    let dictionaryDateVar = "Date"
-    let dictionaryAgeVar = "Age"
-    let dictionaryLastNameVar = "Last Name"
-    let dictionaryMailVar = "Mail"
+
     
     @IBOutlet weak var nameStudentAccountTextField: UITextField!
     @IBOutlet weak var lastNameStudentAccountTextField: UITextField!
@@ -38,9 +33,6 @@ class RegisterNewStudentViewController: UIViewController {
             pickerViewData.append(String(age))
         }
         pickerViewData.append("+30")
-        
-       
-        
     }
     
     
@@ -63,18 +55,19 @@ class RegisterNewStudentViewController: UIViewController {
     
     func saveDataUser(email: String, name: String, lastName: String, age: String, uid: String) {
         
-        let data = [self.dictionaryMailVar: email,
-        self.dictionaryNameVar: name,
-        self.dictionaryLastNameVar: lastName,
-        self.dictionaryDateVar: Date().timeIntervalSince1970,
-        self.dictionaryAgeVar: age] as [String : Any]
+        let data = [Constants.FirebaseDictionary.dictionaryMailVar: email,
+        Constants.FirebaseDictionary.dictionaryNameVar: name,
+        Constants.FirebaseDictionary.dictionaryLastNameVar: lastName,
+        Constants.FirebaseDictionary.dictionaryDateVar: Date().timeIntervalSince1970,
+        Constants.StudentInfo.dictionaryIsStudent: true,
+        Constants.FirebaseDictionary.dictionaryAgeVar: age] as [String : Any]
         
-        self.db.collection(self.newStudentCollectionName).document(uid).setData(data) { (error) in
+        self.db.collection(Constants.StudentInfo.newStudentCollectionName).document(uid).setData(data) { (error) in
             if let e = error {
                 print("There was an issue saving data to firestroe, \(e)")
             }
             else{
-                self.goToMain()
+                self.goToMainStudent()
             }
         }
     }

@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
                     print(e)
                 }
                 else{
-                    self.goToMain()
+                    self.goToMainStudent()
                 }
             }
         }

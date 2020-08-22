@@ -7,13 +7,24 @@
 //
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class WelcomePage: UIViewController {
+    
+    let db = Firestore.firestore()
+    let firebaseDocName = "Student's info"
+    let firebaseIsStudent = "IsStudent"
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+//        do{
+//            try Auth.auth().signOut()
+//
+//        }catch{
+//            print(error)
+//        }
         checkAuth()
     }
     
@@ -31,9 +42,33 @@ class WelcomePage: UIViewController {
     
     func checkAuth(){
         if Auth.auth().currentUser != nil {
-          // User is signed in.
-          // ...
-            goToMain()
+            // User is signed in.
+            // ...
+            if let user = Auth.auth().currentUser {
+                let userID = user.uid
+                let docRefStudent = db.collection(Constants.StudentInfo.newStudentCollectionName).document(userID)
+                let docRefClubMember = db.collection(Constants.ClubMemberInfo.newClubMemberCollectionName).document(userID)
+                docRefStudent.getDocument { (document, error) in
+                    if let e = error {
+                        print("Something went wrong retrieving data \(e.localizedDescription)")
+                    }else if let safeDocument = document,
+                        let data = safeDocument.data(){
+                        if data[self.firebaseIsStudent]as? Bool == true {
+                            self.goToMainStudent()
+                        }
+                    }
+                }
+                docRefClubMember.getDocument { (document, error) in
+                    if let e = error {
+                        print("Something went wrong retrieving data \(e.localizedDescription)")
+                    }else if let safeDocument = document,
+                        let data = safeDocument.data(){
+                        if data[self.firebaseIsStudent]as? Bool == false {
+                            self.goToMainClubMember()
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -52,15 +87,27 @@ class WelcomePage: UIViewController {
 }
 
 extension UIViewController {
-    func goToMain() {
+    func goToMainStudent() {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let appDel: AppDelegate = UIApplication.shared.delegate as? AppDelegate else
         {
             return
         }
-        let centerVC = mainStoryBoard.instantiateViewController(identifier: "Home")
+        let centerVC = mainStoryBoard.instantiateViewController(identifier: "HomeStudent")
         appDel.window?.rootViewController = centerVC
         appDel.window?.makeKeyAndVisible()
+    }
+    
+    func goToMainClubMember() {
+       let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+       
+       guard let appDel: AppDelegate = UIApplication.shared.delegate as? AppDelegate else
+       {
+           return
+       }
+       let centerVC = mainStoryBoard.instantiateViewController(identifier: "HomeClubMember")
+       appDel.window?.rootViewController = centerVC
+       appDel.window?.makeKeyAndVisible()
     }
 }

@@ -16,7 +16,16 @@ class AddMeToAppointmentViewController: UIViewController {
     let user = Auth.auth().currentUser
     let firebaseDocName = "Appointment"
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var moreInfoLabel: UILabel!
+    @IBOutlet weak var studentGrdLvlLabel: UILabel!
+    @IBOutlet weak var CommunityHrsLabel: UILabel!
+        
     var appointInfo: String?
+    var appointTime: String?
     var appointDate: String?
     var appointName: String?
     var appointID: String?
@@ -24,9 +33,17 @@ class AddMeToAppointmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
+        if let title = appointName,
+            let time = appointTime,
+            let info = appointInfo,
+            let date = appointDate{
+            titleLabel.text = title
+            dateLabel.text = date
+            timeLabel.text = time
+            infoLabel.text = info
+        }
     }
     
     @IBAction func addMePressed(_ sender: UIButton) {

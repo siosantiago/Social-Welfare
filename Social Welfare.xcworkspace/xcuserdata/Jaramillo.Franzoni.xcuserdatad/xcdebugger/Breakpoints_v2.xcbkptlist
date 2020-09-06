@@ -14,8 +14,8 @@
             filePath = "Social Welfare/Controller/AddMeToAppointmentViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "allClubMembersAdded(ID:userID:)"
             landmarkType = "7">
          </BreakpointContent>

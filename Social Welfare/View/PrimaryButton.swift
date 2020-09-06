@@ -25,6 +25,10 @@ class PrimaryButton: UIButton {
         layer.borderColor = #colorLiteral(red: 0.03529411765, green: 0.1450980392, blue: 0.1960784314, alpha: 1)
         layer.borderWidth = 8.0
         titleLabel?.font = .boldSystemFont(ofSize: 20)
+        layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.shadowRadius = 5
+        
+        
     }
     
     

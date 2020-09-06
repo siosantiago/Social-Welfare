@@ -11,5 +11,6 @@ target 'Social Welfare' do
   pod 'Firebase/DynamicLinks'
   pod 'Firebase/Firestore'
   pod 'Firebase/Analytics'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 
 end

@@ -11,10 +11,9 @@ import Firebase
 class AllAppointmentsViewController: UIViewController {
     
     let db = Firestore.firestore()
-    
+    let dateFormatter = DateFormatter()
     @IBOutlet weak var allAppointmentsTableView: UITableView!
-    
-    
+        
     let cellIdentifier = "appointmentsCell"
     let nibCell = "AppointmentsCell"
     let firebaseCollectionName = "Appointment"
@@ -22,9 +21,13 @@ class AllAppointmentsViewController: UIViewController {
     let firebaseDateVar = "Date"
     let firebaseTimeVar = "Time"
     let firebaseInfoVar = "Info"
-    
+
     var allAppointments: [Appointment] = []
     var appointmentN: String?
+    var appointmentDate: String = ""
+    var appointmentTime: String = ""
+    var appointmentInfo: String = ""
+    var appointmentName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +61,6 @@ class AllAppointmentsViewController: UIViewController {
                             let date = data[self.firebaseDateVar] as? Timestamp,
                             let info = data[self.firebaseInfoVar] as? String {
                             let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, time: time, id: id )
-                            
                             self.allAppointments.append(newAppointment)
                             DispatchQueue.main.async {
                                 self.allAppointmentsTableView.reloadData()
@@ -78,7 +80,6 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let appointment = allAppointments[indexPath.row]
-        let dateFormatter = DateFormatter()
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AppointmentsViewCell
         
         cell.tittleViewCell.text = appointment.title
@@ -96,14 +97,23 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let appPlace = allAppointments[indexPath.row]
         appointmentN = allAppointments[indexPath.row].id
-        print(appointmentN ?? "Nothing is in it")
+        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info, time: appPlace.time)
         self.performSegue(withIdentifier: "addMeToAppointment", sender: self)
         
     }
     
-    
+    func thingsToSend(title: String, date: Date, info: String, time: String) {
+        dateFormatter.dateFormat = "MMMM dd"
+        let strgDate = dateFormatter.string(from: date)
+        
+        appointmentName = title
+        appointmentDate = strgDate
+        appointmentInfo = info
+        appointmentTime = time
+        
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
@@ -112,6 +122,10 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
             if let destinationVC = segue.destination as? AddMeToAppointmentViewController {
                 if let safeDocumentName = appointmentN {
                     destinationVC.appointID = safeDocumentName
+                    destinationVC.appointDate = appointmentDate
+                    destinationVC.appointTime = appointmentTime
+                    destinationVC.appointInfo = appointmentInfo
+                    destinationVC.appointName = appointmentName
                 }
             }
         }

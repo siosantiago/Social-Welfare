@@ -9,15 +9,19 @@
 /* Begin PBXBuildFile section */
 		5612B65A24F08E3900A2878E /* RegisterNewClubMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65924F08E3900A2878E /* RegisterNewClubMemberViewController.swift */; };
 		5612B65C24F0937C00A2878E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65B24F0937C00A2878E /* Constants.swift */; };
+		5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */; };
+		5612B66124F2CECA00A2878E /* ClubMemberUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */; };
 		568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B101D24D686EA00CAE8D2 /* LoginViewController.swift */; };
 		568B102024D71E7700CAE8D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */; };
 		568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568B102124D776D700CAE8D2 /* AppointmentsCell.xib */; };
 		568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */; };
 		56954F8724DCE27D001DA6DE /* RegisterNewStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */; };
 		56954F8924DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8824DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift */; };
-		56954F8B24DE38F8001DA6DE /* userViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8A24DE38F8001DA6DE /* userViewController.swift */; };
+		56954F8B24DE38F8001DA6DE /* StudentUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8A24DE38F8001DA6DE /* StudentUserViewController.swift */; };
 		56954F8D24E073C6001DA6DE /* AllAppointmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8C24E073C6001DA6DE /* AllAppointmentsViewController.swift */; };
 		56954F8F24E4CAC0001DA6DE /* AddMeToAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56954F8E24E4CABF001DA6DE /* AddMeToAppointmentViewController.swift */; };
+		56976D7A2504346900EC3CAE /* ShowingAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56976D792504346800EC3CAE /* ShowingAppointmentViewController.swift */; };
+		56A62961250455A300119201 /* ShowInfoStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A62960250455A200119201 /* ShowInfoStudentViewController.swift */; };
 		56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17A6824C61F54009FC858 /* WelcomePage.swift */; };
 		56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */; };
 		56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */; };
@@ -36,15 +40,19 @@
 		14315F1EB43809F647DD24BE /* Pods_Social_Welfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Welfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5612B65924F08E3900A2878E /* RegisterNewClubMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewClubMemberViewController.swift; sourceTree = "<group>"; };
 		5612B65B24F0937C00A2878E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointStudentViewController.swift; sourceTree = "<group>"; };
+		5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubMemberUserViewController.swift; sourceTree = "<group>"; };
 		568B101D24D686EA00CAE8D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		568B102124D776D700CAE8D2 /* AppointmentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCell.xib; sourceTree = "<group>"; };
 		568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentViewController.swift; sourceTree = "<group>"; };
 		56954F8624DCE27D001DA6DE /* RegisterNewStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewStudentViewController.swift; sourceTree = "<group>"; };
 		56954F8824DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAppointmentSuccesfullyViewController.swift; sourceTree = "<group>"; };
-		56954F8A24DE38F8001DA6DE /* userViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userViewController.swift; sourceTree = "<group>"; };
+		56954F8A24DE38F8001DA6DE /* StudentUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentUserViewController.swift; sourceTree = "<group>"; };
 		56954F8C24E073C6001DA6DE /* AllAppointmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllAppointmentsViewController.swift; sourceTree = "<group>"; };
 		56954F8E24E4CABF001DA6DE /* AddMeToAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMeToAppointmentViewController.swift; sourceTree = "<group>"; };
+		56976D792504346800EC3CAE /* ShowingAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowingAppointmentViewController.swift; sourceTree = "<group>"; };
+		56A62960250455A200119201 /* ShowInfoStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowInfoStudentViewController.swift; sourceTree = "<group>"; };
 		56B17A6824C61F54009FC858 /* WelcomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomePage.swift; sourceTree = "<group>"; };
 		56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		56DEDD6424CFAA590023BCA2 /* AppointmentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsViewCell.swift; sourceTree = "<group>"; };
@@ -83,11 +91,15 @@
 				5612B65924F08E3900A2878E /* RegisterNewClubMemberViewController.swift */,
 				568B101D24D686EA00CAE8D2 /* LoginViewController.swift */,
 				56DEDD6824CFAE360023BCA2 /* AppoimentsPageController.swift */,
+				56976D792504346800EC3CAE /* ShowingAppointmentViewController.swift */,
+				5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */,
+				56A62960250455A200119201 /* ShowInfoStudentViewController.swift */,
 				56954F8C24E073C6001DA6DE /* AllAppointmentsViewController.swift */,
 				56954F8E24E4CABF001DA6DE /* AddMeToAppointmentViewController.swift */,
 				568B102324DB901900CAE8D2 /* CreateAppointmentViewController.swift */,
 				56954F8824DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift */,
-				56954F8A24DE38F8001DA6DE /* userViewController.swift */,
+				56954F8A24DE38F8001DA6DE /* StudentUserViewController.swift */,
+				5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -174,8 +186,8 @@
 				56E9325824AE4A2B00F0E12E /* Sources */,
 				56E9325924AE4A2B00F0E12E /* Frameworks */,
 				56E9325A24AE4A2B00F0E12E /* Resources */,
-				2D890892D46A0D90FE44F147 /* [CP] Embed Pods Frameworks */,
-				F9D032945915F2A07F7031D4 /* [CP] Copy Pods Resources */,
+				D61A32F6D44775110511FD90 /* [CP] Embed Pods Frameworks */,
+				E2925CC2453B61DD764D5A3E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,23 +248,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D890892D46A0D90FE44F147 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B8D167B866BBD05D2BC23F08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -275,7 +270,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9D032945915F2A07F7031D4 /* [CP] Copy Pods Resources */ = {
+		D61A32F6D44775110511FD90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2925CC2453B61DD764D5A3E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,14 +315,18 @@
 				5612B65A24F08E3900A2878E /* RegisterNewClubMemberViewController.swift in Sources */,
 				56E9326424AE4A2B00F0E12E /* StudentsOrMenberViewController.swift in Sources */,
 				56DEDD6924CFAE360023BCA2 /* AppoimentsPageController.swift in Sources */,
+				5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */,
 				56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */,
+				56976D7A2504346900EC3CAE /* ShowingAppointmentViewController.swift in Sources */,
 				568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */,
 				56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */,
+				56A62961250455A300119201 /* ShowInfoStudentViewController.swift in Sources */,
 				5612B65C24F0937C00A2878E /* Constants.swift in Sources */,
 				56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */,
-				56954F8B24DE38F8001DA6DE /* userViewController.swift in Sources */,
+				56954F8B24DE38F8001DA6DE /* StudentUserViewController.swift in Sources */,
 				56954F8D24E073C6001DA6DE /* AllAppointmentsViewController.swift in Sources */,
 				56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */,
+				5612B66124F2CECA00A2878E /* ClubMemberUserViewController.swift in Sources */,
 				56954F8724DCE27D001DA6DE /* RegisterNewStudentViewController.swift in Sources */,
 				56E9326024AE4A2B00F0E12E /* AppDelegate.swift in Sources */,
 				56954F8924DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift in Sources */,

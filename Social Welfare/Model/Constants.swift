@@ -24,5 +24,16 @@ struct Constants {
     struct ClubMemberInfo {
         static let newClubMemberCollectionName = "Club Member's info"
     }
+    struct AppointmentTableView {
+        static let cellIdentifier = "appointmentsCell"
+        static let nibCell = "AppointmentsCell"
+        static let firebaseCollectionName = "Appointment"
+        static let firebaseTitleVar = "Title"
+        static let firebaseDateVar = "Date"
+        static let firebaseTimeVar = "Time"
+        static let firebaseInfoVar = "Info"
+        static let firebaseTutorID = "Club Member ID"
+        static let firebaseStudentID = "Student ID"
+    }
 }
 

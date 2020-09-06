@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RegisterNewClubMemberViewController: UIViewController {
+class RegisterNewClubMemberViewController: UIViewController, UITextViewDelegate {
     
     let db = Firestore.firestore()
     
@@ -20,15 +20,20 @@ class RegisterNewClubMemberViewController: UIViewController {
     @IBOutlet weak var ageTextFieldRegister: UITextField!
     @IBOutlet weak var schoolNameTextFieldRegister: UITextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
     }
     
 
     @IBAction func registerButtonPressed(_ sender: UIButton) {
+
+        
         if let name = nameTextFieldRegister.text,
             let lastName = lastNameTextFieldRegister.text,
             let email = emailTextFieldRegister.text,

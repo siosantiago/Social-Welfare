@@ -15,17 +15,15 @@ class AppoimentsPageController: UIViewController {
     
     let db = Firestore.firestore()
     let user = Auth.auth().currentUser
-    let cellIdentifier = "appointmentsCell"
-    let nibCell = "AppointmentsCell"
-    let firebaseCollectionName = "Appointment"
-    let firebaseTitleVar = "Title"
-    let firebaseDateVar = "Date"
-    let firebaseTimeVar = "Time"
-    let firebaseInfoVar = "Info"
-    let firebaseTutorID = "Club Member ID"
+    let dateFormatter = DateFormatter()
     
     //variables
     var appointments: [Appointment] = []
+    var appointmentID: String?
+    var appointmentDate: String = ""
+    var appointmentTime: String = ""
+    var appointmentInfo: String = ""
+    var appointmentName: String = ""
     
 
     override func viewDidLoad() {
@@ -34,14 +32,14 @@ class AppoimentsPageController: UIViewController {
         appointmentsTableView.dataSource = self
         appointmentsTableView.delegate = self
         
-        appointmentsTableView.register(UINib(nibName: "AppointmentsCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        appointmentsTableView.register(UINib(nibName: Constants.AppointmentTableView.nibCell, bundle: nil), forCellReuseIdentifier: Constants.AppointmentTableView.cellIdentifier)
         appointmentsTableView.rowHeight = UITableView.automaticDimension
         appointmentsTableView.estimatedRowHeight = 100
         loadAppointments()
     }
     
     func loadAppointments() {
-        db.collection(firebaseCollectionName).order(by: firebaseDateVar).addSnapshotListener { (querySnapshot, error) in
+        db.collection(Constants.AppointmentTableView.firebaseCollectionName).order(by: Constants.AppointmentTableView.firebaseDateVar).addSnapshotListener { (querySnapshot, error) in
             
             self.appointments = []
             
@@ -55,11 +53,11 @@ class AppoimentsPageController: UIViewController {
                     for document in snapshotDocuments {
                         let data = document.data()
                         let id = document.documentID
-                        if let title = data[self.firebaseTitleVar] as? String,
-                            userID == data[self.firebaseTutorID] as? String,
-                            let time = data[self.firebaseTimeVar] as? String,
-                            let date = data[self.firebaseDateVar] as? Timestamp,
-                            let info = data[self.firebaseInfoVar] as? String {
+                        if let title = data[Constants.AppointmentTableView.firebaseTitleVar] as? String,
+                            userID == data[Constants.AppointmentTableView.firebaseTutorID] as? String,
+                            let time = data[Constants.AppointmentTableView.firebaseTimeVar] as? String,
+                            let date = data[Constants.AppointmentTableView.firebaseDateVar] as? Timestamp,
+                            let info = data[Constants.AppointmentTableView.firebaseInfoVar] as? String {
                             let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, time: time, id: id )
                             
                             self.appointments.append(newAppointment)
@@ -74,7 +72,7 @@ class AppoimentsPageController: UIViewController {
     }
 }
 
-extension AppoimentsPageController: UITableViewDataSource {
+extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return appointments.count
     }
@@ -82,7 +80,7 @@ extension AppoimentsPageController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let appointment = appointments[indexPath.row]
         let dateFormatter = DateFormatter()
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AppointmentsViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsViewCell
         
         cell.tittleViewCell.text = appointment.title
         cell.infoViewCell.text = appointment.info
@@ -94,9 +92,36 @@ extension AppoimentsPageController: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let appPlace = appointments[indexPath.row]
+        appointmentID = appointments[indexPath.row].id
+        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info, time: appPlace.time)
+        self.performSegue(withIdentifier: "showAppointment", sender: self)
+    }
     
-}
+    
+    func thingsToSend(title: String, date: Date, info: String, time: String) {
+        dateFormatter.dateFormat = "MMMM dd"
+        let strgDate = dateFormatter.string(from: date)
+        
+        appointmentDate = strgDate
+        appointmentName = title
+        appointmentInfo = info
+        appointmentTime = time
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAppointment" {
+            if let destinationVC = segue.destination as? ShowingAppointmentViewController {
+                if let safeDocumentName = appointmentID {
+                    destinationVC.appointID = safeDocumentName
+                    destinationVC.appointDate = appointmentDate
+                    destinationVC.appointTime = appointmentTime
+                    destinationVC.appointInfo = appointmentInfo
+                    destinationVC.appointName = appointmentName
+                }
+            }
+        }
+    }
 
-extension AppoimentsPageController: UITableViewDelegate {
-    
 }

@@ -8,17 +8,20 @@
 
 import UIKit
 import Firebase
+import SkyFloatingLabelTextField
 
 class RegisterNewClubMemberViewController: UIViewController, UITextViewDelegate {
     
     let db = Firestore.firestore()
     
-    @IBOutlet weak var nameTextFieldRegister: UITextField!
-    @IBOutlet weak var lastNameTextFieldRegister: UITextField!
-    @IBOutlet weak var emailTextFieldRegister: UITextField!
-    @IBOutlet weak var passwordTextFieldRegister: UITextField!
-    @IBOutlet weak var ageTextFieldRegister: UITextField!
-    @IBOutlet weak var schoolNameTextFieldRegister: UITextField!
+    @IBOutlet weak var nameTextFieldRegister: SkyFloatingLabelTextField!
+    @IBOutlet weak var lastNameTextFieldRegister: SkyFloatingLabelTextField!
+    @IBOutlet weak var emailTextFieldRegister: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordTextFieldRegister: SkyFloatingLabelTextField!
+    @IBOutlet weak var ageTextFieldRegister: SkyFloatingLabelTextField!
+    @IBOutlet weak var schoolNameTextFieldRegister: SkyFloatingLabelTextField!
+    @IBOutlet weak var bottomScrollViewConstraint: NSLayoutConstraint!
+    var activeTextField : UITextField? = nil
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -26,7 +29,21 @@ class RegisterNewClubMemberViewController: UIViewController, UITextViewDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameTextFieldRegister.delegate = self
+        lastNameTextFieldRegister.delegate = self
+        emailTextFieldRegister.delegate = self
+        ageTextFieldRegister.delegate = self
+        schoolNameTextFieldRegister.delegate = self
+        
         // Do any additional setup after loading the view.
+        // call the 'keyboardWillShow' function when the view controller receive the notification that a keyboard is going to be shown
+        NotificationCenter.default.addObserver(self, selector: #selector(RegisterNewClubMemberViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
+        NotificationCenter.default.addObserver(self, selector: #selector(RegisterNewClubMemberViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
         
     }
     
@@ -71,4 +88,53 @@ class RegisterNewClubMemberViewController: UIViewController, UITextViewDelegate 
         }
     }
 
+}
+
+extension RegisterNewClubMemberViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      // set the activeTextField to the selected textfield
+      self.activeTextField = textField
+    }
+      
+    // when user click 'done' or dismiss the keyboard
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      self.activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            
+            // if keyboard size is not available for some reason, dont do anything
+            return
+        }
+        
+        var shouldMoveViewUp = false
+        
+        // if active text field is not nil
+        if let activeTextField = activeTextField {
+            
+            let bottomOfTextField = activeTextField.convert(activeTextField.bounds, to: self.view).maxY;
+            
+            let topOfKeyboard = self.view.frame.height - keyboardSize.height
+            
+            // if the bottom of Textfield is below the top of keyboard, move up
+            if bottomOfTextField > topOfKeyboard {
+                shouldMoveViewUp = true
+            }
+        }
+        
+        if(shouldMoveViewUp) {
+            bottomScrollViewConstraint.constant = keyboardSize.height
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // move back the root view origin to zero
+        bottomScrollViewConstraint.constant = 0
+    }
 }

@@ -21,33 +21,59 @@ class CreateAppointmentViewController: UIViewController {
     let dictionaryTimeVar = "Time"
     let dictionaryInfoVar = "Info"
     let dictionaryUserIDVar = "Student ID"
+    let dictionaryAwardHours = "Awarded Hours"
+    let defaultText = "input any other information here"
     
-    var pickerViewData: [[String]] = []
-    var timeChosen: String?
-    var minutesChosen: String? = "00"
+    var activeTextField : UITextField? = nil
+    
     var arr1: [String] = []
     var appValid = false
     var datePicked: Date? = nil
     
     @IBOutlet weak var titleAppointmentTextField: UITextField!
-    @IBOutlet weak var timeAppointmentPickerView: UIPickerView!
-    @IBOutlet weak var datePickerView: UIDatePicker!
+    @IBOutlet weak var timeAppointmentTextField: UITextField!
+    @IBOutlet weak var dateAppointmentTextField: UITextField!
+    @IBOutlet weak var communityHoursAwardedTextField: UITextField!
     @IBOutlet weak var infoAppointmentTextField: UITextField!
+    @IBOutlet weak var moreInfoScrollView: UITextView!
     
+    @IBOutlet weak var bottomScrollViewConstraint: NSLayoutConstraint!
+    
+    let datePickerView = UIDatePicker()
+    let timeAppointmentPickerView = UIDatePicker()
     let dateFormatter = DateFormatter()
     
     var defaultDate: String? = "0.0"
+    
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        timeAppointmentPickerView.delegate = self
-        timeAppointmentPickerView.dataSource = self
         // Do any additional setup after loading the view.
-        createPickerViewData()
+        // call the 'keyboardWillShow' function when the view controller receive the notification that a keyboard is going to be shown
+        NotificationCenter.default.addObserver(self, selector: #selector(CreateAppointmentViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // call the 'keyboardWillHide' function when the view controlelr receive notification that keyboard is going to be hidden
+        NotificationCenter.default.addObserver(self, selector: #selector(CreateAppointmentViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        super.viewDidLoad()
+        titleAppointmentTextField.delegate = self
+        infoAppointmentTextField.delegate = self
+        communityHoursAwardedTextField.delegate = self
+        dateAppointmentTextField.delegate = self
+        timeAppointmentTextField.inputView = timeAppointmentPickerView
+        dateAppointmentTextField.inputView = datePickerView
+        // Do any additional setup after loading the view.
         datePickerView.datePickerMode = .date
         datePickerView.minimumDate = Date.init()
+        timeAppointmentPickerView.datePickerMode = .time
+        addDoneButtonDoneForTextField(dateAppointmentTextField, selector: #selector(doneDate))
+        addDoneButtonDoneForTextField(timeAppointmentTextField, selector: #selector(doneTime))
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        moreInfoScrollView.text = defaultText
     }
-    @IBAction func datePickerChanged(_ sender: UIDatePicker) {
+    
+    
+    func datePickerChanged() {
         datePicked = datePickerView.date
         print("Date picked = \(datePicked!)")
     }
@@ -56,16 +82,14 @@ class CreateAppointmentViewController: UIViewController {
         if let title = titleAppointmentTextField.text,
             !title.isEmpty,
             let date = datePicked,
-            let time = timeChosen,
-            let minutes = minutesChosen,
+            let communityHoursDone = communityHoursAwardedTextField.text,
             let info = infoAppointmentTextField.text,
-            let safeUser = user,
-            !info.isEmpty   {
+            let safeUser = user {
             let id = safeUser.uid
             db.collection(newAppointmentCollectionName).document(title).setData( [
                 dictionaryTitleVar: title,
                 dictionaryDateVar: date,
-                dictionaryTimeVar: "\(time)\(minutes)",
+                dictionaryAwardHours: communityHoursDone,
                 dictionaryInfoVar: info,
                 dictionaryUserIDVar: id]) { (error) in
                     if let e = error {
@@ -94,43 +118,102 @@ class CreateAppointmentViewController: UIViewController {
 
 }
 
-extension CreateAppointmentViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+extension CreateAppointmentViewController {
     
-    
-    func createPickerViewData() {
-        for data in 1...24{
-            arr1.append("\(data):")
-        }
-        pickerViewData.append(arr1)
-        pickerViewData.append(["00","30"])
+    @objc func doneDate() {
+        let date = datePickerView.date
+        datePicked = date
+        
+        let calendar = Calendar.current
+        let day = calendar.component(.day, from: date)
+        let month = calendar.component(.month, from: date)
+        let year = calendar.component(.year, from: date)
+        
+        datePicked = Calendar.current.date(bySetting: .day, value: day, of: datePicked ?? Date())
+        datePicked = Calendar.current.date(bySetting: .month, value: month, of: datePicked ?? Date())
+        datePicked = Calendar.current.date(bySetting: .year, value: year, of: datePicked ?? Date())
+
+        dateAppointmentTextField.text = date.getSimpleFormat()
+        dateAppointmentTextField.resignFirstResponder()
+    }
+    @objc func doneTime() {
+        let date = timeAppointmentPickerView.date
+        datePicked = date
+        
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        
+        datePicked = Calendar.current.date(bySettingHour: hour, minute: minutes, second: 0, of: datePicked ?? Date())
+
+        timeAppointmentTextField.text = date.getTimeFormat()
+        timeAppointmentTextField.resignFirstResponder()
     }
     
+}
+
+extension CreateAppointmentViewController: UITextFieldDelegate{
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      // set the activeTextField to the selected textfield
+        if textField == dateAppointmentTextField {
+            datePickerChanged()
+        }
+        self.activeTextField = textField
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if component == 0{
-            return 24
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == dateAppointmentTextField {
+            print("Inside loop")
+            datePickerChanged()
         }
-        else{
-            return 2
+        self.activeTextField = nil
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+        @objc func keyboardWillShow(notification: NSNotification) {
+    
+          guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+    
+            // if keyboard size is not available for some reason, dont do anything
+            return
+          }
+        bottomScrollViewConstraint.constant = keyboardSize.height
+          
+        }
+    
+        @objc func keyboardWillHide(notification: NSNotification) {
+          // move back the root view origin to zero
+            bottomScrollViewConstraint.constant = 0
+        }
+      
+}
+
+extension CreateAppointmentViewController: UITextViewDelegate {
+    
+    
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        let count = textView.text.count + (text.count - range.length)
+//        if count <= 120 {
+//            self.moreInfoScrollView.text = "\(120 - count) \(String.charsLeft)"
+//        }
+//        return count <= 120
+//    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == self.defaultText {
+            textView.text = nil
+            textView.textColor = UIColor.black
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerViewData[component][row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if component == 0{
-            let firstArr = pickerViewData[component]
-            timeChosen = firstArr[row]
-        }
-        else{
-            let firstArr = pickerViewData[component]
-            minutesChosen = firstArr[row]
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = self.defaultText
+            textView.textColor = UIColor.gray
         }
     }
 }

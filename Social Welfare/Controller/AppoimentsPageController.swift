@@ -55,10 +55,9 @@ class AppoimentsPageController: UIViewController {
                         let id = document.documentID
                         if let title = data[Constants.AppointmentTableView.firebaseTitleVar] as? String,
                             userID == data[Constants.AppointmentTableView.firebaseTutorID] as? String,
-                            let time = data[Constants.AppointmentTableView.firebaseTimeVar] as? String,
                             let date = data[Constants.AppointmentTableView.firebaseDateVar] as? Timestamp,
                             let info = data[Constants.AppointmentTableView.firebaseInfoVar] as? String {
-                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, time: time, id: id )
+                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, id: id )
                             
                             self.appointments.append(newAppointment)
                             DispatchQueue.main.async {
@@ -79,15 +78,11 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let appointment = appointments[indexPath.row]
-        let dateFormatter = DateFormatter()
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsViewCell
         
         cell.tittleViewCell.text = appointment.title
         cell.infoViewCell.text = appointment.info
-        dateFormatter.dateFormat = "MMMM dd"
-        let stringDate = dateFormatter.string(from: appointment.date)
-        cell.dateViewCell.text = "\(stringDate) | \(appointment.time)"
-        
+        cell.dateViewCell.text = appointment.date.getReadableFullFormat()
         
         return cell
     }
@@ -95,19 +90,16 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appPlace = appointments[indexPath.row]
         appointmentID = appointments[indexPath.row].id
-        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info, time: appPlace.time)
+        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
         self.performSegue(withIdentifier: "showAppointment", sender: self)
     }
     
     
-    func thingsToSend(title: String, date: Date, info: String, time: String) {
-        dateFormatter.dateFormat = "MMMM dd"
-        let strgDate = dateFormatter.string(from: date)
-        
-        appointmentDate = strgDate
+    func thingsToSend(title: String, date: Date, info: String) {
+        appointmentDate = date.getSimpleFormat()
         appointmentName = title
         appointmentInfo = info
-        appointmentTime = time
+        appointmentTime = date.getTimeFormat()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

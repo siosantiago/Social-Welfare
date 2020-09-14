@@ -8,20 +8,22 @@
 
 import UIKit
 import Firebase
+import SkyFloatingLabelTextField
 
 class RegisterNewStudentViewController: UIViewController {
     
     let db = Firestore.firestore()
 
     
-    @IBOutlet weak var nameStudentAccountTextField: UITextField!
-    @IBOutlet weak var lastNameStudentAccountTextField: UITextField!
-    @IBOutlet weak var emailStudentAccountTextField: UITextField!
-    @IBOutlet weak var passwordStudentAccountTextField: UITextField!
+    @IBOutlet weak var nameStudentAccountTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var lastNameStudentAccountTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var emailStudentAccountTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordStudentAccountTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var ageStudentAccountPickerView: UIPickerView!
     
     var pickerViewData: [String] = []
     var ageChosen: String?
+    var activeTextField : UITextField? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,13 @@ class RegisterNewStudentViewController: UIViewController {
         // Do any additional setup after loading the view.
         ageStudentAccountPickerView.dataSource = self
         ageStudentAccountPickerView.delegate = self
+        nameStudentAccountTextField.delegate = self
+        lastNameStudentAccountTextField.delegate = self
+        emailStudentAccountTextField.delegate = self
+        passwordStudentAccountTextField.delegate = self
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        
         for age in 1...29 {
             pickerViewData.append(String(age))
         }
@@ -94,3 +103,18 @@ extension RegisterNewStudentViewController: UIPickerViewDataSource, UIPickerView
     
 }
 
+extension RegisterNewStudentViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+      // set the activeTextField to the selected textfield
+      self.activeTextField = textField
+    }
+      
+    // when user click 'done' or dismiss the keyboard
+    func textFieldDidEndEditing(_ textField: UITextField) {
+      self.activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+}

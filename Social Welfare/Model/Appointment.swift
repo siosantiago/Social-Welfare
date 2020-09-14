@@ -12,6 +12,5 @@ struct Appointment {
     let title: String
     let date: Date
     let info: String
-    let time: String
     let id: String
 }

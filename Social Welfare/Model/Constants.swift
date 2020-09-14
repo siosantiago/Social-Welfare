@@ -16,6 +16,7 @@ struct Constants {
         static let dictionaryLastNameVar = "Last Name"
         static let dictionaryMailVar = "Mail"
         static let dictionarySchoolNameVar = "School name"
+        static let dictionaryHoursAwarded = "Awarded Hours"
     }
     struct StudentInfo {
         static let newStudentCollectionName = "Student's info"
@@ -34,6 +35,9 @@ struct Constants {
         static let firebaseInfoVar = "Info"
         static let firebaseTutorID = "Club Member ID"
         static let firebaseStudentID = "Student ID"
+    }
+    struct infoTextView {
+        static let stringHolderText = "Add appointment information"
     }
 }
 

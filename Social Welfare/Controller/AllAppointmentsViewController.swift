@@ -57,10 +57,9 @@ class AllAppointmentsViewController: UIViewController {
                         let data = document.data()
                         let id = document.documentID
                         if let title = data[self.firebaseTitleVar] as? String,
-                            let time = data[self.firebaseTimeVar] as? String,
                             let date = data[self.firebaseDateVar] as? Timestamp,
                             let info = data[self.firebaseInfoVar] as? String {
-                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, time: time, id: id )
+                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, id: id )
                             self.allAppointments.append(newAppointment)
                             DispatchQueue.main.async {
                                 self.allAppointmentsTableView.reloadData()
@@ -84,9 +83,7 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
         
         cell.tittleViewCell.text = appointment.title
         cell.infoViewCell.text = appointment.info
-        dateFormatter.dateFormat = "MMMM dd"
-        let stringDate = dateFormatter.string(from: appointment.date)
-        cell.dateViewCell.text = "\(stringDate) | \(appointment.time)"
+        cell.dateViewCell.text = appointment.date.getReadableFullFormat()
         cell.tittleViewCell.textColor = .red
         cell.layer.borderColor = #colorLiteral(red: 0.03529411765, green: 0.1450980392, blue: 0.1960784314, alpha: 1)
         cell.layer.borderWidth = 5.0
@@ -99,19 +96,17 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appPlace = allAppointments[indexPath.row]
         appointmentN = allAppointments[indexPath.row].id
-        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info, time: appPlace.time)
+        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
         self.performSegue(withIdentifier: "addMeToAppointment", sender: self)
         
     }
     
-    func thingsToSend(title: String, date: Date, info: String, time: String) {
-        dateFormatter.dateFormat = "MMMM dd"
-        let strgDate = dateFormatter.string(from: date)
+    func thingsToSend(title: String, date: Date, info: String) {
         
         appointmentName = title
-        appointmentDate = strgDate
+        appointmentDate = date.getSimpleFormat()
         appointmentInfo = info
-        appointmentTime = time
+        appointmentTime = date.getTimeFormat()
         
     }
 

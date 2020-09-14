@@ -50,10 +50,9 @@ class MyAppointStudentViewController: UIViewController {
                         let id = document.documentID
                         if let title = data[Constants.AppointmentTableView.firebaseTitleVar]as? String,
                             userID == data[Constants.AppointmentTableView.firebaseStudentID]as? String,
-                            let time = data[Constants.AppointmentTableView.firebaseTimeVar]as? String,
                             let date = data[Constants.AppointmentTableView.firebaseDateVar]as? Timestamp,
                             let info = data[Constants.AppointmentTableView.firebaseInfoVar]as? String{
-                            self.myAppointments.append(Appointment(title: title, date: date.dateValue(), info: info, time: time, id: id))
+                            self.myAppointments.append(Appointment(title: title, date: date.dateValue(), info: info, id: id))
                             DispatchQueue.main.async {
                                 self.appointmentsTableView.reloadData()
                             }
@@ -73,32 +72,27 @@ extension MyAppointStudentViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myAppointment = myAppointments[indexPath.row]
-        let dateFormatter = DateFormatter()
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsViewCell
         
         cell.tittleViewCell.text = myAppointment.title
         cell.infoViewCell.text = myAppointment.info
-        dateFormatter.dateFormat = "MMMM dd"
-        let stringDate = dateFormatter.string(from: myAppointment.date)
-        cell.dateViewCell.text = "\(stringDate) | \(myAppointment.time)"
+        cell.dateViewCell.text = myAppointment.date.getReadableFullFormat()
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appPlace = myAppointments[indexPath.row]
         appointmentID = myAppointments[indexPath.row].id
-        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info, time: appPlace.time)
+        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
         self.performSegue(withIdentifier: "studentShowInfo", sender: self)
     }
     
-    func thingsToSend(title: String, date: Date, info: String, time: String) {
-        dateFormatter.dateFormat = "MMMM dd"
-        let strgDate = dateFormatter.string(from: date)
+    func thingsToSend(title: String, date: Date, info: String) {
         
-        appointmentDate = strgDate
+        appointmentDate = date.getSimpleFormat()
         appointmentName = title
         appointmentInfo = info
-        appointmentTime = time
+        appointmentTime = date.getTimeFormat()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

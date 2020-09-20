@@ -33,8 +33,6 @@ class AppoimentsPageController: UIViewController {
         appointmentsTableView.delegate = self
         
         appointmentsTableView.register(UINib(nibName: Constants.AppointmentTableView.nibCell, bundle: nil), forCellReuseIdentifier: Constants.AppointmentTableView.cellIdentifier)
-        appointmentsTableView.rowHeight = UITableView.automaticDimension
-        appointmentsTableView.estimatedRowHeight = 100
         loadAppointments()
     }
     
@@ -78,11 +76,14 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let appointment = appointments[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsCoolTableViewCell
         
-        cell.tittleViewCell.text = appointment.title
-        cell.infoViewCell.text = appointment.info
-        cell.dateViewCell.text = appointment.date.getReadableFullFormat()
+        cell.titleLabel.text = appointment.title
+        cell.infoLabel.text = appointment.info
+        cell.dateLabel.text = appointment.date.getReadableFullFormat()
+        cell.timeLabel.text = appointment.date.getTimeFormat()
+        let color = self.getColorForCell(colorCellNumber: indexPath.row)
+        cell.coloredView.backgroundColor = color
         
         return cell
     }
@@ -93,7 +94,16 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
         self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
         self.performSegue(withIdentifier: "showAppointment", sender: self)
     }
-    
+    // MARK: - Size of Cell and Color
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
     
     func thingsToSend(title: String, date: Date, info: String) {
         appointmentDate = date.getSimpleFormat()

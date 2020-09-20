@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="coolDesignCell" rowHeight="300" id="KGk-i7-Jjw" customClass="AppointmentsCoolTableViewCell" customModule="Social_Welfare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkF-0G-D8f" userLabel="ColoredView">
+                        <rect key="frame" x="10" y="10" width="480" height="180"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algebra 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBS-cq-FNt">
+                                <rect key="frame" x="20" y="15" width="91" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zG-Tk-m5L">
+                                <rect key="frame" x="327" y="15" width="133" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:15 - 13:15 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vi9-hG-bqq">
+                                <rect key="frame" x="20" y="59" width="146" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I need help with solving polinomials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bh-9b-OBo">
+                                <rect key="frame" x="20" y="131.5" width="440" height="23.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75603407619999996" green="0.87387555839999997" blue="0.96328073739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9zG-Tk-m5L" firstAttribute="top" secondItem="dkF-0G-D8f" secondAttribute="top" constant="15" id="1iX-RE-us5"/>
+                            <constraint firstAttribute="bottom" secondItem="8Bh-9b-OBo" secondAttribute="bottom" constant="25" id="CyK-9B-UcQ"/>
+                            <constraint firstItem="Vi9-hG-bqq" firstAttribute="top" secondItem="kBS-cq-FNt" secondAttribute="bottom" constant="20" id="FqV-bh-gM6"/>
+                            <constraint firstAttribute="trailing" secondItem="9zG-Tk-m5L" secondAttribute="trailing" constant="20" id="J6l-db-eXS"/>
+                            <constraint firstItem="8Bh-9b-OBo" firstAttribute="leading" secondItem="dkF-0G-D8f" secondAttribute="leading" constant="20" id="K4F-aB-IRr"/>
+                            <constraint firstItem="Vi9-hG-bqq" firstAttribute="leading" secondItem="dkF-0G-D8f" secondAttribute="leading" constant="20" id="RYj-7R-xrp"/>
+                            <constraint firstItem="kBS-cq-FNt" firstAttribute="top" secondItem="dkF-0G-D8f" secondAttribute="top" constant="15" id="U9f-B5-5iK"/>
+                            <constraint firstItem="8Bh-9b-OBo" firstAttribute="centerX" secondItem="dkF-0G-D8f" secondAttribute="centerX" id="gAg-L1-u1i"/>
+                            <constraint firstItem="kBS-cq-FNt" firstAttribute="leading" secondItem="dkF-0G-D8f" secondAttribute="leading" constant="20" id="hIX-kl-gZB"/>
+                            <constraint firstAttribute="trailing" secondItem="8Bh-9b-OBo" secondAttribute="trailing" constant="20" id="qoA-sP-TQD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dkF-0G-D8f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0f9-sF-tj6"/>
+                    <constraint firstAttribute="bottom" secondItem="dkF-0G-D8f" secondAttribute="bottom" constant="10" id="AAo-AY-nzc"/>
+                    <constraint firstItem="dkF-0G-D8f" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="BBd-yM-nvD"/>
+                    <constraint firstItem="dkF-0G-D8f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dly-TV-5nf"/>
+                    <constraint firstAttribute="trailing" secondItem="dkF-0G-D8f" secondAttribute="trailing" constant="10" id="qtA-97-kdk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="coloredView" destination="dkF-0G-D8f" id="SCj-uy-MyL"/>
+                <outlet property="dateLabel" destination="9zG-Tk-m5L" id="lDA-FI-sdm"/>
+                <outlet property="infoLabel" destination="8Bh-9b-OBo" id="fc0-4Q-Vhf"/>
+                <outlet property="timeLabel" destination="Vi9-hG-bqq" id="pIp-zn-xb9"/>
+                <outlet property="titleLabel" destination="kBS-cq-FNt" id="IVX-6k-SQ7"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="113"/>
+        </tableViewCell>
+    </objects>
+</document>

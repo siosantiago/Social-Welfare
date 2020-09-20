@@ -72,11 +72,13 @@ extension MyAppointStudentViewController: UITableViewDelegate, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let myAppointment = myAppointments[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsCoolTableViewCell
         
-        cell.tittleViewCell.text = myAppointment.title
-        cell.infoViewCell.text = myAppointment.info
-        cell.dateViewCell.text = myAppointment.date.getReadableFullFormat()
+        cell.titleLabel.text = myAppointment.title
+        cell.infoLabel.text = myAppointment.info
+        cell.dateLabel.text = myAppointment.date.getReadableFullFormat()
+        cell.timeLabel.text = myAppointment.date.getTimeFormat()
+        cell.coloredView.backgroundColor = getColorForCell(colorCellNumber: indexPath.row)
         return cell
     }
     
@@ -85,6 +87,17 @@ extension MyAppointStudentViewController: UITableViewDelegate, UITableViewDataSo
         appointmentID = myAppointments[indexPath.row].id
         self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
         self.performSegue(withIdentifier: "studentShowInfo", sender: self)
+    }
+    
+    // MARK: - Size of Cell and Color
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
     
     func thingsToSend(title: String, date: Date, info: String) {

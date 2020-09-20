@@ -35,9 +35,7 @@ class AllAppointmentsViewController: UIViewController {
         allAppointmentsTableView.dataSource = self
         allAppointmentsTableView.delegate = self
         
-        allAppointmentsTableView.register(UINib(nibName: "AppointmentsCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
-        allAppointmentsTableView.rowHeight = UITableView.automaticDimension
-        allAppointmentsTableView.estimatedRowHeight = 100
+        allAppointmentsTableView.register(UINib(nibName: Constants.AppointmentTableView.nibCell, bundle: nil), forCellReuseIdentifier: Constants.AppointmentTableView.cellIdentifier)
         loadAppointments()
     }
     
@@ -79,14 +77,13 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let appointment = allAppointments[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! AppointmentsViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsCoolTableViewCell
         
-        cell.tittleViewCell.text = appointment.title
-        cell.infoViewCell.text = appointment.info
-        cell.dateViewCell.text = appointment.date.getReadableFullFormat()
-        cell.tittleViewCell.textColor = .red
-        cell.layer.borderColor = #colorLiteral(red: 0.03529411765, green: 0.1450980392, blue: 0.1960784314, alpha: 1)
-        cell.layer.borderWidth = 5.0
+        cell.titleLabel.text = appointment.title
+        cell.infoLabel.text = appointment.info
+        cell.dateLabel.text = appointment.date.getReadableFullFormat()
+        cell.timeLabel.text = appointment.date.getTimeFormat()
+        cell.coloredView.backgroundColor = getColorForCell(colorCellNumber: indexPath.row)
         
         
         
@@ -109,6 +106,18 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
         appointmentTime = date.getTimeFormat()
         
     }
+    
+    // MARK: - Size of Cell and Color
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    // Make the background color show through
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.

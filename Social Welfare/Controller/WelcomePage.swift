@@ -110,4 +110,22 @@ extension UIViewController {
        appDel.window?.rootViewController = centerVC
        appDel.window?.makeKeyAndVisible()
     }
+    
+    func getColorForCell(colorCellNumber colorNumber: Int) -> UIColor{
+        switch colorNumber % 5 {
+        case 0:
+            return Constants.ColorsCell.colorChosen[0]
+        case 1:
+            return Constants.ColorsCell.colorChosen[1]
+        case 2:
+            return Constants.ColorsCell.colorChosen[2]
+        case 3:
+            return Constants.ColorsCell.colorChosen[3]
+        case 4:
+            return Constants.ColorsCell.colorChosen[4]
+        default:
+            return Constants.ColorsCell.colorChosen[0]
+        }
+
+    }
 }

@@ -23,13 +23,13 @@ extension Date {
     
     func getReadableFullFormat() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM dd '|' hh:mm a"
+        dateFormatter.dateFormat = "MMMM dd"
         return dateFormatter.string(from: self)
     }
     
     func getTimeFormat() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "h:mm a"
+        dateFormatter.dateFormat = "hh:mm a"
         return dateFormatter.string(from: self)
     }
     

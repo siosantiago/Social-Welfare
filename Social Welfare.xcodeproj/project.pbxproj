@@ -11,6 +11,8 @@
 		5612B65C24F0937C00A2878E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65B24F0937C00A2878E /* Constants.swift */; };
 		5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */; };
 		5612B66124F2CECA00A2878E /* ClubMemberUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */; };
+		5674E43B2514405800092E66 /* AppointmentsCoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5674E4392514405700092E66 /* AppointmentsCoolTableViewCell.swift */; };
+		5674E43C2514405800092E66 /* AppointmentsCoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5674E43A2514405800092E66 /* AppointmentsCoolTableViewCell.xib */; };
 		568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B101D24D686EA00CAE8D2 /* LoginViewController.swift */; };
 		568B102024D71E7700CAE8D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */; };
 		568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568B102124D776D700CAE8D2 /* AppointmentsCell.xib */; };
@@ -45,6 +47,8 @@
 		5612B65B24F0937C00A2878E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointStudentViewController.swift; sourceTree = "<group>"; };
 		5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubMemberUserViewController.swift; sourceTree = "<group>"; };
+		5674E4392514405700092E66 /* AppointmentsCoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsCoolTableViewCell.swift; sourceTree = "<group>"; };
+		5674E43A2514405800092E66 /* AppointmentsCoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCoolTableViewCell.xib; sourceTree = "<group>"; };
 		568B101D24D686EA00CAE8D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		568B102124D776D700CAE8D2 /* AppointmentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCell.xib; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				56DEDD6524CFAA590023BCA2 /* AppointmentsViewCell.xib */,
 				568B102124D776D700CAE8D2 /* AppointmentsCell.xib */,
 				56A62962250496F100119201 /* InfoTextView.swift */,
+				5674E4392514405700092E66 /* AppointmentsCoolTableViewCell.swift */,
+				5674E43A2514405800092E66 /* AppointmentsCoolTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */,
 				56DEDD6724CFAA590023BCA2 /* AppointmentsViewCell.xib in Resources */,
 				56E9326724AE4A2B00F0E12E /* Main.storyboard in Resources */,
+				5674E43C2514405800092E66 /* AppointmentsCoolTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5674E43B2514405800092E66 /* AppointmentsCoolTableViewCell.swift in Sources */,
 				568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */,
 				5612B65A24F08E3900A2878E /* RegisterNewClubMemberViewController.swift in Sources */,
 				56E9326424AE4A2B00F0E12E /* StudentsOrMenberViewController.swift in Sources */,

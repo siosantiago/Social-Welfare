@@ -48,7 +48,6 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tap)
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
     }
     
 //    @objc func keyboardWillShow(notification: NSNotification) {

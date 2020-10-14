@@ -36,7 +36,10 @@ class ShowInfoStudentViewController: UIViewController {
     }
     
     @IBAction func startZoomMeetingPressed(_ sender: PrimaryButton) {
-        UIApplication.sharedApplication().openURL(NSURL(string: Constants.ClassroomLink.linkG)!)
+        if let url = URL(string: "http://meet.google.com/new") {
+             UIApplication.shared.open(url, options: [:])
+         }
     }
+    
     
 }

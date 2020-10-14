@@ -42,5 +42,8 @@ struct Constants {
     struct ColorsCell{
         static let colorChosen: [UIColor] = [#colorLiteral(red: 0.6352941176, green: 0.8352941176, blue: 0.9490196078, alpha: 1),#colorLiteral(red: 1, green: 0.8705882353, blue: 0.8117647059, alpha: 1),#colorLiteral(red: 1, green: 0.8005940223, blue: 0.1601154003, alpha: 1),#colorLiteral(red: 1, green: 0.6039215686, blue: 0.462745098, alpha: 1),#colorLiteral(red: 1, green: 0.2588235294, blue: 0.4980392157, alpha: 1)]
     }
+    struct ClassroomLink{
+        static let linkG = "http://meet.google.com/new"
+    }
 }
 

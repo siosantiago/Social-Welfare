@@ -36,6 +36,7 @@ class ShowInfoStudentViewController: UIViewController {
     }
     
     @IBAction func startZoomMeetingPressed(_ sender: PrimaryButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: Constants.ClassroomLink.linkG)!)
     }
     
 }

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPs-KS-QoB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPs-KS-QoB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -42,13 +44,13 @@
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,16 +92,16 @@
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -118,7 +120,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="Password"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm8-JY-oZI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wm8-JY-oZI">
                                         <rect key="frame" x="145.5" y="177.5" width="83" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <state key="normal" title="login"/>
@@ -133,13 +135,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="wuJ-gP-JGd"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="gq2-nw-Uj6" firstAttribute="leading" secondItem="wuJ-gP-JGd" secondAttribute="leading" constant="20" id="Lvd-il-CWN"/>
                             <constraint firstItem="wuJ-gP-JGd" firstAttribute="trailing" secondItem="gq2-nw-Uj6" secondAttribute="trailing" constant="20" id="Qjw-6P-b1w"/>
                             <constraint firstItem="gq2-nw-Uj6" firstAttribute="top" secondItem="wuJ-gP-JGd" secondAttribute="top" constant="20" id="U1i-wG-LPp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="wuJ-gP-JGd"/>
                     </view>
                     <navigationItem key="navigationItem" id="vhs-49-6ZZ"/>
                     <connections>
@@ -162,7 +164,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="6VE-Td-82w">
                                 <rect key="frame" x="0.0" y="88" width="414" height="754"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uv-bi-HOj">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Uv-bi-HOj">
                                         <rect key="frame" x="20" y="0.0" width="374" height="71.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Login">
@@ -192,7 +194,7 @@
                                             <segue destination="udF-Yh-dN9" kind="show" identifier="clubMemberRegisteringSegue" id="kha-GK-8Tu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PM4-Lw-qbZ" userLabel="Student" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PM4-Lw-qbZ" userLabel="Student" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                         <rect key="frame" x="20" y="587" width="374" height="167"/>
                                         <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
                                         <color key="tintColor" name="Button Color 1"/>
@@ -216,6 +218,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6VE-Td-82w" secondAttribute="bottom" constant="20" id="6fI-5Q-IIT"/>
@@ -223,7 +226,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6VE-Td-82w" secondAttribute="trailing" id="ngc-uv-rmx"/>
                             <constraint firstItem="6VE-Td-82w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wDu-Vy-Nuf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="9hp-iR-bYO"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
@@ -245,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="aja-dO-0jL">
-                                <rect key="frame" x="0.0" y="88" width="414" height="628"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="543"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Student Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpv-Si-EvF">
                                         <rect key="frame" x="66" y="0.0" width="282" height="92"/>
@@ -254,7 +256,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0WW-Ds-hiJ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="20" y="120" width="374" height="52.5"/>
+                                        <rect key="frame" x="20" y="120" width="374" height="31.5"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -272,16 +274,16 @@
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -301,7 +303,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZv-Rd-CjB" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="20" y="200.5" width="374" height="52"/>
+                                        <rect key="frame" x="20" y="179.5" width="374" height="30"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -319,16 +321,16 @@
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
                                                 <real key="value" value="4"/>
@@ -348,7 +350,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZwI-ak-e8u" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="20" y="280.5" width="374" height="52.5"/>
+                                        <rect key="frame" x="20" y="237.5" width="374" height="31.5"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -366,16 +368,16 @@
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -395,7 +397,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBM-dV-iY8" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="20" y="361" width="374" height="52.5"/>
+                                        <rect key="frame" x="20" y="297" width="374" height="31.5"/>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -413,16 +415,16 @@
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="value" systemColor="systemRedColor"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -441,19 +443,19 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peR-Pa-Eu5">
-                                        <rect key="frame" x="20" y="441.5" width="374" height="20.5"/>
+                                        <rect key="frame" x="20" y="356.5" width="374" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lH-Ht-QeE">
-                                        <rect key="frame" x="20" y="490" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="405" width="374" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="TPm-gd-1AS"/>
                                         </constraints>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glp-50-JI1" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
-                                        <rect key="frame" x="167" y="568" width="80" height="60"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glp-50-JI1" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                        <rect key="frame" x="167" y="483" width="80" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="mZK-cH-5rk"/>
                                             <constraint firstAttribute="height" constant="60" id="uv4-XU-byC"/>
@@ -484,13 +486,13 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="pe1-mz-Xb8"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="aja-dO-0jL" firstAttribute="trailing" secondItem="pe1-mz-Xb8" secondAttribute="trailing" id="JAh-Ve-Dlh"/>
                             <constraint firstItem="aja-dO-0jL" firstAttribute="top" secondItem="pe1-mz-Xb8" secondAttribute="top" id="TNp-fe-hZt"/>
                             <constraint firstItem="aja-dO-0jL" firstAttribute="leading" secondItem="5Ay-cj-giA" secondAttribute="leading" id="l9Y-wj-qV4"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="pe1-mz-Xb8"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ulf-IV-buy"/>
                     <connections>
@@ -515,7 +517,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Pa-4j-poG">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <sections/>
                             </tableView>
@@ -531,6 +533,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="VlF-dn-kUz"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="5Pa-4j-poG" firstAttribute="trailing" secondItem="VlF-dn-kUz" secondAttribute="trailing" id="8kH-94-nxK"/>
@@ -541,7 +544,6 @@
                             <constraint firstItem="zug-go-bXn" firstAttribute="leading" secondItem="VlF-dn-kUz" secondAttribute="leading" id="xTu-du-U6D"/>
                             <constraint firstItem="5Pa-4j-poG" firstAttribute="top" secondItem="zug-go-bXn" secondAttribute="bottom" id="xnO-b5-fEp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VlF-dn-kUz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="bookmark.fill" catalog="system" id="FTL-GU-nt6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -583,7 +585,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5L-6v-Ikd" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5L-6v-Ikd" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                         <rect key="frame" x="182" y="310" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="URg-84-OPD"/>
@@ -666,6 +668,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Nt-9O-uCA"/>
                         <color key="backgroundColor" name="AppBackgroundColor "/>
                         <constraints>
                             <constraint firstItem="FlQ-Xa-bEE" firstAttribute="leading" secondItem="2Nt-9O-uCA" secondAttribute="leading" id="G2j-jZ-67K"/>
@@ -676,7 +679,6 @@
                             <constraint firstItem="2Nt-9O-uCA" firstAttribute="trailing" secondItem="wf6-b6-hMT" secondAttribute="trailing" id="pfV-BL-4kn"/>
                             <constraint firstItem="FlQ-Xa-bEE" firstAttribute="trailing" secondItem="2Nt-9O-uCA" secondAttribute="trailing" id="qta-ih-uyr"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2Nt-9O-uCA"/>
                     </view>
                     <navigationItem key="navigationItem" id="O4K-5J-lr6"/>
                     <connections>
@@ -724,7 +726,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90Q-qK-3NY" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90Q-qK-3NY" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                         <rect key="frame" x="182" y="301" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="1ZQ-yb-O5q"/>
@@ -794,6 +796,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="lfv-ed-w03"/>
                         <color key="backgroundColor" name="AppBackgroundColor "/>
                         <constraints>
                             <constraint firstItem="bDc-zg-Bv3" firstAttribute="top" secondItem="lfv-ed-w03" secondAttribute="top" id="BE4-4b-Y2R"/>
@@ -804,7 +807,6 @@
                             <constraint firstItem="ONx-17-TZu" firstAttribute="top" secondItem="bDc-zg-Bv3" secondAttribute="bottom" constant="20" id="bdx-Nn-VnJ"/>
                             <constraint firstItem="bDc-zg-Bv3" firstAttribute="leading" secondItem="lfv-ed-w03" secondAttribute="leading" id="pFt-LU-hup"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lfv-ed-w03"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="azp-xJ-AuC"/>
@@ -848,7 +850,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Sd3-M9-HYC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="178" width="374" height="66.5"/>
+                                                        <rect key="frame" x="20" y="178" width="374" height="49"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -866,16 +868,16 @@
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -895,7 +897,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8a-f9-qqQ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="272.5" width="374" height="66.5"/>
+                                                        <rect key="frame" x="20" y="255" width="374" height="49"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -913,16 +915,16 @@
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -942,7 +944,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gR5-13-Hpf" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="367" width="374" height="67"/>
+                                                        <rect key="frame" x="20" y="332" width="374" height="49"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -960,16 +962,16 @@
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -989,7 +991,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOz-IS-Azc" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="462" width="374" height="66.5"/>
+                                                        <rect key="frame" x="20" y="409" width="374" height="49"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1007,16 +1009,16 @@
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="errorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="lineErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="textErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="titleErrorColor">
-                                                                <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="value" systemColor="systemRedColor"/>
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1036,7 +1038,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIO-JO-97g" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="556.5" width="374" height="66.5"/>
+                                                        <rect key="frame" x="20" y="486" width="374" height="49"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1071,7 +1073,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOr-LX-ODv" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="651" width="374" height="139"/>
+                                                        <rect key="frame" x="20" y="563" width="374" height="227"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1105,7 +1107,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="title" value="School"/>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAD-Z5-3KH" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAD-Z5-3KH" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                                         <rect key="frame" x="167" y="818" width="80" height="60"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="UCz-3u-xgA"/>
@@ -1160,6 +1162,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="82g-VD-sag"/>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="v2t-B1-MW9"/>
                         <color key="backgroundColor" name="AppBackgroundColor "/>
                         <constraints>
                             <constraint firstItem="OES-aX-cYY" firstAttribute="top" secondItem="v2t-B1-MW9" secondAttribute="top" id="Nhn-Fv-gCp"/>
@@ -1167,7 +1170,6 @@
                             <constraint firstItem="OES-aX-cYY" firstAttribute="trailing" secondItem="v2t-B1-MW9" secondAttribute="trailing" id="dDx-c5-y09"/>
                             <constraint firstItem="OES-aX-cYY" firstAttribute="leading" secondItem="v2t-B1-MW9" secondAttribute="leading" id="nva-YA-gf8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="v2t-B1-MW9"/>
                     </view>
                     <navigationItem key="navigationItem" id="yps-Uf-KRa"/>
                     <size key="freeformSize" width="414" height="1000"/>
@@ -1191,7 +1193,7 @@
             <objects>
                 <viewController id="474-Qy-nfj" userLabel="Welcome View Screen" customClass="WelcomePage" customModule="Social_Welfare" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nz8-vL-Igy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KCT-nq-KxP">
@@ -1234,6 +1236,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="IHM-ko-0TH"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="KCT-nq-KxP" firstAttribute="leading" secondItem="IHM-ko-0TH" secondAttribute="leading" id="5J0-IP-Lad"/>
@@ -1241,7 +1244,6 @@
                             <constraint firstAttribute="trailing" secondItem="KCT-nq-KxP" secondAttribute="trailing" id="JyC-Yj-gYX"/>
                             <constraint firstItem="KCT-nq-KxP" firstAttribute="top" secondItem="IHM-ko-0TH" secondAttribute="top" id="u5E-eE-lhz"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="IHM-ko-0TH"/>
                     </view>
                     <navigationItem key="navigationItem" id="GCC-9k-rkB"/>
                 </viewController>
@@ -1269,8 +1271,8 @@
                 <view contentMode="scaleToFill" id="mGt-rL-qOr">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="97"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <viewLayoutGuide key="safeArea" id="4E7-ua-fJC"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="-1020.2898550724639" y="126.5625"/>
@@ -1312,10 +1314,11 @@
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-rz-5a5">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ttt-9s-HdX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cAT-Dm-qTn" firstAttribute="trailing" secondItem="ttt-9s-HdX" secondAttribute="trailing" id="0wF-yz-lte"/>
                             <constraint firstItem="ttt-9s-HdX" firstAttribute="bottom" secondItem="8fg-rz-5a5" secondAttribute="bottom" id="4SM-p9-C9B"/>
@@ -1325,7 +1328,6 @@
                             <constraint firstItem="8fg-rz-5a5" firstAttribute="top" secondItem="cAT-Dm-qTn" secondAttribute="bottom" id="UAP-K4-j7A"/>
                             <constraint firstItem="ttt-9s-HdX" firstAttribute="trailing" secondItem="8fg-rz-5a5" secondAttribute="trailing" id="YwT-zD-BnW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ttt-9s-HdX"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="bookmark.fill" catalog="system" id="Fmg-5Y-6UJ"/>
                     <connections>
@@ -1390,14 +1392,14 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nXV-hC-uHD">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nXV-hC-uHD" customClass="InfoTextView" customModule="Social_Welfare" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="589.5" width="374" height="326.5"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-Af-BMN" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Kx-Af-BMN" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                                 <rect key="frame" x="167" y="956" width="80" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="4o1-3o-lOZ"/>
@@ -1405,7 +1407,7 @@
                                                 </constraints>
                                                 <color key="tintColor" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Create">
-                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="systemRedColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="createNewAppointmentPressed:" destination="WHp-a9-DcN" eventType="touchUpInside" id="jXO-0n-E3F"/>
@@ -1443,7 +1445,8 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="9ur-wz-mUq"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="gnA-sm-Rp8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gnA-sm-Rp8" firstAttribute="bottom" secondItem="g8r-bU-ncu" secondAttribute="bottom" id="AmB-Qf-qKG"/>
                             <constraint firstItem="FeK-eG-oNR" firstAttribute="width" secondItem="vx0-1B-tm0" secondAttribute="width" id="CcC-yc-Y76"/>
@@ -1451,7 +1454,6 @@
                             <constraint firstItem="g8r-bU-ncu" firstAttribute="top" secondItem="gnA-sm-Rp8" secondAttribute="top" id="NUw-2V-kYj"/>
                             <constraint firstItem="g8r-bU-ncu" firstAttribute="trailing" secondItem="gnA-sm-Rp8" secondAttribute="trailing" id="Rta-kg-BlW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gnA-sm-Rp8"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="folder" catalog="system" id="8dT-db-DGv"/>
                     <size key="freeformSize" width="414" height="1200"/>
@@ -1533,6 +1535,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="P30-SB-DND"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="P30-SB-DND" firstAttribute="bottom" secondItem="Bwi-ts-OVE" secondAttribute="bottom" constant="20" id="1V4-zz-AH1"/>
@@ -1543,7 +1546,6 @@
                             <constraint firstItem="tZ4-ZY-q6u" firstAttribute="top" secondItem="P30-SB-DND" secondAttribute="top" id="g9M-Qx-3x7"/>
                             <constraint firstItem="tZ4-ZY-q6u" firstAttribute="leading" secondItem="P30-SB-DND" secondAttribute="leading" id="tId-e2-m1D"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="P30-SB-DND"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" id="D9D-KD-Jnz"/>
                     <connections>
@@ -1586,7 +1588,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C65-fV-9X4" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C65-fV-9X4" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                 <rect key="frame" x="157" y="549" width="100" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ELE-zj-Hc4"/>
@@ -1598,6 +1600,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="WVb-8g-asz"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="C65-fV-9X4" firstAttribute="top" secondItem="VsY-lG-q8e" secondAttribute="bottom" constant="90" id="5Sb-6o-xtA"/>
@@ -1607,7 +1610,6 @@
                             <constraint firstItem="VsY-lG-q8e" firstAttribute="centerY" secondItem="7e7-vD-sPT" secondAttribute="centerY" id="oFu-7V-xlJ"/>
                             <constraint firstItem="C65-fV-9X4" firstAttribute="centerX" secondItem="7e7-vD-sPT" secondAttribute="centerX" id="vEo-6v-kT3"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="WVb-8g-asz"/>
                     </view>
                     <navigationItem key="navigationItem" id="faL-Qy-6Vv"/>
                     <connections>
@@ -1671,15 +1673,15 @@
                                                 <rect key="frame" x="20" y="35" width="374" height="26.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Appointment's date " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeb-z8-kRX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="244.5" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="247" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mm/dd/yy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ce-E7-6U3">
-                                                        <rect key="frame" x="275.5" y="0.0" width="98.5" height="26.5"/>
+                                                        <rect key="frame" x="278" y="0.0" width="96" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1705,15 +1707,15 @@
                                                 <rect key="frame" x="20" y="35" width="374" height="26.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Appointment's time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEz-cZ-Had">
-                                                        <rect key="frame" x="0.0" y="0.0" width="195" height="26.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="194" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from - to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ytn-lx-ukT">
-                                                        <rect key="frame" x="292" y="0.0" width="82" height="26.5"/>
+                                                        <rect key="frame" x="291" y="0.0" width="83" height="26.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                        <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1740,7 +1742,7 @@
                                         <rect key="frame" x="0.0" y="426" width="414" height="198"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info of the appointment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jP-zq-keP">
-                                                <rect key="frame" x="20" y="8" width="250" height="30"/>
+                                                <rect key="frame" x="20" y="8" width="249.5" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1765,14 +1767,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xNl-XT-Z5X" userLabel="create">
                                         <rect key="frame" x="0.0" y="624" width="414" height="194"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeL-Rw-WL9" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeL-Rw-WL9" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                                 <rect key="frame" x="274" y="5" width="120" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="EWu-MM-m4S"/>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="sbo-fu-s7O"/>
                                                 </constraints>
                                                 <state key="normal" title="Create">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -1806,6 +1808,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="rG5-4C-N14"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="rG5-4C-N14" firstAttribute="bottom" secondItem="beK-SW-ek6" secondAttribute="bottom" id="8Xt-CG-hJF"/>
@@ -1813,7 +1816,6 @@
                             <constraint firstItem="beK-SW-ek6" firstAttribute="leading" secondItem="rG5-4C-N14" secondAttribute="leading" id="abt-Da-uRa"/>
                             <constraint firstItem="beK-SW-ek6" firstAttribute="top" secondItem="rG5-4C-N14" secondAttribute="top" id="vL7-20-uc9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="rG5-4C-N14"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Create" image="folder" catalog="system" id="OiG-3S-IUS"/>
                 </viewController>
@@ -1904,6 +1906,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Mx-B1-TvV"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="6Mx-B1-TvV" firstAttribute="bottom" secondItem="BlA-cs-aZU" secondAttribute="bottom" constant="40" id="3Kg-jl-Mxn"/>
@@ -1914,7 +1917,6 @@
                             <constraint firstItem="a5H-7D-4RV" firstAttribute="trailing" secondItem="6Mx-B1-TvV" secondAttribute="trailing" id="O2W-Qc-90v"/>
                             <constraint firstItem="BlA-cs-aZU" firstAttribute="top" secondItem="a5H-7D-4RV" secondAttribute="bottom" constant="30" id="ojh-cK-Z3e"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Mx-B1-TvV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="person" catalog="system" id="2p3-WT-b4d"/>
                     <connections>
@@ -1940,9 +1942,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SyW-b6-dIq">
                                 <rect key="frame" x="0.0" y="44" width="414" height="754"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Jyl-30-Vb9"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="Jyl-30-Vb9" firstAttribute="bottom" secondItem="SyW-b6-dIq" secondAttribute="bottom" constant="15" id="b6l-KV-M2L"/>
@@ -1950,7 +1953,6 @@
                             <constraint firstItem="SyW-b6-dIq" firstAttribute="trailing" secondItem="Jyl-30-Vb9" secondAttribute="trailing" id="quD-Ce-oms"/>
                             <constraint firstItem="SyW-b6-dIq" firstAttribute="leading" secondItem="Jyl-30-Vb9" secondAttribute="leading" id="tKe-CJ-PjW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Jyl-30-Vb9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="browse" image="calendar" catalog="system" id="KSO-LJ-9h9"/>
                     <connections>
@@ -1977,7 +1979,7 @@
                                     <navigationItem title="Join Appointment" id="aai-vU-lus"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D0-gt-6NI" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D0-gt-6NI" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
                                 <rect key="frame" x="157" y="708" width="100" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="M2B-6A-39c"/>
@@ -2077,6 +2079,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="isq-Yo-8JQ"/>
                         <color key="backgroundColor" name="Background Color 1"/>
                         <constraints>
                             <constraint firstItem="4D0-gt-6NI" firstAttribute="top" secondItem="ZWC-MJ-Ho2" secondAttribute="bottom" constant="10" id="J9K-rh-OJD"/>
@@ -2092,7 +2095,6 @@
                             <constraint firstItem="urm-eT-DJP" firstAttribute="leading" secondItem="isq-Yo-8JQ" secondAttribute="leading" id="tZa-lt-W5Y"/>
                             <constraint firstItem="ZWC-MJ-Ho2" firstAttribute="top" secondItem="urm-eT-DJP" secondAttribute="bottom" id="wcd-Ma-kFh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="isq-Yo-8JQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="f2s-PU-C5W"/>
                     <connections>
@@ -2137,7 +2139,7 @@
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AppBackgroundColor ">
@@ -2155,5 +2157,20 @@
         <namedColor name="Button Color 1">
             <color red="0.0" green="0.28999999165534973" blue="0.48600000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

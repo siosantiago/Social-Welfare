@@ -24,6 +24,7 @@ class AppoimentsPageController: UIViewController {
     var appointmentTime: String = ""
     var appointmentInfo: String = ""
     var appointmentName: String = ""
+    var appointmentGoogleMeet: String = ""
     
 
     override func viewDidLoad() {
@@ -56,7 +57,6 @@ class AppoimentsPageController: UIViewController {
                             let date = data[Constants.AppointmentTableView.firebaseDateVar] as? Timestamp,
                             let info = data[Constants.AppointmentTableView.firebaseInfoVar] as? String {
                             let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, id: id )
-                            
                             self.appointments.append(newAppointment)
                             DispatchQueue.main.async {
                                 self.appointmentsTableView.reloadData()
@@ -110,6 +110,9 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
         appointmentName = title
         appointmentInfo = info
         appointmentTime = date.getTimeFormat()
+        if let safeID = user?.uid {
+            gettingGoogleMeet(safeID: safeID)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -121,9 +124,23 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
                     destinationVC.appointTime = appointmentTime
                     destinationVC.appointInfo = appointmentInfo
                     destinationVC.appointName = appointmentName
+                    destinationVC.appointGoogleMeet = appointmentGoogleMeet
                 }
             }
         }
     }
 
+    func gettingGoogleMeet(safeID: String){
+        let docRef = db.collection("Club Member's info").document(safeID)
+        docRef.getDocument { (document, error) in
+            if let document = document, document.exists,
+                let data = document.data(){
+                if let safeGoogleMeet = data[Constants.AppointmentTableView.firebaseDateVar] as? String {
+                    self.appointmentGoogleMeet = safeGoogleMeet
+                }
+            } else {
+                print("Document does not exist")
+            }
+        }
+    }
 }

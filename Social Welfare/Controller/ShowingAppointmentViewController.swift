@@ -21,6 +21,7 @@ class ShowingAppointmentViewController: UIViewController {
     var appointDate: String?
     var appointName: String?
     var appointID: String?
+    var appointGoogleMeet: String?
        
 
     override func viewDidLoad() {
@@ -36,7 +37,10 @@ class ShowingAppointmentViewController: UIViewController {
     }
 
     @IBAction func startZoomCallPressed(_ sender: PrimaryButton) {
-        
+        let normalURl = "\(Constants.ClassroomLink.linkG)\(appointGoogleMeet ?? "new")"
+        if let url = URL(string: normalURl) {
+             UIApplication.shared.open(url, options: [:])
+         }
     }
     @IBAction func returnButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)

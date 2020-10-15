@@ -14,10 +14,13 @@ class LoginViewController: UIViewController {
     
     let segueIdentifier = "loginSegue"
     
-    
+
+    @IBOutlet weak var studentOrClumMember: UISegmentedControl!
     @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    var studentOrClub = "Student"
     
+
     var activeTextField : UITextField? = nil
     
     @IBAction func loginPressed(_ sender: UIButton) {
@@ -27,14 +30,30 @@ class LoginViewController: UIViewController {
                     print(e)
                 }
                 else{
-                    self.goToMainStudent()
+                    if self.studentOrClub == "Student" {
+                        self.goToMainStudent()
+                    }
+                    else{
+                        self.goToMainClubMember()
+                    }
+                    
                 }
             }
         }
         
     }
     
-
+    @IBAction func studentOrClubChosen(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            studentOrClub = "Student"
+        case 1:
+            studentOrClub = "Club Member"
+        default:
+            studentOrClub = "Club Member"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        // Do any additional setup after loading the view.

@@ -31,11 +31,14 @@ class CreateAppointmentViewController: UIViewController {
     var datePicked: Date? = nil
     
     @IBOutlet weak var titleAppointmentTextField: UITextField!
+    @IBOutlet weak var counterCharLabel: UILabel!
     @IBOutlet weak var timeAppointmentTextField: UITextField!
     @IBOutlet weak var dateAppointmentTextField: UITextField!
     @IBOutlet weak var communityHoursAwardedTextField: UITextField!
     @IBOutlet weak var infoAppointmentTextField: UITextField!
+    @IBOutlet weak var infoCounterCharLabel: UILabel!
     @IBOutlet weak var moreInfoScrollView: UITextView!
+    @IBOutlet weak var moreInfoCounterLabel: UILabel!
     
     @IBOutlet weak var bottomScrollViewConstraint: NSLayoutConstraint!
     
@@ -70,6 +73,7 @@ class CreateAppointmentViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
         moreInfoScrollView.text = defaultText
+        moreInfoScrollView.delegate = self
     }
     
     
@@ -163,6 +167,28 @@ extension CreateAppointmentViewController: UITextFieldDelegate{
         self.activeTextField = textField
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var isTrue = true
+        if string == ""{
+        }
+        else if textField == titleAppointmentTextField || textField == infoAppointmentTextField {
+            let count = textField.text?.count ?? 0
+            if count <= 20 {
+                if textField == titleAppointmentTextField {
+                    self.counterCharLabel.text = String(count) + "/25 max"
+                }
+                else {
+                    self.infoCounterCharLabel.text = String(count) + "/25 max"
+                }
+            }
+            isTrue = count <= 20
+        }
+        else {
+            isTrue = true
+        }
+        return isTrue
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == dateAppointmentTextField {
             print("Inside loop")
@@ -174,47 +200,48 @@ extension CreateAppointmentViewController: UITextFieldDelegate{
         textField.resignFirstResponder()
     }
     
-        @objc func keyboardWillShow(notification: NSNotification) {
-    
-          guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            
             // if keyboard size is not available for some reason, dont do anything
             return
-          }
+        }
         bottomScrollViewConstraint.constant = keyboardSize.height
-          
-        }
+        
+    }
     
-        @objc func keyboardWillHide(notification: NSNotification) {
-          // move back the root view origin to zero
-            bottomScrollViewConstraint.constant = 0
-        }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        // move back the root view origin to zero
+        bottomScrollViewConstraint.constant = 0
+    }
       
 }
 
-extension CreateAppointmentViewController: UITextViewDelegate {
-    
-    
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        let count = textView.text.count + (text.count - range.length)
-//        if count <= 120 {
-//            self.moreInfoScrollView.text = "\(120 - count) \(String.charsLeft)"
-//        }
-//        return count <= 120
-//    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == self.defaultText {
-            textView.text = nil
-            textView.textColor = UIColor.black
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = self.defaultText
-            textView.textColor = UIColor.gray
-        }
-    }
-}
 
+
+ extension CreateAppointmentViewController: UITextViewDelegate {
+      func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+         let count = moreInfoScrollView.text.count + (text.count - range.length)
+         if count <= 100 {
+            let str = 100 - count
+            self.moreInfoCounterLabel.text = String(str) + "/100 max"
+         }
+         return count <= 100
+     }
+     
+     func textViewDidBeginEditing(_ textView: UITextView) {
+        if moreInfoScrollView.text == self.defaultText {
+            moreInfoScrollView.text = nil
+            moreInfoScrollView.textColor = UIColor.black
+         }
+     }
+     
+     func textViewDidEndEditing(_ textView: UITextView) {
+         if moreInfoScrollView.text.isEmpty {
+            moreInfoScrollView.text = self.defaultText
+            moreInfoScrollView.textColor = UIColor.gray
+         }
+     }
+ }
+ 

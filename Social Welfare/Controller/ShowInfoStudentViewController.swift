@@ -14,7 +14,7 @@ class ShowInfoStudentViewController: UIViewController {
     @IBOutlet weak var infoOutlet: UILabel!
     @IBOutlet weak var tutorGrdLvlOutlet: UILabel!
     @IBOutlet weak var timeOutlet: UILabel!
-    @IBOutlet weak var hrsGrantedOutlet: UILabel!
+    @IBOutlet weak var meetingLinkOutlet: UILabel!
     
     var appointInfo: String?
     var appointTime: String?
@@ -33,6 +33,10 @@ class ShowInfoStudentViewController: UIViewController {
             infoOutlet.text = info
             timeOutlet.text = time
         }
+    }
+    @IBAction func copyButtonPressed(_ sender: UIButton) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = "Hello, world!"
     }
     
     @IBAction func startZoomMeetingPressed(_ sender: PrimaryButton) {

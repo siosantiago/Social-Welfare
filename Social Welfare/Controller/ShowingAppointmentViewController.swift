@@ -15,6 +15,7 @@ class ShowingAppointmentViewController: UIViewController {
     @IBOutlet weak var stdGrdLvlLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var hrsGivenLabel: UILabel!
+    @IBOutlet weak var meetingLinkLabel: UILabel!
     
     var appointInfo: String?
     var appointTime: String?
@@ -26,13 +27,18 @@ class ShowingAppointmentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let safeGoogleCode = appointGoogleMeet {
+            let normalURl = "\(Constants.ClassroomLink.linkG)" + safeGoogleCode
+            meetingLinkLabel.text = normalURl
+        }
+        
         if let title = appointName,
             let info = appointInfo,
             let time = appointTime {
             titleLabel.text = title
             infoLabel.text = info
             timeLabel.text = time
+            
         }
     }
 
@@ -45,4 +51,10 @@ class ShowingAppointmentViewController: UIViewController {
     @IBAction func returnButtonPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func copyLinkPressed(_ sender: UIButton) {
+        let pasteboard = UIPasteboard.general
+        pasteboard.string = appointGoogleMeet ?? "new"
+        
+    }
+    
 }

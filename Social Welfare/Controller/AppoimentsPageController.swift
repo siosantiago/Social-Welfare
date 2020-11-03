@@ -55,6 +55,7 @@ class AppoimentsPageController: UIViewController {
                         if let title = data[Constants.AppointmentTableView.firebaseTitleVar] as? String,
                             userID == data[Constants.AppointmentTableView.firebaseTutorID] as? String,
                             let date = data[Constants.AppointmentTableView.firebaseDateVar] as? Timestamp,
+                            date.dateValue() >= Date.init(),
                             let info = data[Constants.AppointmentTableView.firebaseInfoVar] as? String {
                             let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, id: id )
                             self.appointments.append(newAppointment)
@@ -71,6 +72,7 @@ class AppoimentsPageController: UIViewController {
 
 extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return appointments.count
     }
     
@@ -135,7 +137,7 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
         docRef.getDocument { (document, error) in
             if let document = document, document.exists,
                 let data = document.data(){
-                if let safeGoogleMeet = data[Constants.AppointmentTableView.firebaseDateVar] as? String {
+                if let safeGoogleMeet = data[Constants.AppointmentTableView.firebaseGoogleMeet] as? String {
                     self.appointmentGoogleMeet = safeGoogleMeet
                 }
             } else {

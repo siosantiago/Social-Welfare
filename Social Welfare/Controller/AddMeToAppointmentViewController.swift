@@ -69,6 +69,7 @@ class AddMeToAppointmentViewController: UIViewController {
                 return
             }else{
                 docRef.updateData([ "Club Member ID": userID])
+                
             }
         }
     }

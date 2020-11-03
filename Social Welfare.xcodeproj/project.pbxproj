@@ -11,6 +11,7 @@
 		5612B65C24F0937C00A2878E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65B24F0937C00A2878E /* Constants.swift */; };
 		5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */; };
 		5612B66124F2CECA00A2878E /* ClubMemberUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */; };
+		56438ADA2551E48F001781F5 /* FirebaseDownloadableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56438AD92551E48E001781F5 /* FirebaseDownloadableTableViewController.swift */; };
 		5674E43B2514405800092E66 /* AppointmentsCoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5674E4392514405700092E66 /* AppointmentsCoolTableViewCell.swift */; };
 		5674E43C2514405800092E66 /* AppointmentsCoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5674E43A2514405800092E66 /* AppointmentsCoolTableViewCell.xib */; };
 		568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B101D24D686EA00CAE8D2 /* LoginViewController.swift */; };
@@ -48,6 +49,7 @@
 		5612B65B24F0937C00A2878E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointStudentViewController.swift; sourceTree = "<group>"; };
 		5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubMemberUserViewController.swift; sourceTree = "<group>"; };
+		56438AD92551E48E001781F5 /* FirebaseDownloadableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDownloadableTableViewController.swift; sourceTree = "<group>"; };
 		5674E4392514405700092E66 /* AppointmentsCoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsCoolTableViewCell.swift; sourceTree = "<group>"; };
 		5674E43A2514405800092E66 /* AppointmentsCoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCoolTableViewCell.xib; sourceTree = "<group>"; };
 		568B101D24D686EA00CAE8D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */,
 				56AE0B55250DDAA000CB2AE3 /* UIViewController+extension.swift */,
 				56AE0B57250DDCFA00CB2AE3 /* Date+extension.swift */,
+				56438AD92551E48E001781F5 /* FirebaseDownloadableTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -204,8 +207,7 @@
 				56E9325824AE4A2B00F0E12E /* Sources */,
 				56E9325924AE4A2B00F0E12E /* Frameworks */,
 				56E9325A24AE4A2B00F0E12E /* Resources */,
-				6F76BDA1F4A0258EA19330D8 /* [CP] Embed Pods Frameworks */,
-				720400FB973972EF202835CA /* [CP] Copy Pods Resources */,
+				9463B4490AAC857252CD6838 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -267,7 +269,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6F76BDA1F4A0258EA19330D8 /* [CP] Embed Pods Frameworks */ = {
+		9463B4490AAC857252CD6838 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -282,23 +284,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		720400FB973972EF202835CA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Social Welfare/Pods-Social Welfare-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8D167B866BBD05D2BC23F08 /* [CP] Check Pods Manifest.lock */ = {
@@ -344,6 +329,7 @@
 				56A62961250455A300119201 /* ShowInfoStudentViewController.swift in Sources */,
 				5612B65C24F0937C00A2878E /* Constants.swift in Sources */,
 				56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */,
+				56438ADA2551E48F001781F5 /* FirebaseDownloadableTableViewController.swift in Sources */,
 				56954F8B24DE38F8001DA6DE /* StudentUserViewController.swift in Sources */,
 				56954F8D24E073C6001DA6DE /* AllAppointmentsViewController.swift in Sources */,
 				56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */,
@@ -502,6 +488,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WTCA8NYJ4Q;
 				INFOPLIST_FILE = "Social Welfare/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -520,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WTCA8NYJ4Q;
 				INFOPLIST_FILE = "Social Welfare/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

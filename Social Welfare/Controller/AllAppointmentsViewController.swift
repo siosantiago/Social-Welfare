@@ -56,6 +56,7 @@ class AllAppointmentsViewController: UIViewController {
                         let id = document.documentID
                         if let title = data[self.firebaseTitleVar] as? String,
                             let date = data[self.firebaseDateVar] as? Timestamp,
+                            date.dateValue() >= Date.init(),
                             let info = data[self.firebaseInfoVar] as? String {
                             let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, id: id )
                             self.allAppointments.append(newAppointment)

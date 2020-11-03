@@ -23,6 +23,8 @@ class MyAppointStudentViewController: UIViewController {
     var appointmentTime: String = ""
     var appointmentInfo: String = ""
     var appointmentName: String = ""
+    var appointmentGoogleMeet: String = ""
+    var appointmentTutorsID: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,7 @@ class MyAppointStudentViewController: UIViewController {
                         if let title = data[Constants.AppointmentTableView.firebaseTitleVar]as? String,
                             userID == data[Constants.AppointmentTableView.firebaseStudentID]as? String,
                             let date = data[Constants.AppointmentTableView.firebaseDateVar]as? Timestamp,
+                            date.dateValue() >= Date.init(),
                             let info = data[Constants.AppointmentTableView.firebaseInfoVar]as? String{
                             self.myAppointments.append(Appointment(title: title, date: date.dateValue(), info: info, id: id))
                             DispatchQueue.main.async {
@@ -121,5 +124,4 @@ extension MyAppointStudentViewController: UITableViewDelegate, UITableViewDataSo
             }
         }
     }
-    
 }

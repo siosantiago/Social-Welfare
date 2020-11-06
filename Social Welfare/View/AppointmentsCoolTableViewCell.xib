@@ -20,13 +20,13 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkF-0G-D8f" userLabel="ColoredView">
                         <rect key="frame" x="10" y="10" width="480" height="180"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Algebra 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBS-cq-FNt">
-                                <rect key="frame" x="20" y="15" width="91" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Algebra 2sak ska;ska;lsl;ka;sk;aks;la;sa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBS-cq-FNt">
+                                <rect key="frame" x="20" y="15" width="297" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="September 13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zG-Tk-m5L">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="September 13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zG-Tk-m5L">
                                 <rect key="frame" x="327" y="15" width="133" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -48,6 +48,7 @@
                         <color key="backgroundColor" red="0.75603407619999996" green="0.87387555839999997" blue="0.96328073739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="9zG-Tk-m5L" firstAttribute="top" secondItem="dkF-0G-D8f" secondAttribute="top" constant="15" id="1iX-RE-us5"/>
+                            <constraint firstItem="9zG-Tk-m5L" firstAttribute="leading" secondItem="kBS-cq-FNt" secondAttribute="trailing" constant="10" id="9bg-ov-9G4"/>
                             <constraint firstAttribute="bottom" secondItem="8Bh-9b-OBo" secondAttribute="bottom" constant="25" id="CyK-9B-UcQ"/>
                             <constraint firstItem="Vi9-hG-bqq" firstAttribute="top" secondItem="kBS-cq-FNt" secondAttribute="bottom" constant="20" id="FqV-bh-gM6"/>
                             <constraint firstAttribute="trailing" secondItem="9zG-Tk-m5L" secondAttribute="trailing" constant="20" id="J6l-db-eXS"/>

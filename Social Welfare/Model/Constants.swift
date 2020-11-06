@@ -9,26 +9,6 @@
 import UIKit
 
 struct Constants {
-    struct User{
-        static let name = "name"
-        static let date = "date"
-        static let age = "age"
-        static let lastName = "last_name"
-        static let email = "email"
-        static let schoolName = "school_name"
-        static let hoursAwarded = "awarded_hours"
-        static let type = "type"
-    }
-    
-    struct FirebaseDictionary{
-        static let dictionaryNameVar = "name"
-        static let dictionaryDateVar = "date"
-        static let dictionaryAgeVar = "age"
-        static let dictionaryLastNameVar = "last_name"
-        static let dictionaryMailVar = "mail"
-        static let dictionarySchoolNameVar = "school_name"
-        static let dictionaryHoursAwarded = "awarded_hours"
-    }
     struct Collections {
         static let users = "users"
     }

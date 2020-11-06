@@ -31,19 +31,17 @@ class ClubMemberUserViewController: UIViewController {
     
     func loadInformation() {
         if let userID = user?.uid {
-            let docPlace = db.collection(Constants.Collections.users).document(userID)
-            docPlace.getDocument { (docSnapshot, error) in
-                if let e = error {
-                    print("error retrieving data \(e.localizedDescription)")
-                }else if let data = docSnapshot?.data(),
-                    let name = data[Constants.FirebaseDictionary.dictionaryNameVar]as? String,
-                    let lastName = data[Constants.FirebaseDictionary.dictionaryLastNameVar]as? String,
-                    let mail = data[Constants.FirebaseDictionary.dictionaryMailVar]as? String,
-                    let schoolName = data[Constants.FirebaseDictionary.dictionarySchoolNameVar]as? String {
-                    self.nameClbMemberLabel.text = name
-                    self.lastNameOutlet.text = lastName
-                    self.mailLabel.text = mail
-                    self.schoolNameLabel.text = schoolName
+            let userRefRef = "\(Constants.Collections.users)/\(userID)"
+            NetworkService.getObject(from: userRefRef) { (result: ResultRequest<User>) in
+                switch result {
+                case let .success(object):
+                    guard let user = object else { return }
+                    self.nameClbMemberLabel.text = user.name
+                    self.lastNameOutlet.text = user.lastName
+                    self.mailLabel.text = user.email
+                    self.schoolNameLabel.text = user.schoolName
+                case let .failure(error):
+                    print(error)
                 }
             }
         }

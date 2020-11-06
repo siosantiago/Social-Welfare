@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 import SkyFloatingLabelTextField
 
 class RegisterNewStudentViewController: UIViewController {
@@ -64,19 +65,17 @@ class RegisterNewStudentViewController: UIViewController {
     
     func saveDataUser(email: String, name: String, lastName: String, age: String, uid: String) {
         
-        let data = [Constants.FirebaseDictionary.dictionaryMailVar: email,
-        Constants.FirebaseDictionary.dictionaryNameVar: name,
-        Constants.FirebaseDictionary.dictionaryLastNameVar: lastName,
-        Constants.FirebaseDictionary.dictionaryDateVar: Date().timeIntervalSince1970,
-        Constants.StudentInfo.dictionaryIsStudent: true,
-        Constants.FirebaseDictionary.dictionaryAgeVar: age] as [String : Any]
+        let user = User(name: name, date: Timestamp(date: Date()), age: age,
+                        lastName: lastName, email: email,
+                        schoolName: nil, hoursAwarded: nil,
+                        type: .student)
         
-        self.db.collection(Constants.StudentInfo.newStudentCollectionName).document(uid).setData(data) { (error) in
-            if let e = error {
-                print("There was an issue saving data to firestroe, \(e)")
-            }
-            else{
+        NetworkService.createObject(to: Constants.Collections.users, key: uid, object: user) { (result) in
+            switch result {
+            case .success(_):
                 self.goToMainStudent()
+            case let .failure(error):
+                print("There was an issue saving data to firestroe, \(error.localizedDescription)")
             }
         }
     }

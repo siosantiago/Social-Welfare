@@ -31,7 +31,7 @@ class StudentUserViewController: UIViewController {
     
     func loadInformation() {
         if let studentID = user?.uid {
-            let docPlace = db.collection(Constants.StudentInfo.newStudentCollectionName).document(studentID)
+            let docPlace = db.collection(Constants.Collections.users).document(studentID)
             docPlace.getDocument { (documentSnapshot, error) in
                 if let e = error {
                     print("error retrieving data \(e)")

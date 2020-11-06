@@ -19,12 +19,6 @@ class WelcomePage: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
-//        do{
-//            try Auth.auth().signOut()
-//
-//        }catch{
-//            print(error)
-//        }
         checkAuth()
     }
     
@@ -40,39 +34,33 @@ class WelcomePage: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    func checkAuth(){
-        if Auth.auth().currentUser != nil {
-            // User is signed in.
-            // ...
-            if let user = Auth.auth().currentUser {
-                let userID = user.uid
-                let docRefStudent = db.collection(Constants.StudentInfo.newStudentCollectionName).document(userID)
-                let docRefClubMember = db.collection(Constants.ClubMemberInfo.newClubMemberCollectionName).document(userID)
-                docRefStudent.getDocument { (document, error) in
-                    if let e = error {
-                        print("Something went wrong retrieving data \(e.localizedDescription)")
-                    }else if let safeDocument = document,
-                        let data = safeDocument.data(){
-                        if data[self.firebaseIsStudent]as? Bool == true {
-                            self.goToMainStudent()
-                        }
+    func checkAuth() {
+        if let user = Auth.auth().currentUser {
+            let userID = user.uid
+            let userRefRef = "\(Constants.Collections.users)/\(userID)"
+            NetworkService.getObject(from: userRefRef) { (result: ResultRequest<User>) in
+                switch result {
+                case let .success(object):
+                    guard let user = object else { return }
+                    if user.type == .student {
+                        self.goToMainStudent()
+                    } else {
+                        self.goToMainClubMember()
                     }
-                }
-                docRefClubMember.getDocument { (document, error) in
-                    if let e = error {
-                        print("Something went wrong retrieving data \(e.localizedDescription)")
-                    }else if let safeDocument = document,
-                        let data = safeDocument.data(){
-                        if data[self.firebaseIsStudent]as? Bool == false {
-                            self.goToMainClubMember()
-                        }
-                    }
+                case let .failure(error):
+                    self.logout()
                 }
             }
         }
     }
     
-    
+    func logout() {
+        do{
+            try Auth.auth().signOut()
+        }catch{
+            print(error)
+        }
+    }
 
     /*
     // MARK: - Navigation

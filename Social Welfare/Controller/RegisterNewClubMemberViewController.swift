@@ -70,23 +70,19 @@ class RegisterNewClubMemberViewController: UIViewController, UITextViewDelegate 
     
     func saveDataUser(email: String, name: String, lastName: String, age: String, uid: String, school: String) {
         
-        let data = [Constants.FirebaseDictionary.dictionaryMailVar: email,
-        Constants.FirebaseDictionary.dictionaryNameVar: name,
-        Constants.FirebaseDictionary.dictionaryLastNameVar: lastName,
-        Constants.FirebaseDictionary.dictionaryDateVar: Date().timeIntervalSince1970,
-        Constants.FirebaseDictionary.dictionarySchoolNameVar: school,
-        Constants.StudentInfo.dictionaryIsStudent: false,
-        Constants.FirebaseDictionary.dictionaryAgeVar: age] as [String : Any]
+        let user = User(name: name, date: Timestamp(date: Date()), age: age,
+                        lastName: lastName, email: email,
+                        schoolName: nil, hoursAwarded: nil,
+                        type: .clubMember)
         
-        self.db.collection(Constants.ClubMemberInfo.newClubMemberCollectionName).document(uid).setData(data) { (error) in
-            if let e = error {
-                print("There was an issue saving data to firestroe, \(e)")
+        NetworkService.createObject(to: Constants.Collections.users, key: uid, object: user) { (result) in
+            switch result {
+            case .success(_):
+                self.goToMainStudent()
+            case let .failure(error):
+                print("There was an issue saving data to firestroe, \(error.localizedDescription)")
             }
-            else{
-                self.goToMainClubMember()
-            }
-        }
-    }
+        }    }
 
 }
 

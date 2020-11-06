@@ -31,7 +31,7 @@ class ClubMemberUserViewController: UIViewController {
     
     func loadInformation() {
         if let userID = user?.uid {
-            let docPlace = db.collection(Constants.ClubMemberInfo.newClubMemberCollectionName).document(userID)
+            let docPlace = db.collection(Constants.Collections.users).document(userID)
             docPlace.getDocument { (docSnapshot, error) in
                 if let e = error {
                     print("error retrieving data \(e.localizedDescription)")

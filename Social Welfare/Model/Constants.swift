@@ -9,21 +9,31 @@
 import UIKit
 
 struct Constants {
+    struct User{
+        static let name = "name"
+        static let date = "date"
+        static let age = "age"
+        static let lastName = "last_name"
+        static let email = "email"
+        static let schoolName = "school_name"
+        static let hoursAwarded = "awarded_hours"
+        static let type = "type"
+    }
+    
     struct FirebaseDictionary{
-        static let dictionaryNameVar = "Name"
-        static let dictionaryDateVar = "Date"
-        static let dictionaryAgeVar = "Age"
-        static let dictionaryLastNameVar = "Last Name"
-        static let dictionaryMailVar = "Mail"
-        static let dictionarySchoolNameVar = "School name"
-        static let dictionaryHoursAwarded = "Awarded Hours"
+        static let dictionaryNameVar = "name"
+        static let dictionaryDateVar = "date"
+        static let dictionaryAgeVar = "age"
+        static let dictionaryLastNameVar = "last_name"
+        static let dictionaryMailVar = "mail"
+        static let dictionarySchoolNameVar = "school_name"
+        static let dictionaryHoursAwarded = "awarded_hours"
+    }
+    struct Collections {
+        static let users = "users"
     }
     struct StudentInfo {
-        static let newStudentCollectionName = "Student's info"
-        static let dictionaryIsStudent = "IsStudent"
-    }
-    struct ClubMemberInfo {
-        static let newClubMemberCollectionName = "Club Member's info"
+        static let dictionaryIsStudent = "Is_student"
     }
     struct AppointmentTableView {
         static let cellIdentifier = "coolDesignCell"

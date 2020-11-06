@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google LLC
+ * Copyright 2017 Google
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -204,7 +204,10 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
 
 - (FieldValueOptions)optionsForServerTimestampBehavior:
     (FIRServerTimestampBehavior)serverTimestampBehavior {
-  return FieldValueOptions(InternalServerTimestampBehavior(serverTimestampBehavior));
+  SUPPRESS_DEPRECATED_DECLARATIONS_BEGIN()
+  return FieldValueOptions(InternalServerTimestampBehavior(serverTimestampBehavior),
+                           _snapshot.firestore()->settings().timestamps_in_snapshots_enabled());
+  SUPPRESS_END()
 }
 
 - (id)convertedValue:(FieldValue)value options:(const FieldValueOptions &)options {
@@ -239,7 +242,12 @@ ServerTimestampBehavior InternalServerTimestampBehavior(FIRServerTimestampBehavi
 }
 
 - (id)convertedTimestamp:(const FieldValue &)value options:(const FieldValueOptions &)options {
-  return MakeFIRTimestamp(value.timestamp_value());
+  FIRTimestamp *wrapped = MakeFIRTimestamp(value.timestamp_value());
+  if (options.timestamps_in_snapshots_enabled()) {
+    return wrapped;
+  } else {
+    return [wrapped dateValue];
+  }
 }
 
 - (id)convertedServerTimestamp:(const FieldValue &)value

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52A225E92554F36D00E3C86A /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A225E82554F36D00E3C86A /* UserType.swift */; };
+		52A226272554F85A00E3C86A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A226262554F85A00E3C86A /* NetworkService.swift */; };
+		52A2262B2554F93200E3C86A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2262A2554F93200E3C86A /* User.swift */; };
+		52A2262E2554F9B400E3C86A /* EnumDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2262D2554F9B400E3C86A /* EnumDecodable.swift */; };
 		5612B65A24F08E3900A2878E /* RegisterNewClubMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65924F08E3900A2878E /* RegisterNewClubMemberViewController.swift */; };
 		5612B65C24F0937C00A2878E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65B24F0937C00A2878E /* Constants.swift */; };
 		5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */; };
@@ -45,6 +49,10 @@
 
 /* Begin PBXFileReference section */
 		14315F1EB43809F647DD24BE /* Pods_Social_Welfare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_Welfare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52A225E82554F36D00E3C86A /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		52A226262554F85A00E3C86A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = "Social Welfare/Model/NetworkService.swift"; sourceTree = SOURCE_ROOT; };
+		52A2262A2554F93200E3C86A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		52A2262D2554F9B400E3C86A /* EnumDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDecodable.swift; sourceTree = "<group>"; };
 		5612B65924F08E3900A2878E /* RegisterNewClubMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewClubMemberViewController.swift; sourceTree = "<group>"; };
 		5612B65B24F0937C00A2878E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointStudentViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52A226252554F84F00E3C86A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				52A226262554F85A00E3C86A /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		56B17A6524C61E8A009FC858 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +158,9 @@
 				56B17AAB24C92BE6009FC858 /* PrimaryButton.swift */,
 				56DEDD6B24CFB1B10023BCA2 /* Appointment.swift */,
 				5612B65B24F0937C00A2878E /* Constants.swift */,
+				52A225E82554F36D00E3C86A /* UserType.swift */,
+				52A2262A2554F93200E3C86A /* User.swift */,
+				52A2262D2554F9B400E3C86A /* EnumDecodable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */,
+				52A226252554F84F00E3C86A /* Network */,
 				56B17AAA24C92B83009FC858 /* View */,
 				56DEDD6A24CFB1830023BCA2 /* Model */,
 				56B17A6524C61E8A009FC858 /* Controller */,
@@ -321,10 +341,13 @@
 				56E9326424AE4A2B00F0E12E /* StudentsOrMenberViewController.swift in Sources */,
 				56DEDD6924CFAE360023BCA2 /* AppoimentsPageController.swift in Sources */,
 				56AE0B56250DDAA000CB2AE3 /* UIViewController+extension.swift in Sources */,
+				52A226272554F85A00E3C86A /* NetworkService.swift in Sources */,
 				5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */,
+				52A2262B2554F93200E3C86A /* User.swift in Sources */,
 				56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */,
 				56976D7A2504346900EC3CAE /* ShowingAppointmentViewController.swift in Sources */,
 				568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */,
+				52A2262E2554F9B400E3C86A /* EnumDecodable.swift in Sources */,
 				56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */,
 				56A62961250455A300119201 /* ShowInfoStudentViewController.swift in Sources */,
 				5612B65C24F0937C00A2878E /* Constants.swift in Sources */,
@@ -338,6 +361,7 @@
 				56954F8724DCE27D001DA6DE /* RegisterNewStudentViewController.swift in Sources */,
 				56E9326024AE4A2B00F0E12E /* AppDelegate.swift in Sources */,
 				56A984372537A4D8008D6251 /* moreInfoTextView.swift in Sources */,
+				52A225E92554F36D00E3C86A /* UserType.swift in Sources */,
 				56954F8924DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift in Sources */,
 				56A62963250496F100119201 /* InfoTextView.swift in Sources */,
 				56954F8F24E4CAC0001DA6DE /* AddMeToAppointmentViewController.swift in Sources */,

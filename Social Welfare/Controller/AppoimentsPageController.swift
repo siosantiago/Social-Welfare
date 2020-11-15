@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CodableFirebase
 
 class AppoimentsPageController: UIViewController {
     
@@ -25,6 +26,8 @@ class AppoimentsPageController: UIViewController {
     var appointmentInfo: String = ""
     var appointmentName: String = ""
     var appointmentGoogleMeet: String = ""
+    var type = ""
+
     
 
     override func viewDidLoad() {
@@ -36,6 +39,8 @@ class AppoimentsPageController: UIViewController {
         appointmentsTableView.register(UINib(nibName: Constants.AppointmentTableView.nibCell, bundle: nil), forCellReuseIdentifier: Constants.AppointmentTableView.cellIdentifier)
         loadAppointments()
     }
+    
+   
     
     func loadAppointments() {
         db.collection(Constants.AppointmentTableView.firebaseCollectionName).order(by: Constants.AppointmentTableView.firebaseDateVar).addSnapshotListener { (querySnapshot, error) in
@@ -57,7 +62,7 @@ class AppoimentsPageController: UIViewController {
                             let date = data[Constants.AppointmentTableView.firebaseDateVar] as? Timestamp,
                             date.dateValue() >= Date.init(),
                             let info = data[Constants.AppointmentTableView.firebaseInfoVar] as? String {
-                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, id: id )
+                            let newAppointment = Appointment(title: title, date: date, info: info, studentID: id, type: .other)
                             self.appointments.append(newAppointment)
                             DispatchQueue.main.async {
                                 self.appointmentsTableView.reloadData()
@@ -82,8 +87,8 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
         
         cell.titleLabel.text = appointment.title
         cell.infoLabel.text = appointment.info
-        cell.dateLabel.text = appointment.date.getReadableFullFormat()
-        cell.timeLabel.text = appointment.date.getTimeFormat()
+        cell.dateLabel.text = appointment.date.dateValue().getReadableFullFormat()
+        cell.timeLabel.text = appointment.date.dateValue().getTimeFormat()
         let color = self.getColorForCell(colorCellNumber: indexPath.row)
         cell.coloredView.backgroundColor = color
         
@@ -92,8 +97,9 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appPlace = appointments[indexPath.row]
-        appointmentID = appointments[indexPath.row].id
-        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
+        appointmentID = appointments[indexPath.row].studentID
+        self.thingsToSend(title: appPlace.title, date: appPlace.date.dateValue(), info: appPlace.info)
+        tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "showAppointment", sender: self)
     }
     // MARK: - Size of Cell and Color
@@ -133,7 +139,7 @@ extension AppoimentsPageController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func gettingGoogleMeet(safeID: String){
-        let docRef = db.collection("Club Member's info").document(safeID)
+        let docRef = db.collection(Constants.Collections.users).document(safeID)
         docRef.getDocument { (document, error) in
             if let document = document, document.exists,
                 let data = document.data(){

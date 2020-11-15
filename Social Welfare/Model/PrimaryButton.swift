@@ -50,6 +50,7 @@ class PrimaryButton: UIButton {
         layer.cornerRadius = 15
         layer.shadowOffset = CGSize(width: 3, height: 3)
         layer.shadowOpacity = 0.5
+        self.imageView?.clipsToBounds = true
     }
 }
 

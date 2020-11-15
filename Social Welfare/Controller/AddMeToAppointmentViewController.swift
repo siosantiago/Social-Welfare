@@ -11,10 +11,11 @@ import Firebase
 
 class AddMeToAppointmentViewController: UIViewController {
     
+    
     let db = Firestore.firestore()
     
     let user = Auth.auth().currentUser
-    let firebaseDocName = "Appointment"
+    let firebaseDocName = "appointments"
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -23,6 +24,7 @@ class AddMeToAppointmentViewController: UIViewController {
     @IBOutlet weak var moreInfoLabel: UILabel!
     @IBOutlet weak var studentGrdLvlLabel: UILabel!
     @IBOutlet weak var CommunityHrsLabel: UILabel!
+    
         
     var appointInfo: String?
     var appointTime: String?
@@ -57,25 +59,28 @@ class AddMeToAppointmentViewController: UIViewController {
     }
     
     func allClubMembersAdded(ID: String, userID: String) {
-        let docRef = db.collection(firebaseDocName).document(ID)
+        let docRef = db.collection(Constants.Collections.appoinment).document(ID)
         docRef.getDocument { (document, error) in
             if let e = error {
                 print("Something went wrong retrieving data \(e.localizedDescription)")
             }else if let safeDocument = document,
                 let data = safeDocument.data(),
-                let idTrue = data["Club Member ID"] as? String {
+                let idTrue = data["clubMemberID"] as? String {
                 print(idTrue)
                 self.dismiss(animated: true, completion: nil)
                 return
             }else{
-                docRef.updateData([ "Club Member ID": userID])
+                docRef.updateData([ "clubMemberID": userID])
                 
             }
         }
     }
     
     
-
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

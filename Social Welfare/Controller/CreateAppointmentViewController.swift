@@ -15,9 +15,9 @@ class CreateAppointmentViewController: UIViewController {
     
     let appointmentsPageController = AppoimentsPageController()
     let user = Auth.auth().currentUser
-    let newAppointmentCollectionName = "Appointment"
-    let dictionaryTitleVar = "Title"
-    let dictionaryDateVar = "Date"
+    let newAppointmentCollectionName = "appointments"
+    let dictionaryTitleVar = "title"
+    let dictionaryDateVar = "date"
     let dictionaryTimeVar = "Time"
     let dictionaryInfoVar = "Info"
     let dictionaryUserIDVar = "Student ID"
@@ -29,6 +29,7 @@ class CreateAppointmentViewController: UIViewController {
     var arr1: [String] = []
     var appValid = false
     var datePicked: Date? = nil
+    var type: AppointmentType? 
     
     @IBOutlet weak var titleAppointmentTextField: UITextField!
     @IBOutlet weak var counterCharLabel: UILabel!
@@ -79,35 +80,34 @@ class CreateAppointmentViewController: UIViewController {
     
     func datePickerChanged() {
         datePicked = datePickerView.date
-        print("Date picked = \(datePicked!)")
     }
     
     @IBAction func createNewAppointmentPressed(_ sender: UIButton) {
         if let title = titleAppointmentTextField.text,
             !title.isEmpty,
-            let date = datePicked,
+            let safeDate = datePicked,
             let communityHoursDone = communityHoursAwardedTextField.text,
             let info = infoAppointmentTextField.text,
+            let safeType = type,
             let safeUser = user {
             let id = safeUser.uid
-            db.collection(newAppointmentCollectionName).document(title).setData( [
-                dictionaryTitleVar: title,
-                dictionaryDateVar: date,
-                dictionaryAwardHours: communityHoursDone,
-                dictionaryInfoVar: info,
-                dictionaryUserIDVar: id]) { (error) in
-                    if let e = error {
-                        self.performSegue(withIdentifier: "creationSuccessfulSegue", sender: self)
-                        print(e.localizedDescription)
-                        
-                    }
-                    else {
+            let appointment = Appointment(title: title, date: Timestamp(date: safeDate), info: info, studentID: id, clubMemberID: nil, communityHoursDone: communityHoursDone, moreInfo: moreInfoScrollView.text ?? nil, type: safeType)
+            NetworkService.createObject(to: Constants.Collections.appoinment, key: String(Int.random(in: 0...1000000)), object: appointment) { (result) in
+                switch result {
+                    case .success(_):
                         self.appValid = true
                         self.performSegue(withIdentifier: "creationSuccessfulSegue", sender: self)
-                    }
+                case let .failure(error):
+                    print("There was an issue saving data to firestroe, \(error.localizedDescription)")
+                }
             }
         }
     }
+    
+    @IBAction func backButtonPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            // Get the new view controller using segue.destination.
@@ -126,8 +126,6 @@ extension CreateAppointmentViewController {
     
     @objc func doneDate() {
         let date = datePickerView.date
-        datePicked = date
-        
         let calendar = Calendar.current
         let day = calendar.component(.day, from: date)
         let month = calendar.component(.month, from: date)
@@ -142,8 +140,6 @@ extension CreateAppointmentViewController {
     }
     @objc func doneTime() {
         let date = timeAppointmentPickerView.date
-        datePicked = date
-        
         let calendar = Calendar.current
         let hour = calendar.component(.hour, from: date)
         let minutes = calendar.component(.minute, from: date)
@@ -191,7 +187,6 @@ extension CreateAppointmentViewController: UITextFieldDelegate{
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == dateAppointmentTextField {
-            print("Inside loop")
             datePickerChanged()
         }
         self.activeTextField = nil
@@ -203,7 +198,6 @@ extension CreateAppointmentViewController: UITextFieldDelegate{
     @objc func keyboardWillShow(notification: NSNotification) {
         
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            
             // if keyboard size is not available for some reason, dont do anything
             return
         }
@@ -213,7 +207,7 @@ extension CreateAppointmentViewController: UITextFieldDelegate{
     
     @objc func keyboardWillHide(notification: NSNotification) {
         // move back the root view origin to zero
-        bottomScrollViewConstraint.constant = 0
+        bottomScrollViewConstraint.constant = 5
     }
       
 }

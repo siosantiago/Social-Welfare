@@ -20,6 +20,7 @@ class WelcomePage: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
         checkAuth()
+        //logout()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -47,7 +48,7 @@ class WelcomePage: UIViewController {
                     } else {
                         self.goToMainClubMember()
                     }
-                case let .failure(error):
+                case .failure(_):
                     self.logout()
                 }
             }
@@ -114,6 +115,5 @@ extension UIViewController {
         default:
             return Constants.ColorsCell.colorChosen[0]
         }
-
     }
 }

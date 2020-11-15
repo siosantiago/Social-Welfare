@@ -18,9 +18,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkF-0G-D8f" userLabel="ColoredView">
-                        <rect key="frame" x="10" y="10" width="480" height="180"/>
+                        <rect key="frame" x="10" y="5" width="480" height="190"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Algebra 2sak ska;ska;lsl;ka;sk;aks;la;sa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBS-cq-FNt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Algebra 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBS-cq-FNt">
                                 <rect key="frame" x="20" y="15" width="297" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I need help with solving polinomials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bh-9b-OBo">
-                                <rect key="frame" x="20" y="131.5" width="440" height="23.5"/>
+                                <rect key="frame" x="20" y="141.5" width="440" height="23.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -62,8 +62,8 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="dkF-0G-D8f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="0f9-sF-tj6"/>
-                    <constraint firstAttribute="bottom" secondItem="dkF-0G-D8f" secondAttribute="bottom" constant="10" id="AAo-AY-nzc"/>
+                    <constraint firstItem="dkF-0G-D8f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="0f9-sF-tj6"/>
+                    <constraint firstAttribute="bottom" secondItem="dkF-0G-D8f" secondAttribute="bottom" constant="5" id="AAo-AY-nzc"/>
                     <constraint firstItem="dkF-0G-D8f" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="BBd-yM-nvD"/>
                     <constraint firstItem="dkF-0G-D8f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dly-TV-5nf"/>
                     <constraint firstAttribute="trailing" secondItem="dkF-0G-D8f" secondAttribute="trailing" constant="10" id="qtA-97-kdk"/>

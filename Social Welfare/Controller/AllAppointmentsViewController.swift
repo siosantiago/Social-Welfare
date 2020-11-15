@@ -8,7 +8,14 @@
 
 import UIKit
 import Firebase
-class AllAppointmentsViewController: UIViewController {
+
+class AllAppointmentsViewController: UIViewController, MyCustomCellDelegator {
+    
+    func callSegueFromCell(myData dataobject: AppointmentType) {
+        self.appointmentType = dataobject
+        self.performSegue(withIdentifier: "showTypeSegue", sender: dataobject)
+    }
+    
     
     let db = Firestore.firestore()
     let dateFormatter = DateFormatter()
@@ -16,11 +23,9 @@ class AllAppointmentsViewController: UIViewController {
         
     let cellIdentifier = "appointmentsCell"
     let nibCell = "AppointmentsCell"
-    let firebaseCollectionName = "Appointment"
-    let firebaseTitleVar = "Title"
-    let firebaseDateVar = "Date"
-    let firebaseTimeVar = "Time"
-    let firebaseInfoVar = "Info"
+    
+    let firstNibCell = "TypeAppointTableViewCell"
+    let firstCellIdentifer = "choseCell"
 
     var allAppointments: [Appointment] = []
     var appointmentN: String?
@@ -28,21 +33,20 @@ class AllAppointmentsViewController: UIViewController {
     var appointmentTime: String = ""
     var appointmentInfo: String = ""
     var appointmentName: String = ""
+    var appointmentType: AppointmentType?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         allAppointmentsTableView.dataSource = self
         allAppointmentsTableView.delegate = self
-        
+        allAppointmentsTableView.register(UINib(nibName: firstNibCell, bundle: nil), forCellReuseIdentifier: firstCellIdentifer)
         allAppointmentsTableView.register(UINib(nibName: Constants.AppointmentTableView.nibCell, bundle: nil), forCellReuseIdentifier: Constants.AppointmentTableView.cellIdentifier)
         loadAppointments()
     }
     
-    
-    
     func loadAppointments() {
-        db.collection(firebaseCollectionName).order(by: firebaseDateVar)
+        db.collection(Constants.Collections.appoinment).order(by: Constants.AppointmentTableView.firebaseDateVar)
         .addSnapshotListener { (querySnapshot, error) in
             self.allAppointments = []
             
@@ -54,11 +58,12 @@ class AllAppointmentsViewController: UIViewController {
                     for document in snapshotDocuments {
                         let data = document.data()
                         let id = document.documentID
-                        if let title = data[self.firebaseTitleVar] as? String,
-                            let date = data[self.firebaseDateVar] as? Timestamp,
+                        if let title = data[Constants.AppointmentTableView.firebaseTitleVar] as? String,
+                            let date = data[Constants.AppointmentTableView.firebaseDateVar] as? Timestamp,
                             date.dateValue() >= Date.init(),
-                            let info = data[self.firebaseInfoVar] as? String {
-                            let newAppointment = Appointment(title: title, date: date.dateValue(), info: info, id: id )
+                            data[Constants.AppointmentTableView.firebaseTutorID] as? String == nil,
+                            let info = data[Constants.AppointmentTableView.firebaseInfoVar] as? String {
+                            let newAppointment = Appointment(title: title, date: date, info: info, studentID: id, type: .other )
                             self.allAppointments.append(newAppointment)
                             DispatchQueue.main.async {
                                 self.allAppointmentsTableView.reloadData()
@@ -73,30 +78,40 @@ class AllAppointmentsViewController: UIViewController {
 
 extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allAppointments.count
+        return allAppointments.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let appointment = allAppointments[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsCoolTableViewCell
-        
-        cell.titleLabel.text = appointment.title
-        cell.infoLabel.text = appointment.info
-        cell.dateLabel.text = appointment.date.getReadableFullFormat()
-        cell.timeLabel.text = appointment.date.getTimeFormat()
-        cell.coloredView.backgroundColor = getColorForCell(colorCellNumber: indexPath.row)
-        
-        
-        
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: firstCellIdentifer, for: indexPath) as! TypeAppointTableViewCell
+            cell.delegate = self
+            
+            return cell
+        }else {
+            let appointment = allAppointments[indexPath.row-1]
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.AppointmentTableView.cellIdentifier, for: indexPath) as! AppointmentsCoolTableViewCell
+            
+            cell.titleLabel.text = appointment.title
+            cell.infoLabel.text = appointment.info
+            cell.dateLabel.text = appointment.date.dateValue().getReadableFullFormat()
+            cell.timeLabel.text = appointment.date.dateValue().getTimeFormat()
+            cell.coloredView.backgroundColor = getColorForCell(colorCellNumber: indexPath.row)
+            
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let appPlace = allAppointments[indexPath.row]
-        appointmentN = allAppointments[indexPath.row].id
-        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
-        self.performSegue(withIdentifier: "addMeToAppointment", sender: self)
-        
+        if indexPath.row == 0 {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }else {
+            let appPlace = allAppointments[indexPath.row-1]
+            appointmentN = allAppointments[indexPath.row-1].studentID
+            self.thingsToSend(title: appPlace.title, date: appPlace.date.dateValue(), info: appPlace.info)
+            tableView.deselectRow(at: indexPath, animated: true)
+            self.performSegue(withIdentifier: "addMeToAppointment", sender: self)
+        }
     }
     
     func thingsToSend(title: String, date: Date, info: String) {
@@ -112,12 +127,7 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
     }
-    // Make the background color show through
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-        return headerView
-    }
+    
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -131,7 +141,15 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
                     destinationVC.appointTime = appointmentTime
                     destinationVC.appointInfo = appointmentInfo
                     destinationVC.appointName = appointmentName
+                    allAppointments = []
+                    self.allAppointmentsTableView.reloadData()
                 }
+            }
+        }
+        else if segue.identifier == "showTypeSegue" {
+            if let destinationVC = segue.destination as? TypeAppointmentTableViewController,
+               let safeType = appointmentType {
+                destinationVC.appointType = safeType
             }
         }
     }

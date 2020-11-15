@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="choseCell" id="KGk-i7-Jjw" customClass="TypeAppointTableViewCell" customModule="Social_Welfare" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="331" height="180"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="331" height="180"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vR4-XA-dR5">
+                        <rect key="frame" x="5" y="5" width="158" height="168"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhF-nm-jtP" customClass="TypeAppointButton" customModule="Social_Welfare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="158" height="52.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uhF-nm-jtP" secondAttribute="height" multiplier="3:1" id="F97-64-yQu"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="longLearningSessionTypeButton"/>
+                                <connections>
+                                    <action selector="learningSessionTypeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="c6O-Kv-DNX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjn-BX-FGo" customClass="TypeAppointButton" customModule="Social_Welfare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="57.5" width="158" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yjn-BX-FGo" secondAttribute="height" multiplier="3:1" id="mXK-xs-YOr"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="longEnglishTypeButton"/>
+                                <connections>
+                                    <action selector="englishTypeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8Yy-hW-zvf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flT-S3-HXs" customClass="TypeAppointButton" customModule="Social_Welfare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115.5" width="158" height="52.5"/>
+                                <state key="normal" backgroundImage="longSatActTypeButton"/>
+                                <connections>
+                                    <action selector="satActTypeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Hdo-o3-3Gn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="flT-S3-HXs" secondAttribute="trailing" id="3z1-LV-Luh"/>
+                            <constraint firstItem="yjn-BX-FGo" firstAttribute="width" secondItem="uhF-nm-jtP" secondAttribute="width" id="6aY-UR-UAe"/>
+                            <constraint firstItem="yjn-BX-FGo" firstAttribute="leading" secondItem="vR4-XA-dR5" secondAttribute="leading" id="7kK-rh-Pul"/>
+                            <constraint firstAttribute="trailing" secondItem="uhF-nm-jtP" secondAttribute="trailing" id="9kY-kT-byt"/>
+                            <constraint firstItem="flT-S3-HXs" firstAttribute="width" secondItem="uhF-nm-jtP" secondAttribute="width" id="Sn2-HE-f9h"/>
+                            <constraint firstItem="yjn-BX-FGo" firstAttribute="height" secondItem="uhF-nm-jtP" secondAttribute="height" id="YAm-CA-cKo"/>
+                            <constraint firstItem="uhF-nm-jtP" firstAttribute="leading" secondItem="vR4-XA-dR5" secondAttribute="leading" id="cU8-gP-wKF"/>
+                            <constraint firstAttribute="trailing" secondItem="yjn-BX-FGo" secondAttribute="trailing" id="dj5-ta-vMu"/>
+                            <constraint firstItem="flT-S3-HXs" firstAttribute="leading" secondItem="vR4-XA-dR5" secondAttribute="leading" id="hw4-7Y-NCC"/>
+                            <constraint firstItem="flT-S3-HXs" firstAttribute="height" secondItem="uhF-nm-jtP" secondAttribute="height" id="qQY-cD-2Kn"/>
+                            <constraint firstItem="flT-S3-HXs" firstAttribute="width" secondItem="flT-S3-HXs" secondAttribute="height" multiplier="3:1" id="z0r-Xt-wZT"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Vho-Vc-2Dg">
+                        <rect key="frame" x="168" y="5" width="158" height="168"/>
+                        <subviews>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hr2-g3-a2d" customClass="TypeAppointButton" customModule="Social_Welfare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="158" height="52.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hr2-g3-a2d" secondAttribute="height" multiplier="3:1" id="h9R-IV-fXX"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="longHumanitiesTypeButton"/>
+                                <connections>
+                                    <action selector="humanitiesTypeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G8E-Mc-AEX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQD-r3-1TN" customClass="TypeAppointButton" customModule="Social_Welfare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="57.5" width="158" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jQD-r3-1TN" secondAttribute="height" multiplier="3:1" id="OCT-rC-sqi"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="longMathTypeButton"/>
+                                <connections>
+                                    <action selector="mathTypeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="mxk-xh-4Av"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBD-An-BVk" customClass="TypeAppointButton" customModule="Social_Welfare" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="115.5" width="158" height="52.5"/>
+                                <state key="normal" backgroundImage="longPerToPerTypeButton"/>
+                                <connections>
+                                    <action selector="perToPerTypeButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vxu-6w-kwL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="hr2-g3-a2d" firstAttribute="leading" secondItem="Vho-Vc-2Dg" secondAttribute="leading" id="1WP-fV-Ihy"/>
+                            <constraint firstItem="jQD-r3-1TN" firstAttribute="height" secondItem="hr2-g3-a2d" secondAttribute="height" id="4xu-QB-dZV"/>
+                            <constraint firstItem="MBD-An-BVk" firstAttribute="width" secondItem="hr2-g3-a2d" secondAttribute="width" id="9bS-xt-hXV"/>
+                            <constraint firstAttribute="trailing" secondItem="hr2-g3-a2d" secondAttribute="trailing" id="9ym-3w-u1H"/>
+                            <constraint firstItem="jQD-r3-1TN" firstAttribute="width" secondItem="hr2-g3-a2d" secondAttribute="width" id="AVF-DM-5Ah"/>
+                            <constraint firstItem="MBD-An-BVk" firstAttribute="height" secondItem="hr2-g3-a2d" secondAttribute="height" id="MTT-mW-cPg"/>
+                            <constraint firstItem="MBD-An-BVk" firstAttribute="width" secondItem="MBD-An-BVk" secondAttribute="height" multiplier="3:1" id="Mh0-bs-DN5"/>
+                            <constraint firstItem="MBD-An-BVk" firstAttribute="leading" secondItem="Vho-Vc-2Dg" secondAttribute="leading" id="P9v-Ae-qTZ"/>
+                            <constraint firstItem="jQD-r3-1TN" firstAttribute="leading" secondItem="Vho-Vc-2Dg" secondAttribute="leading" id="e8U-N6-wWa"/>
+                            <constraint firstAttribute="trailing" secondItem="jQD-r3-1TN" secondAttribute="trailing" id="kMU-bD-8LE"/>
+                            <constraint firstAttribute="trailing" secondItem="MBD-An-BVk" secondAttribute="trailing" id="yCG-TD-1b6"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Vho-Vc-2Dg" secondAttribute="trailing" constant="5" id="3bu-gu-QOf"/>
+                    <constraint firstItem="Vho-Vc-2Dg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="4Qd-3z-FFN"/>
+                    <constraint firstAttribute="bottom" secondItem="Vho-Vc-2Dg" secondAttribute="bottom" constant="5" id="8OH-G3-3sy"/>
+                    <constraint firstItem="Vho-Vc-2Dg" firstAttribute="leading" secondItem="vR4-XA-dR5" secondAttribute="trailing" constant="5" id="Cbq-2C-zX5"/>
+                    <constraint firstItem="Vho-Vc-2Dg" firstAttribute="width" secondItem="vR4-XA-dR5" secondAttribute="width" id="Hig-sn-ltq"/>
+                    <constraint firstItem="vR4-XA-dR5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="QHv-xE-2m3"/>
+                    <constraint firstItem="Vho-Vc-2Dg" firstAttribute="height" secondItem="vR4-XA-dR5" secondAttribute="height" id="tAg-AL-6y1"/>
+                    <constraint firstItem="vR4-XA-dR5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="vCL-V4-buu"/>
+                    <constraint firstAttribute="bottom" secondItem="vR4-XA-dR5" secondAttribute="bottom" constant="5" id="wcH-DI-ops"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="23" y="52"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="longEnglishTypeButton" width="1500" height="500"/>
+        <image name="longHumanitiesTypeButton" width="1500" height="500"/>
+        <image name="longLearningSessionTypeButton" width="1500" height="500"/>
+        <image name="longMathTypeButton" width="1500" height="500"/>
+        <image name="longPerToPerTypeButton" width="1500" height="500"/>
+        <image name="longSatActTypeButton" width="1500" height="500"/>
+    </resources>
+</document>

@@ -13,3 +13,15 @@ enum UserType: String, Codable, EnumDecodable {
     case student = "student"
     case clubMember = "club_member"
 }
+
+enum AppointmentType: String, Codable, EnumDecodable {
+    static var defaultDecoderValue: AppointmentType = .other
+    case math = "math"
+    case english = "english"
+    case satAct = "satAct"
+    case humaties = "humanities"
+    case science = "science"
+    case learningSession = "learningSession"
+    case personToPerson = "personToPerson"
+    case other = "other"
+}

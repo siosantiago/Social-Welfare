@@ -9,12 +9,10 @@
 import UIKit
 import Firebase
 
-class MyAppointStudentViewController: UIViewController {
+class MyAppointStudentViewController: FirebaseDownloadableTableViewController {
 
     @IBOutlet weak var appointmentsTableView: UITableView!
     
-    let db = Firestore.firestore()
-    let user = Auth.auth().currentUser
     let dateFormatter = DateFormatter()
     
     var myAppointments: [Appointment] = []
@@ -37,25 +35,24 @@ class MyAppointStudentViewController: UIViewController {
         loadAppointments()
     }
     
-    func loadAppointments(){
-        db.collection(Constants.AppointmentTableView.firebaseCollectionName).order(by: Constants.AppointmentTableView.firebaseDateVar).addSnapshotListener { (querySnapshot, error) in
-            
+    func loadAppointments() {
+        db.collection(Constants.Collections.appoinment).order(by: Constants.AppointmentTableView.firebaseDateVar).addSnapshotListener { (querySnapshot, error) in
             self.myAppointments = []
             if let e = error {
                 print("Error retreiving data from firestore: \(e.localizedDescription)")
             }else{
                 if let snapshotDocument = querySnapshot?.documents,
-                    let safeUser = self.user {
+                   let safeUser = self.user {
                     let userID = safeUser.uid
                     for document in snapshotDocument {
                         let data = document.data()
                         let id = document.documentID
                         if let title = data[Constants.AppointmentTableView.firebaseTitleVar]as? String,
-                            userID == data[Constants.AppointmentTableView.firebaseStudentID]as? String,
-                            let date = data[Constants.AppointmentTableView.firebaseDateVar]as? Timestamp,
-                            date.dateValue() >= Date.init(),
-                            let info = data[Constants.AppointmentTableView.firebaseInfoVar]as? String{
-                            self.myAppointments.append(Appointment(title: title, date: date.dateValue(), info: info, id: id))
+                           userID == data[Constants.AppointmentTableView.firebaseStudentID]as? String,
+                           let date = data[Constants.AppointmentTableView.firebaseDateVar]as? Timestamp,
+                           date.dateValue() >= Date.init(),
+                           let info = data[Constants.AppointmentTableView.firebaseInfoVar]as? String{
+                            self.myAppointments.append(Appointment(title: title, date: date, info: info, studentID: id, type: .other))
                             DispatchQueue.main.async {
                                 self.appointmentsTableView.reloadData()
                             }
@@ -68,7 +65,7 @@ class MyAppointStudentViewController: UIViewController {
 }
 
 
-extension MyAppointStudentViewController: UITableViewDelegate, UITableViewDataSource {
+extension MyAppointStudentViewController: UITableViewDataSource, UITableViewDelegate  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myAppointments.count
     }
@@ -79,16 +76,16 @@ extension MyAppointStudentViewController: UITableViewDelegate, UITableViewDataSo
         
         cell.titleLabel.text = myAppointment.title
         cell.infoLabel.text = myAppointment.info
-        cell.dateLabel.text = myAppointment.date.getReadableFullFormat()
-        cell.timeLabel.text = myAppointment.date.getTimeFormat()
+        cell.dateLabel.text = myAppointment.date.dateValue().getReadableFullFormat()
+        cell.timeLabel.text = myAppointment.date.dateValue().getTimeFormat()
         cell.coloredView.backgroundColor = getColorForCell(colorCellNumber: indexPath.row)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let appPlace = myAppointments[indexPath.row]
-        appointmentID = myAppointments[indexPath.row].id
-        self.thingsToSend(title: appPlace.title, date: appPlace.date, info: appPlace.info)
+        appointmentID = myAppointments[indexPath.row].studentID
+        self.thingsToSend(title: appPlace.title, date: appPlace.date.dateValue(), info: appPlace.info)
         self.performSegue(withIdentifier: "studentShowInfo", sender: self)
     }
     

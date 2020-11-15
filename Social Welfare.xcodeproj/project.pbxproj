@@ -11,11 +11,14 @@
 		52A226272554F85A00E3C86A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A226262554F85A00E3C86A /* NetworkService.swift */; };
 		52A2262B2554F93200E3C86A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2262A2554F93200E3C86A /* User.swift */; };
 		52A2262E2554F9B400E3C86A /* EnumDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A2262D2554F9B400E3C86A /* EnumDecodable.swift */; };
+		5602DB13255B9A1C00968D3B /* CreateAppointmentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5602DB12255B9A1C00968D3B /* CreateAppointmentTextField.swift */; };
+		5602DB34255F55F500968D3B /* ChooseTypeAppointmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5602DB33255F55F200968D3B /* ChooseTypeAppointmentViewController.swift */; };
 		5612B65A24F08E3900A2878E /* RegisterNewClubMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65924F08E3900A2878E /* RegisterNewClubMemberViewController.swift */; };
 		5612B65C24F0937C00A2878E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65B24F0937C00A2878E /* Constants.swift */; };
 		5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */; };
 		5612B66124F2CECA00A2878E /* ClubMemberUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */; };
 		56438ADA2551E48F001781F5 /* FirebaseDownloadableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56438AD92551E48E001781F5 /* FirebaseDownloadableTableViewController.swift */; };
+		56438AF62558BD24001781F5 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56438AF52558BD23001781F5 /* SettingsTableViewController.swift */; };
 		5674E43B2514405800092E66 /* AppointmentsCoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5674E4392514405700092E66 /* AppointmentsCoolTableViewCell.swift */; };
 		5674E43C2514405800092E66 /* AppointmentsCoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5674E43A2514405800092E66 /* AppointmentsCoolTableViewCell.xib */; };
 		568B101E24D686EA00CAE8D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B101D24D686EA00CAE8D2 /* LoginViewController.swift */; };
@@ -44,6 +47,10 @@
 		56E9326724AE4A2B00F0E12E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326524AE4A2B00F0E12E /* Main.storyboard */; };
 		56E9326924AE4A2E00F0E12E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326824AE4A2E00F0E12E /* Assets.xcassets */; };
 		56E9326C24AE4A2E00F0E12E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E9326A24AE4A2E00F0E12E /* LaunchScreen.storyboard */; };
+		56EF298C2560EE63000E3E09 /* TypeAppointTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF298A2560EE63000E3E09 /* TypeAppointTableViewCell.swift */; };
+		56EF298D2560EE63000E3E09 /* TypeAppointTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56EF298B2560EE63000E3E09 /* TypeAppointTableViewCell.xib */; };
+		56EF299725617747000E3E09 /* TypeAppointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF299625617747000E3E09 /* TypeAppointButton.swift */; };
+		56EF299B25618ECA000E3E09 /* TypeAppointmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF299A25618EC8000E3E09 /* TypeAppointmentTableViewController.swift */; };
 		90E37BFE7F99C29E161D3286 /* Pods_Social_Welfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14315F1EB43809F647DD24BE /* Pods_Social_Welfare.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,11 +60,14 @@
 		52A226262554F85A00E3C86A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = "Social Welfare/Model/NetworkService.swift"; sourceTree = SOURCE_ROOT; };
 		52A2262A2554F93200E3C86A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		52A2262D2554F9B400E3C86A /* EnumDecodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumDecodable.swift; sourceTree = "<group>"; };
+		5602DB12255B9A1C00968D3B /* CreateAppointmentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAppointmentTextField.swift; sourceTree = "<group>"; };
+		5602DB33255F55F200968D3B /* ChooseTypeAppointmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTypeAppointmentViewController.swift; sourceTree = "<group>"; };
 		5612B65924F08E3900A2878E /* RegisterNewClubMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewClubMemberViewController.swift; sourceTree = "<group>"; };
 		5612B65B24F0937C00A2878E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5612B65D24F0B7BF00A2878E /* MyAppointStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointStudentViewController.swift; sourceTree = "<group>"; };
 		5612B66024F2CEC800A2878E /* ClubMemberUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubMemberUserViewController.swift; sourceTree = "<group>"; };
 		56438AD92551E48E001781F5 /* FirebaseDownloadableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDownloadableTableViewController.swift; sourceTree = "<group>"; };
+		56438AF52558BD23001781F5 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		5674E4392514405700092E66 /* AppointmentsCoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentsCoolTableViewCell.swift; sourceTree = "<group>"; };
 		5674E43A2514405800092E66 /* AppointmentsCoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentsCoolTableViewCell.xib; sourceTree = "<group>"; };
 		568B101D24D686EA00CAE8D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +98,10 @@
 		56E9326824AE4A2E00F0E12E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56E9326B24AE4A2E00F0E12E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56E9326D24AE4A2E00F0E12E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56EF298A2560EE63000E3E09 /* TypeAppointTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAppointTableViewCell.swift; sourceTree = "<group>"; };
+		56EF298B2560EE63000E3E09 /* TypeAppointTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeAppointTableViewCell.xib; sourceTree = "<group>"; };
+		56EF299625617747000E3E09 /* TypeAppointButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAppointButton.swift; sourceTree = "<group>"; };
+		56EF299A25618EC8000E3E09 /* TypeAppointmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAppointmentTableViewController.swift; sourceTree = "<group>"; };
 		957719F52DE05811087DB235 /* Pods-Social Welfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Welfare.debug.xcconfig"; path = "Target Support Files/Pods-Social Welfare/Pods-Social Welfare.debug.xcconfig"; sourceTree = "<group>"; };
 		DFCCD0006B8F3573703E44F0 /* Pods-Social Welfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Welfare.release.xcconfig"; path = "Target Support Files/Pods-Social Welfare/Pods-Social Welfare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +124,30 @@
 				52A226262554F85A00E3C86A /* NetworkService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		5602DB10255B980A00968D3B /* TexField */ = {
+			isa = PBXGroup;
+			children = (
+				5602DB12255B9A1C00968D3B /* CreateAppointmentTextField.swift */,
+			);
+			path = TexField;
+			sourceTree = "<group>";
+		};
+		5602DB32255F54B800968D3B /* Create Appointmet */ = {
+			isa = PBXGroup;
+			children = (
+				5602DB33255F55F200968D3B /* ChooseTypeAppointmentViewController.swift */,
+			);
+			path = "Create Appointmet";
+			sourceTree = "<group>";
+		};
+		56438AF42558BCE5001781F5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				56438AF52558BD23001781F5 /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		56B17A6524C61E8A009FC858 /* Controller */ = {
@@ -188,15 +226,46 @@
 			children = (
 				56E9325F24AE4A2B00F0E12E /* AppDelegate.swift */,
 				52A226252554F84F00E3C86A /* Network */,
+				56EF29882560EE02000E3E09 /* TableViewCell */,
+				5602DB10255B980A00968D3B /* TexField */,
+				56EF298F25617672000E3E09 /* Button */,
 				56B17AAA24C92B83009FC858 /* View */,
+				5602DB32255F54B800968D3B /* Create Appointmet */,
+				56EF299925618E41000E3E09 /* ClubMemberPages */,
 				56DEDD6A24CFB1830023BCA2 /* Model */,
 				56B17A6524C61E8A009FC858 /* Controller */,
+				56438AF42558BCE5001781F5 /* Settings */,
 				56E9326824AE4A2E00F0E12E /* Assets.xcassets */,
 				56E9326A24AE4A2E00F0E12E /* LaunchScreen.storyboard */,
 				56E9326D24AE4A2E00F0E12E /* Info.plist */,
 				568B101F24D71E7600CAE8D2 /* GoogleService-Info.plist */,
 			);
 			path = "Social Welfare";
+			sourceTree = "<group>";
+		};
+		56EF29882560EE02000E3E09 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				56EF298A2560EE63000E3E09 /* TypeAppointTableViewCell.swift */,
+				56EF298B2560EE63000E3E09 /* TypeAppointTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		56EF298F25617672000E3E09 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				56EF299625617747000E3E09 /* TypeAppointButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		56EF299925618E41000E3E09 /* ClubMemberPages */ = {
+			isa = PBXGroup;
+			children = (
+				56EF299A25618EC8000E3E09 /* TypeAppointmentTableViewController.swift */,
+			);
+			path = ClubMemberPages;
 			sourceTree = "<group>";
 		};
 		6E1E142A79881820AFD58065 /* Pods */ = {
@@ -281,6 +350,7 @@
 				568B102024D71E7700CAE8D2 /* GoogleService-Info.plist in Resources */,
 				568B102224D776D700CAE8D2 /* AppointmentsCell.xib in Resources */,
 				56DEDD6724CFAA590023BCA2 /* AppointmentsViewCell.xib in Resources */,
+				56EF298D2560EE63000E3E09 /* TypeAppointTableViewCell.xib in Resources */,
 				56E9326724AE4A2B00F0E12E /* Main.storyboard in Resources */,
 				5674E43C2514405800092E66 /* AppointmentsCoolTableViewCell.xib in Resources */,
 			);
@@ -343,16 +413,22 @@
 				56AE0B56250DDAA000CB2AE3 /* UIViewController+extension.swift in Sources */,
 				52A226272554F85A00E3C86A /* NetworkService.swift in Sources */,
 				5612B65E24F0B7C000A2878E /* MyAppointStudentViewController.swift in Sources */,
+				56EF299725617747000E3E09 /* TypeAppointButton.swift in Sources */,
+				5602DB34255F55F500968D3B /* ChooseTypeAppointmentViewController.swift in Sources */,
 				52A2262B2554F93200E3C86A /* User.swift in Sources */,
 				56B17A6924C61F54009FC858 /* WelcomePage.swift in Sources */,
 				56976D7A2504346900EC3CAE /* ShowingAppointmentViewController.swift in Sources */,
 				568B102424DB901A00CAE8D2 /* CreateAppointmentViewController.swift in Sources */,
 				52A2262E2554F9B400E3C86A /* EnumDecodable.swift in Sources */,
+				56EF299B25618ECA000E3E09 /* TypeAppointmentTableViewController.swift in Sources */,
 				56DEDD6C24CFB1B10023BCA2 /* Appointment.swift in Sources */,
+				5602DB13255B9A1C00968D3B /* CreateAppointmentTextField.swift in Sources */,
 				56A62961250455A300119201 /* ShowInfoStudentViewController.swift in Sources */,
 				5612B65C24F0937C00A2878E /* Constants.swift in Sources */,
 				56DEDD6624CFAA590023BCA2 /* AppointmentsViewCell.swift in Sources */,
+				56438AF62558BD24001781F5 /* SettingsTableViewController.swift in Sources */,
 				56438ADA2551E48F001781F5 /* FirebaseDownloadableTableViewController.swift in Sources */,
+				56EF298C2560EE63000E3E09 /* TypeAppointTableViewCell.swift in Sources */,
 				56954F8B24DE38F8001DA6DE /* StudentUserViewController.swift in Sources */,
 				56954F8D24E073C6001DA6DE /* AllAppointmentsViewController.swift in Sources */,
 				56B17AAC24C92BE7009FC858 /* PrimaryButton.swift in Sources */,

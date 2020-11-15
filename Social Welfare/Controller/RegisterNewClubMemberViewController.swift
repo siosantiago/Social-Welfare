@@ -78,7 +78,7 @@ class RegisterNewClubMemberViewController: UIViewController, UITextViewDelegate 
         NetworkService.createObject(to: Constants.Collections.users, key: uid, object: user) { (result) in
             switch result {
             case .success(_):
-                self.goToMainStudent()
+                self.goToMainClubMember()
             case let .failure(error):
                 print("There was an issue saving data to firestroe, \(error.localizedDescription)")
             }

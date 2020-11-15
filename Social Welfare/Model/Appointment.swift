@@ -7,10 +7,16 @@
 //
 
 import Foundation
+import Firebase
+import CodableFirebase
 
-struct Appointment {
-    let title: String
-    let date: Date
-    let info: String
-    let id: String
+struct Appointment: Codable {
+    var title: String
+    var date: Timestamp
+    var info: String
+    var studentID: String
+    var clubMemberID: String?
+    var communityHoursDone: String?
+    var moreInfo: String?
+    var type: AppointmentType
 }

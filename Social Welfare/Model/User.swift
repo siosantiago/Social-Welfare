@@ -19,6 +19,7 @@ struct User: Codable {
     var schoolName: String?
     var hoursAwarded: String?
     var type: UserType
+    var googleMeet: String?
 }
 
 extension Timestamp: TimestampType {}

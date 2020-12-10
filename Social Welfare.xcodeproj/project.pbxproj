@@ -52,6 +52,7 @@
 		56EF299725617747000E3E09 /* TypeAppointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF299625617747000E3E09 /* TypeAppointButton.swift */; };
 		56EF299B25618ECA000E3E09 /* TypeAppointmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF299A25618EC8000E3E09 /* TypeAppointmentTableViewController.swift */; };
 		90E37BFE7F99C29E161D3286 /* Pods_Social_Welfare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14315F1EB43809F647DD24BE /* Pods_Social_Welfare.framework */; };
+		D7D09ED82581CC8200A9CCAC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D09ED72581CC8200A9CCAC /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,6 +104,7 @@
 		56EF299625617747000E3E09 /* TypeAppointButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAppointButton.swift; sourceTree = "<group>"; };
 		56EF299A25618EC8000E3E09 /* TypeAppointmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAppointmentTableViewController.swift; sourceTree = "<group>"; };
 		957719F52DE05811087DB235 /* Pods-Social Welfare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Welfare.debug.xcconfig"; path = "Target Support Files/Pods-Social Welfare/Pods-Social Welfare.debug.xcconfig"; sourceTree = "<group>"; };
+		D7D09ED72581CC8200A9CCAC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DFCCD0006B8F3573703E44F0 /* Pods-Social Welfare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social Welfare.release.xcconfig"; path = "Target Support Files/Pods-Social Welfare/Pods-Social Welfare.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,12 +144,13 @@
 			path = "Create Appointmet";
 			sourceTree = "<group>";
 		};
-		56438AF42558BCE5001781F5 /* Settings */ = {
+		56438AF42558BCE5001781F5 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				56438AF52558BD23001781F5 /* SettingsTableViewController.swift */,
+				D7D09ED72581CC8200A9CCAC /* ProfileViewController.swift */,
 			);
-			path = Settings;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		56B17A6524C61E8A009FC858 /* Controller */ = {
@@ -234,7 +237,7 @@
 				56EF299925618E41000E3E09 /* ClubMemberPages */,
 				56DEDD6A24CFB1830023BCA2 /* Model */,
 				56B17A6524C61E8A009FC858 /* Controller */,
-				56438AF42558BCE5001781F5 /* Settings */,
+				56438AF42558BCE5001781F5 /* Profile */,
 				56E9326824AE4A2E00F0E12E /* Assets.xcassets */,
 				56E9326A24AE4A2E00F0E12E /* LaunchScreen.storyboard */,
 				56E9326D24AE4A2E00F0E12E /* Info.plist */,
@@ -439,6 +442,7 @@
 				56A984372537A4D8008D6251 /* moreInfoTextView.swift in Sources */,
 				52A225E92554F36D00E3C86A /* UserType.swift in Sources */,
 				56954F8924DE31D0001DA6DE /* CreationAppointmentSuccesfullyViewController.swift in Sources */,
+				D7D09ED82581CC8200A9CCAC /* ProfileViewController.swift in Sources */,
 				56A62963250496F100119201 /* InfoTextView.swift in Sources */,
 				56954F8F24E4CAC0001DA6DE /* AddMeToAppointmentViewController.swift in Sources */,
 			);

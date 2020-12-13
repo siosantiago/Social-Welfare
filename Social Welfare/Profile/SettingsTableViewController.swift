@@ -41,9 +41,6 @@ class SettingsTableViewController: UIViewController, UITableViewDelegate, UITabl
         if indexPath.row == 2 {
             do {
               try Auth.auth().signOut()
-                
-                navigationController?.popToRootViewController(animated: true)
-                
             } catch let signOutError as NSError {
               print ("Error signing out: %@", signOutError)
             }

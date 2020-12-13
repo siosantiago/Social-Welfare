@@ -15,10 +15,16 @@ class WelcomePage: UIViewController {
     let firebaseDocName = "Student's info"
     let firebaseIsStudent = "IsStudent"
     
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var appIcon: UIImageView!
+    @IBOutlet weak var loginButton: PrimaryButton!
+    @IBOutlet weak var registerButton: PrimaryButton!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        welcomeLabel.text = "Social Welfare"
         checkAuth()
         //logout()
     }
@@ -28,11 +34,19 @@ class WelcomePage: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func showPage() {
+        self.welcomeLabel.text = "Welcome"
+        self.appIcon.isHidden = false
+        self.loginButton.isHidden = false
+        self.registerButton.isHidden = false
     }
     
     func checkAuth() {
@@ -49,9 +63,12 @@ class WelcomePage: UIViewController {
                         self.goToMainClubMember()
                     }
                 case .failure(_):
+                    self.showPage()
                     self.logout()
                 }
             }
+        } else {
+            self.showPage()
         }
     }
     

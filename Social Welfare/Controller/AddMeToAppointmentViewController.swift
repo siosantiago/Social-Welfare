@@ -70,8 +70,7 @@ class AddMeToAppointmentViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
                 return
             }else{
-                docRef.updateData([ "clubMemberID": userID])
-                
+                docRef.updateData(["clubMemberID": userID])
             }
         }
     }

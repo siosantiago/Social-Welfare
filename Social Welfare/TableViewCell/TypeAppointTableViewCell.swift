@@ -29,39 +29,31 @@ class TypeAppointTableViewCell: UITableViewCell {
     
     @IBAction func learningSessionTypeButtonPressed(_ sender: Any) {
         typeChosen = .learningSession
-        print(typeChosen)
         sendSegue()
     }
     
     @IBAction func humanitiesTypeButtonPressed(_ sender: Any) {
         typeChosen = .humaties
-        print(typeChosen)
-
         sendSegue()
     }
     
     @IBAction func englishTypeButtonPressed(_ sender: Any) {
         typeChosen = .english
-        print(typeChosen)
-
         sendSegue()
     }
     
     @IBAction func mathTypeButtonPressed(_ sender: Any) {
         typeChosen = .math
-        print(typeChosen)
         sendSegue()
     }
     
     @IBAction func satActTypeButtonPressed(_ sender: Any) {
         typeChosen = .satAct
-        print(typeChosen)
         sendSegue()
     }
     
     @IBAction func perToPerTypeButtonPressed(_ sender: Any) {
         typeChosen = .personToPerson
-        print(typeChosen)
         sendSegue()
     }
     

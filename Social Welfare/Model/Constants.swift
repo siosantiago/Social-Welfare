@@ -26,6 +26,7 @@ struct Constants {
         static let firebaseInfoVar = "info"
         static let firebaseTutorID = "clubMemberID"
         static let firebaseStudentID = "studentID"
+        static let firebaseType = "type"
         static let firebaseGoogleMeet = "googleMeet"
     }
     struct infoTextView {

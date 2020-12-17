@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPs-KS-QoB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPs-KS-QoB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -263,7 +263,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="aja-dO-0jL">
-                                        <rect key="frame" x="0.0" y="20" width="414" height="627"/>
+                                        <rect key="frame" x="0.0" y="20" width="414" height="712"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Creating Student Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wpv-Si-EvF">
                                                 <rect key="frame" x="66" y="0.0" width="282" height="76"/>
@@ -272,7 +272,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0WW-Ds-hiJ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="20" y="104" width="374" height="31.5"/>
+                                                <rect key="frame" x="20" y="104" width="374" height="52.5"/>
                                                 <color key="textColor" name="BrandBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -319,7 +319,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lZv-Rd-CjB" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="20" y="163.5" width="374" height="31.5"/>
+                                                <rect key="frame" x="20" y="184.5" width="374" height="52"/>
                                                 <color key="textColor" name="BrandBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -366,7 +366,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZwI-ak-e8u" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="20" y="223" width="374" height="31.5"/>
+                                                <rect key="frame" x="20" y="264.5" width="374" height="52.5"/>
                                                 <color key="textColor" name="BrandBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -413,7 +413,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rBM-dV-iY8" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                <rect key="frame" x="20" y="282.5" width="374" height="30"/>
+                                                <rect key="frame" x="20" y="345" width="374" height="52.5"/>
                                                 <color key="textColor" name="BrandBlue"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -459,19 +459,19 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peR-Pa-Eu5">
-                                                <rect key="frame" x="20" y="340.5" width="374" height="20.5"/>
+                                                <rect key="frame" x="20" y="425.5" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7lH-Ht-QeE">
-                                                <rect key="frame" x="20" y="389" width="374" height="150"/>
+                                                <rect key="frame" x="20" y="474" width="374" height="150"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="TPm-gd-1AS"/>
                                                 </constraints>
                                             </pickerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Glp-50-JI1" customClass="PrimaryButton" customModule="Social_Welfare" customModuleProvider="target">
-                                                <rect key="frame" x="167" y="567" width="80" height="60"/>
+                                                <rect key="frame" x="167" y="652" width="80" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="mZK-cH-5rk"/>
                                                     <constraint firstAttribute="height" constant="60" id="uv4-XU-byC"/>
@@ -584,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9BL-fi-8uR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4406" y="-891"/>
+            <point key="canvasLocation" x="4441" y="-929"/>
         </scene>
         <!--MyAppointmentsMoreInfo-->
         <scene sceneID="4Hd-eP-Bht">
@@ -948,7 +948,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Sd3-M9-HYC" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="178" width="374" height="49"/>
+                                                        <rect key="frame" x="20" y="178" width="374" height="66.5"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no"/>
@@ -995,7 +995,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g8a-f9-qqQ" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="255" width="374" height="49"/>
+                                                        <rect key="frame" x="20" y="272.5" width="374" height="66.5"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1042,7 +1042,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gR5-13-Hpf" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="332" width="374" height="49"/>
+                                                        <rect key="frame" x="20" y="367" width="374" height="67"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -1089,7 +1089,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yOz-IS-Azc" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="409" width="374" height="47"/>
+                                                        <rect key="frame" x="20" y="462" width="374" height="66.5"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
@@ -1136,7 +1136,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bIO-JO-97g" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="484" width="374" height="49"/>
+                                                        <rect key="frame" x="20" y="556.5" width="374" height="66.5"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -1171,7 +1171,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOr-LX-ODv" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                                        <rect key="frame" x="20" y="561" width="374" height="229"/>
+                                                        <rect key="frame" x="20" y="651" width="374" height="139"/>
                                                         <color key="textColor" name="BrandBlue"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -1450,7 +1450,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCI-Yo-Xyy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4442" y="-269"/>
+            <point key="canvasLocation" x="4441" y="-269"/>
         </scene>
         <!--Scroll View-->
         <scene sceneID="tLM-wd-a5U">
@@ -1745,7 +1745,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O4k-7F-Pen" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4459" y="1449"/>
+            <point key="canvasLocation" x="4441" y="1430"/>
         </scene>
         <!--profileStudent-->
         <scene sceneID="LHg-mW-DYd">
@@ -1998,7 +1998,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cp-xJ-2U8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4458" y="2247"/>
+            <point key="canvasLocation" x="4441" y="2245"/>
         </scene>
         <!--Choose Picture View Controller-->
         <scene sceneID="CCL-In-TeH">
@@ -2440,7 +2440,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKy-BO-iHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4442" y="536"/>
+            <point key="canvasLocation" x="4441" y="536"/>
         </scene>
         <!--Appointments Page-->
         <scene sceneID="VDy-v9-5lf">
@@ -2809,7 +2809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNw-IG-av8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4424.6376811594209" y="-1848.2142857142856"/>
+            <point key="canvasLocation" x="4441" y="-1850"/>
         </scene>
         <!--Type Appointment Table View Controller-->
         <scene sceneID="SJ4-4z-E5g">
@@ -2831,20 +2831,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vbt-ym-qqM">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eD1-m0-RqF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vbt-ym-qqM" firstAttribute="trailing" secondItem="eD1-m0-RqF" secondAttribute="trailing" id="KLB-x2-AYY"/>
+                            <constraint firstItem="vbt-ym-qqM" firstAttribute="top" secondItem="Mor-Iu-Rwt" secondAttribute="bottom" id="VSP-rZ-tRX"/>
                             <constraint firstItem="Mor-Iu-Rwt" firstAttribute="top" secondItem="eD1-m0-RqF" secondAttribute="top" id="acX-k1-1I2"/>
+                            <constraint firstItem="eD1-m0-RqF" firstAttribute="bottom" secondItem="vbt-ym-qqM" secondAttribute="bottom" id="iSx-9M-uUk"/>
+                            <constraint firstItem="vbt-ym-qqM" firstAttribute="leading" secondItem="eD1-m0-RqF" secondAttribute="leading" id="n7m-10-bYb"/>
                             <constraint firstItem="Mor-Iu-Rwt" firstAttribute="leading" secondItem="eD1-m0-RqF" secondAttribute="leading" id="wLN-Gz-dHt"/>
                             <constraint firstItem="Mor-Iu-Rwt" firstAttribute="trailing" secondItem="eD1-m0-RqF" secondAttribute="trailing" id="ynD-RE-gAj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CEl-RH-gbc"/>
+                    <connections>
+                        <outlet property="headerTitle" destination="Y3o-JQ-iwp" id="yi0-Di-ueJ"/>
+                        <outlet property="typeTableVew" destination="vbt-ym-qqM" id="CLr-Zu-pWY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5n-wZ-ASn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5477" y="-2213"/>
+            <point key="canvasLocation" x="5476.811594202899" y="-2213.1696428571427"/>
         </scene>
         <!--Add Me To Appointment View Controller-->
         <scene sceneID="3Ln-7h-N9N">
@@ -3190,40 +3202,40 @@
     </scenes>
     <designables>
         <designable name="0WW-Ds-hiJ">
-            <size key="intrinsicContentSize" width="64" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="7Eu-dt-F5m">
-            <size key="intrinsicContentSize" width="100" height="31.5"/>
+            <size key="intrinsicContentSize" width="334" height="52.34765625"/>
         </designable>
         <designable name="Sd3-M9-HYC">
-            <size key="intrinsicContentSize" width="64" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="ZwI-ak-e8u">
-            <size key="intrinsicContentSize" width="58.5" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="bIO-JO-97g">
-            <size key="intrinsicContentSize" width="43.5" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="g8a-f9-qqQ">
-            <size key="intrinsicContentSize" width="115.5" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="gR5-13-Hpf">
-            <size key="intrinsicContentSize" width="58.5" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="jX4-xM-xL5">
-            <size key="intrinsicContentSize" width="104" height="30"/>
+            <size key="intrinsicContentSize" width="334" height="52.34765625"/>
         </designable>
         <designable name="lZv-Rd-CjB">
-            <size key="intrinsicContentSize" width="121" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="rBM-dV-iY8">
-            <size key="intrinsicContentSize" width="104" height="30"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="xOr-LX-ODv">
-            <size key="intrinsicContentSize" width="74.5" height="31.5"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
         <designable name="yOz-IS-Azc">
-            <size key="intrinsicContentSize" width="104" height="30"/>
+            <size key="intrinsicContentSize" width="374" height="52.34765625"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

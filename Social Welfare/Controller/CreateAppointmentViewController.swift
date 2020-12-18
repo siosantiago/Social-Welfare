@@ -68,7 +68,11 @@ class CreateAppointmentViewController: UIViewController {
         // Do any additional setup after loading the view.
         datePickerView.datePickerMode = .date
         datePickerView.minimumDate = Date.init()
+        datePickerView.preferredDatePickerStyle = .wheels
+        datePickerView.sizeToFit()
         timeAppointmentPickerView.datePickerMode = .time
+        timeAppointmentPickerView.preferredDatePickerStyle = .wheels
+        timeAppointmentPickerView.sizeToFit()
         addDoneButtonDoneForTextField(dateAppointmentTextField, selector: #selector(doneDate))
         addDoneButtonDoneForTextField(timeAppointmentTextField, selector: #selector(doneTime))
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
@@ -207,7 +211,7 @@ extension CreateAppointmentViewController: UITextFieldDelegate{
     
     @objc func keyboardWillHide(notification: NSNotification) {
         // move back the root view origin to zero
-        bottomScrollViewConstraint.constant = 5
+        bottomScrollViewConstraint.constant = 0
     }
       
 }

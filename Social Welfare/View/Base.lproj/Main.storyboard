@@ -30,7 +30,7 @@
                                         </constraints>
                                         <color key="textColor" name="BrandBlue"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                 <color key="value" red="0.91764705879999997" green="0.56470588239999997" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -574,7 +574,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" id="FTL-GU-nt6">
-                        <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="original"/>
+                        <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="template"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1391,6 +1391,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="AppBackgroundColor "/>
+                        <color key="selectedImageTintColor" name="Button Color 1"/>
                     </tabBar>
                     <connections>
                         <segue destination="sZz-p9-mHp" kind="relationship" relationship="viewControllers" id="hUB-TG-dhf"/>
@@ -1441,7 +1443,8 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Fmg-5Y-6UJ">
-                        <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="original"/>
+                        <imageReference key="image" image="bookmark.fill" catalog="system" renderingMode="template"/>
+                        <color key="badgeColor" name="Button BackGround 1"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="appointmentsTableView" destination="8fg-rz-5a5" id="NOQ-9J-msQ"/>
@@ -1608,7 +1611,7 @@
                                 <constraints>
                                     <constraint firstItem="FeK-eG-oNR" firstAttribute="leading" secondItem="g8r-bU-ncu" secondAttribute="leading" id="P7a-WN-06x"/>
                                     <constraint firstItem="FeK-eG-oNR" firstAttribute="top" secondItem="g8r-bU-ncu" secondAttribute="top" id="S5G-uY-GMa"/>
-                                    <constraint firstItem="FeK-eG-oNR" firstAttribute="bottom" secondItem="VT3-LQ-n56" secondAttribute="bottom" constant="10" id="Yos-pD-EEO"/>
+                                    <constraint firstItem="FeK-eG-oNR" firstAttribute="bottom" secondItem="VT3-LQ-n56" secondAttribute="bottom" constant="-20" id="Yos-pD-EEO"/>
                                     <constraint firstAttribute="trailing" secondItem="FeK-eG-oNR" secondAttribute="trailing" id="zGU-0O-Y8P"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="VT3-LQ-n56"/>
@@ -1771,8 +1774,8 @@
                             <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0GD-TT-akO" userLabel="user">
                                 <rect key="frame" x="0.0" y="88" width="414" height="198.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Santiago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80g-f1-DYM">
-                                        <rect key="frame" x="30" y="30" width="108.5" height="33.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80g-f1-DYM">
+                                        <rect key="frame" x="30" y="30" width="0.0" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="80g-f1-DYM" secondAttribute="height" multiplier="107:33" id="hUi-V2-Kk3"/>
                                         </constraints>
@@ -1786,13 +1789,12 @@
                                             <constraint firstAttribute="width" constant="120" id="J3F-j5-P9V"/>
                                             <constraint firstAttribute="height" constant="120" id="nvk-nD-CUy"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="missingPicture"/>
                                         <connections>
                                             <segue destination="vu0-kQ-06K" kind="presentation" identifier="showImagesSegue" modalPresentationStyle="fullScreen" id="l4r-u3-GGL"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v9j-Uc-PWI">
-                                        <rect key="frame" x="30" y="75.5" width="183.5" height="70"/>
+                                        <rect key="frame" x="30" y="42" width="183.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="siosantiago.jar@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckm-Tv-dgB">
                                                 <rect key="frame" x="0.0" y="0.0" width="183.5" height="18"/>
@@ -3044,6 +3046,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="Button Color 1"/>
                     </tabBar>
                     <connections>
                         <segue destination="2RP-4L-xKQ" kind="relationship" relationship="viewControllers" id="KPM-gZ-E44"/>
@@ -3255,7 +3258,6 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="historyGeoSmall" width="750" height="650"/>
         <image name="math&amp;Calculator" width="1080" height="1920"/>
-        <image name="missingPicture" width="500" height="500"/>
         <image name="otherSmall" width="750" height="650"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>

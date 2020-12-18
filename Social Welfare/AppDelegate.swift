@@ -25,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override init() {
         FirebaseApp.configure()
     }
+    
+    func logout() {
+            let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialVC = mainStoryBoard.instantiateInitialViewController()
+            window?.rootViewController = initialVC
+            window?.makeKeyAndVisible()
+    }
 }
 
 

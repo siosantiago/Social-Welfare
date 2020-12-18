@@ -41,6 +41,8 @@ class SettingsTableViewController: UIViewController, UITableViewDelegate, UITabl
         if indexPath.row == 2 {
             do {
               try Auth.auth().signOut()
+                let appDelegateTemp = UIApplication.shared.delegate as? AppDelegate
+                                appDelegateTemp?.logout()
             } catch let signOutError as NSError {
               print ("Error signing out: %@", signOutError)
             }

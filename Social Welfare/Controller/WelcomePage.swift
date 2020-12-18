@@ -26,7 +26,7 @@ class WelcomePage: UIViewController {
         navigationController?.isNavigationBarHidden = true
         welcomeLabel.text = "Social Welfare"
         checkAuth()
-        //logout()
+        //Ologout()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

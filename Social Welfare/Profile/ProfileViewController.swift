@@ -29,7 +29,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var etcOrClubFourLabel: UILabel!
     @IBOutlet weak var amountCommunityHoursLabel: UILabel!
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        setInformation()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

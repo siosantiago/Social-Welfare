@@ -141,8 +141,6 @@ extension AllAppointmentsViewController: UITableViewDataSource, UITableViewDeleg
                     destinationVC.appointTime = appointmentTime
                     destinationVC.appointInfo = appointmentInfo
                     destinationVC.appointName = appointmentName
-                    allAppointments = []
-                    self.allAppointmentsTableView.reloadData()
                 }
             }
         }
